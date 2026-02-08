@@ -1,69 +1,84 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.s.gradle.android.application")
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.crashlytics)
 }
 
 android {
     namespace = "com.solutionium.woo"
-    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.solutionium.woo"
-        minSdk = 27
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        versionCode = 14
+        versionName = "2.3"
+        //resourceConfigurations.addAll(listOf("fa", "en"))
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
+    rootProject.extra.set("versionName", defaultConfig.versionName)
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    bundle {
+        language {
+            // This tells Google Play to NEVER strip the following language resources.
+            // All other languages will be stripped, which is what we want.
+            enableSplit = false
+        }
+    }
+
+
+    buildTypes {
+//        getByName("release") {
+//            isMinifyEnabled = true
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android.txt"),
+//                "proguard-rules.pro"
+//            )
+//        }
+//        getByName("debug") {
+//            isMinifyEnabled = true
+//            // It's crucial to use the same ProGuard files as your release build
+//            // to ensure you are testing the exact same rules.
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android.txt"),
+//                "proguard-rules.pro"
+//            )
+//        }
+    }
 }
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(project(":data:model"))
+    implementation(project(":data:local"))
+    implementation(project(":core:ui:common"))
+    implementation(project(":feature:product-detail"))
+    implementation(project(":feature:home"))
+    implementation(project(":feature:product-list"))
+    implementation(project(":feature:category"))
+    implementation(project(":feature:cart"))
+    implementation(project(":feature:checkout"))
+    implementation(project(":feature:account"))
+    implementation(project(":feature:address"))
+    implementation(project(":feature:orders"))
+    implementation(project(":feature:review"))
+
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.messaging) // For Cloud Messaging
+    implementation(libs.firebase.analytics) // Recommended for tracking
+    implementation(libs.firebase.crashlytics)
+
+
+    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.foundation)
     implementation(libs.androidx.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.lifecycle.runtime.compose)
+    implementation(libs.androidx.hilt.navigation.compose)
+    //implementation(libs.androidx.browser)
+
 }

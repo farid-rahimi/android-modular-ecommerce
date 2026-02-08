@@ -1,0 +1,57 @@
+package com.solutionium.feature.product.detail
+
+import android.content.Intent
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavType
+import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
+import androidx.navigation.navDeepLink
+import com.solutionium.core.ui.common.DestinationRoute
+
+const val GRAPH_PRODUCT_ROUTE = "product_graph_route"
+fun NavGraphBuilder.productDetailScreen(
+    rootRoute: DestinationRoute,
+    onAllReviewClicked: (DestinationRoute, Int, List<Int>) -> Unit,
+    navigateToProductList: (route: DestinationRoute, Map<String, String>) -> Unit,
+    onBackClick: () -> Unit,
+) {
+    composable(
+        route = "${rootRoute.route}/product?id={productId}&slug={productSlug}",
+        arguments = listOf(
+            navArgument("productId") {
+                type = NavType.IntType
+                defaultValue = -1
+            },
+            navArgument("productSlug") {
+                type = NavType.StringType
+                nullable = true
+                defaultValue = null
+            }
+        ),
+
+    ) {
+        ProductDetailScreen(
+            viewModel = hiltViewModel(),
+            onAllReviewClicked = { id, catIds -> onAllReviewClicked(rootRoute, id, catIds) },
+            navigateToProductList = { params -> navigateToProductList(rootRoute, params) },
+            onBackClick = onBackClick
+        )
+    }
+}
+
+fun NavController.navigateProductDetail(
+    rootRoute: DestinationRoute,
+    productId: Int
+) {
+    navigate("${rootRoute.route}/product?id=$productId")
+    //navigate("${rootRoute.route}/product/$productId")
+}
+
+fun NavController.navigateProductDetail(
+    rootRoute: DestinationRoute,
+    productSlug: String
+) {
+    navigate("${rootRoute.route}/product?slug=$productSlug")
+}

@@ -2,7 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+
     <application
+        android:name=".WooApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,17 +18,61 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Woo"
         tools:targetApi="31">
+        <service
+            android:name=".fcm.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.messaging.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
+            android:launchMode="singleTask"
             android:theme="@style/Theme.Woo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+            <intent-filter>
+
+                <!-- This makes the activity launchable from a URL -->
+                <action android:name="android.intent.action.VIEW" />
+                <!-- This declares that it's a default action for the data type -->
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- This allows the link to be opened from a browser -->
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Define the URL structure your app will handle -->
+                <data
+                    android:host="payment-return"
+                    android:scheme="solutionium" />
+                <!--
+                    This will handle URLs like:
+                    solutionium://payment-return/order-received?order_id=123&status=success
+                    solutionium://payment-return/order-failed?order_id=123&status=failed
+                -->
+            </intent-filter>
+
+
+            <!-- ... other intent filters ... -->
+
+            <!-- App Links Intent Filter for Product Details -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- This must match the URL structure you share -->
+                <data android:scheme="https" />
+                <data android:host="qeshminora.com" />
+                <data android:pathPattern="/product/.*" />
+            </intent-filter>
+
+
+
+
+    </activity>
     </application>
 
 </manifest>

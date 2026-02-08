@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "542681099054",
+    "project_id": "qeshminora-548c3",
+    "storage_bucket": "qeshminora-548c3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542681099054:android:b575a5f79554e09391a8bf",
+        "android_client_info": {
+          "package_name": "com.solutionium.woo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIrz3YI9Eq8kpHOAOMgBMj85uLkEV8FHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

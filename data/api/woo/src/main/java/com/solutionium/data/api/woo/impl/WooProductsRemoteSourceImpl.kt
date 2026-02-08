@@ -1,0 +1,146 @@
+package com.solutionium.data.api.woo.impl
+
+import com.solutionium.data.api.woo.WooProductsRemoteSource
+import com.solutionium.data.api.woo.converters.toAttributeTerm
+import com.solutionium.data.api.woo.converters.toBrand
+import com.solutionium.data.api.woo.converters.toModel
+import com.solutionium.data.api.woo.converters.toProductDetail
+import com.solutionium.data.api.woo.converters.toProductThumbnail
+import com.solutionium.data.api.woo.converters.toRequestBody
+import com.solutionium.data.api.woo.handleNetworkResponse
+import com.solutionium.data.model.AttributeTerm
+import com.solutionium.data.model.Brand
+import com.solutionium.data.model.CartItemServer
+import com.solutionium.data.model.GeneralError
+import com.solutionium.data.model.NewReview
+import com.solutionium.data.model.ProductDetail
+import com.solutionium.data.model.ProductThumbnail
+import com.solutionium.data.model.ProductVariation
+import com.solutionium.data.model.Result
+import com.solutionium.data.model.Review
+import com.solutionium.data.network.response.WooProductListResponse
+import com.solutionium.data.network.services.WooProductService
+import com.solutionium.data.network.adapter.NetworkResponse
+import com.solutionium.data.network.response.CartCheckError
+import com.solutionium.data.network.response.CartCheckListResponse
+import com.solutionium.data.network.response.WooBrandListResponse
+import javax.inject.Inject
+
+internal class WooProductsRemoteSourceImpl @Inject constructor(
+    private val wooProductService: WooProductService,
+) : WooProductsRemoteSource {
+    override suspend fun getProductDetails(productId: Int): Result<ProductDetail, GeneralError> =
+        handleNetworkResponse(
+            networkCall = { wooProductService.getProductDetails(productId) },
+            mapper = { response ->
+                response.toProductDetail()
+            }
+        )
+
+    override suspend fun getProductDetails(slug: String): Result<ProductDetail, GeneralError> =
+        handleNetworkResponse(
+            networkCall = { wooProductService.getProductList(queries = mapOf("slug" to slug)) },
+            mapper = { response ->
+                response.first().toProductDetail()
+            }
+        )
+
+
+    override suspend fun getProductList(
+        page: Int,
+        queries:  Map<String, String>,
+    ): Result<List<ProductThumbnail>, GeneralError> =
+        handleNetworkResponse(
+            //networkCall = { wooProductService.getProductList(page, queries) },
+            networkCall = { wooProductService.getFastProduct(page, queries) },
+            mapper = { responseList ->
+                responseList.products?.map { it.toProductThumbnail() } ?: emptyList()
+            }
+        )
+
+    override suspend fun getProductVariations(
+        productId: Int
+    ): Result<List<ProductVariation>, GeneralError> =
+        handleNetworkResponse(
+            networkCall = { wooProductService.getProductVariations(productId) },
+            mapper = { responseList ->
+                responseList.map { it.toModel() }
+            }
+        )
+
+    override suspend fun getBrandList(
+        queries: Map<String, String>
+    ): Result<List<Brand>, GeneralError> =
+        handleNetworkResponse(
+            networkCall = { wooProductService.getProductBrands(queries) },
+            mapper = { brandResponseList ->
+                brandResponseList.map { it.toBrand() }
+            }
+        )
+
+
+
+    override suspend fun getAttributeTerms(
+        attributeId: Int,
+        queries: Map<String, String>
+    ): Result<List<AttributeTerm>, GeneralError> =
+        handleNetworkResponse(
+            networkCall = { wooProductService.getAttributeTerms(attributeId, queries) },
+            mapper = { responseList ->
+                responseList.map { it.toAttributeTerm() }
+            }
+        )
+
+    override suspend fun getProductReviews(
+        page: Int,
+        queries: Map<String, String>
+    ): Result<List<Review>, GeneralError> =
+        handleNetworkResponse(
+            networkCall = { wooProductService.getProductReviews(page, queries) },
+            mapper = { responseList ->
+                responseList.map { it.toModel() }
+            }
+        )
+
+    override suspend fun submitReview(
+        review: NewReview
+    ): Result<Review, GeneralError> =
+        handleNetworkResponse(
+            networkCall = { wooProductService.submitReview(review.toRequestBody()) },
+            mapper = { response ->
+                response.toModel()
+            }
+        )
+
+
+//    override suspend fun getProductDetailsListById(productIds: List<Int>): Result<List<ProductDetail>, GeneralError> =
+//        handleNetworkResponse(
+//            networkCall = {
+//                wooProductService.getProductList(
+//                    queries = mapOf("per_page" to "100", "include" to productIds.joinToString(","))
+//                )
+//            },
+//            mapper = { responseList ->
+//                responseList.map { it.toProductDetail() }
+//            }
+//        )
+
+    override suspend fun getCartUpdateServer(queries: Map<String, String>): Result<List<CartItemServer>, GeneralError> =
+
+        when (val result = wooProductService.getCartItemUpdate(queries)) {
+            is NetworkResponse.Success -> {
+                val listResponse : CartCheckListResponse = result.body ?: emptyList()
+                Result.Success(listResponse.map { it.toModel() })
+            }
+
+            is NetworkResponse.ApiError -> {
+                val errorResponse = result.body
+                Result.Failure(GeneralError.ApiError(errorResponse.error, null, null))
+            }
+
+            is NetworkResponse.NetworkError -> Result.Failure(GeneralError.NetworkError)
+            is NetworkResponse.UnknownError -> Result.Failure(GeneralError.UnknownError(result.error))
+        }
+
+
+}
