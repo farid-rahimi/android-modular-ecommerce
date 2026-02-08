@@ -37,11 +37,6 @@ internal abstract class ConfigDomainModule {
     ): HomeBannersUseCase
 
     @Binds
-    abstract fun bindPriceManager(
-        impl: PriceManagerImpl
-    ): PriceManager
-
-    @Binds
     abstract fun bindGetStoriesUseCase(
         impl: GetStoriesUseCaseImpl
     ): GetStoriesUseCase

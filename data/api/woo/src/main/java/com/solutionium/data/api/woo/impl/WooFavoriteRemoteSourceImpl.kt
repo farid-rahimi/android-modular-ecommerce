@@ -12,14 +12,14 @@ class WooFavoriteRemoteSourceImpl @Inject constructor(
 
 ) : WooFavoriteRemoteSource {
     override suspend fun getFavorites(): Result<List<Int>, GeneralError> {
-        TODO("Not yet implemented")
+        return Result.Success(emptyList()) // Placeholder
     }
 
     override suspend fun addFavorite(productId: Int): Result<Boolean, GeneralError> {
-        TODO("Not yet implemented")
+        return Result.Success(true) // Placeholder
     }
 
     override suspend fun removeFavorite(productId: Int): Result<Boolean, GeneralError> {
-        TODO("Not yet implemented")
+        return Result.Success(true) // Placeholder
     }
 }

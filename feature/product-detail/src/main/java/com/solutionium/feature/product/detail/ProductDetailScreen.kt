@@ -479,7 +479,7 @@ private fun ProductContent(
             ProductRatingSummary(
                 averageRating = uiState.averageRating ?: 0f,
                 reviewCount = uiState.comments.size,
-                onClick = { /* TODO: scroll to reviews or navigate */ }
+                onClick = {  }
             )
             Spacer(modifier = Modifier.height(20.dp))
 
