@@ -169,13 +169,13 @@ fun AccountScreen(
                             expanded = menuExpanded,
                             onDismissRequest = { menuExpanded = false }
                         ) {
-//                            DropdownMenuItem(
-//                                text = { Text("Language / زبان") },
-//                                onClick = {
-//                                    menuExpanded = false
-//                                    viewModel.onNavigateToLanguage() // Navigate to the language screen
-//                                }
-//                            )
+                            DropdownMenuItem(
+                                text = { Text("Language / زبان") },
+                                onClick = {
+                                    menuExpanded = false
+                                    viewModel.onNavigateToLanguage() // Navigate to the language screen
+                                }
+                            )
                             DropdownMenuItem(
                                 text = { Text(stringResource(R.string.contact_support)) },
                                 onClick = {
