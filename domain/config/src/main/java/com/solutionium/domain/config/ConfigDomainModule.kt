@@ -10,7 +10,6 @@ import com.solutionium.domain.config.impl.GetStoriesUseCaseImpl
 import com.solutionium.domain.config.impl.GetVersionsUseCaseImpl
 import com.solutionium.domain.config.impl.HomeBannersUseCaseImpl
 import com.solutionium.domain.config.impl.PaymentMethodDiscountUseCaseImpl
-import com.solutionium.domain.config.impl.PriceManagerImpl
 import com.solutionium.domain.config.impl.ReviewCriteriaUseCaseImpl
 import dagger.Binds
 import dagger.Module
