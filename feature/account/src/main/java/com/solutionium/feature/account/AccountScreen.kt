@@ -68,6 +68,7 @@ import androidx.compose.ui.unit.sp
 import com.solutionium.core.ui.common.DateHelper
 import com.solutionium.core.ui.common.component.ContactSupportDialog
 import com.solutionium.core.ui.common.component.FormattedPriceV2
+import com.solutionium.core.ui.common.component.LanguageSelectionScreen
 import com.solutionium.core.ui.common.component.OrderSummaryCard
 import com.solutionium.data.model.Order
 import com.solutionium.data.model.Transaction
@@ -123,7 +124,7 @@ fun AccountScreen(
     // Snackbar host state for displaying errors
     val snackbarHostState = remember { SnackbarHostState() }
 
-    // Determine if we are in a sub-state that should handle back press internally
+    // Determine if we are in a substate that should handle back press internally
     val inSubScreenState = when (state.stage) {
         AccountStage.EditProfile,
         AccountStage.ViewWalletTransactions, // <-- ADD THIS

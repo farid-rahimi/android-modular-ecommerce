@@ -97,7 +97,7 @@ class AccountViewModel @Inject constructor(
     private fun observeLanguage() {
         viewModelScope.launch {
             observeLanguageUseCase().collect { langCode ->
-                _state.update { it.copy(currentLanguage = langCode) }
+                _state.update { it.copy(currentLanguage = langCode ?: "fa") }
             }
         }
     }

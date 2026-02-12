@@ -11,8 +11,8 @@ import androidx.core.content.edit
 
 // In your core/data module
 interface AppPreferences {
-    fun language(): Flow<String>
-    fun getLanguage(): String
+    fun language(): Flow<String?>
+    fun getLanguage(): String?
     suspend fun setLanguage(languageCode: String)
 
     // --- ADD THESE NEW METHODS ---
@@ -34,7 +34,7 @@ class AppPreferencesImpl @Inject constructor(
         "app_prefs", Context.MODE_PRIVATE
     )
 
-    override fun language(): Flow<String> = callbackFlow {
+    override fun language(): Flow<String?> = callbackFlow {
         // This listener will be triggered whenever a value in SharedPreferences changes.
         val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
             if (key == LANGUAGE) {
@@ -56,8 +56,8 @@ class AppPreferencesImpl @Inject constructor(
         }
     }.conflate()
 
-    override fun getLanguage(): String {
-        return sharedPreferences.getString(LANGUAGE, "fa") ?: "fa"
+    override fun getLanguage(): String? {
+        return sharedPreferences.getString(LANGUAGE, null)
     }
 
     override suspend fun setLanguage(languageCode: String) {

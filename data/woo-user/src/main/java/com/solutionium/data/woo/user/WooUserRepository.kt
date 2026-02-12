@@ -44,7 +44,7 @@ interface WooUserRepository {
     suspend fun setDefaultAddress(addressId: Int)
     fun isSuperUser(): Flow<Boolean>
 
-    fun getLanguage(): Flow<String>
+    fun getLanguage(): Flow<String?>
     suspend fun setLanguage(languageCode: String)
 
 }
@@ -177,7 +177,7 @@ internal class WooUserRepositoryImpl @Inject constructor(
         }
     }
 
-    override fun getLanguage(): Flow<String> = appPreferences.language()
+    override fun getLanguage(): Flow<String?> = appPreferences.language()
 
     override suspend fun setLanguage(languageCode: String) {
         appPreferences.setLanguage(languageCode)

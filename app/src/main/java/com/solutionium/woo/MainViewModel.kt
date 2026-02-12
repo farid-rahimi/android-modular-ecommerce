@@ -25,7 +25,7 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             appPreferences.language().collect { langCode ->
                 // Check if the language is being collected for the first time.
-                val isInitialLaunch = _uiState.value.languageCode == null
+                val isInitialLaunch = langCode == null
 
                 _uiState.update {
                     it.copy(

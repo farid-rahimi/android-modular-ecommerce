@@ -9,7 +9,7 @@ interface SetLanguageUseCase {
 }
 
 interface ObserveLanguageUseCase {
-    operator fun invoke(): Flow<String>
+    operator fun invoke(): Flow<String?>
 }
 
 class SetLanguageUseCaseImpl @Inject constructor(
@@ -24,7 +24,7 @@ class SetLanguageUseCaseImpl @Inject constructor(
 class ObserveLanguageUseCaseImpl @Inject constructor(
     private val userRepository: WooUserRepository
 ) : ObserveLanguageUseCase {
-    override fun invoke(): Flow<String> {
+    override fun invoke(): Flow<String?> {
         return userRepository.getLanguage()
     }
 }
