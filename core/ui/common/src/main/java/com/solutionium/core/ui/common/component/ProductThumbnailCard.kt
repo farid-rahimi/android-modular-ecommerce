@@ -71,6 +71,7 @@ import com.solutionium.data.model.FeatureType
 import com.solutionium.data.model.ProductCatType
 import com.solutionium.data.model.ProductThumbnail
 import kotlinx.coroutines.delay
+import androidx.core.graphics.toColorInt
 
 
 @Composable
@@ -369,7 +370,7 @@ fun ShoeAttributes(product: ProductThumbnail) {
                             modifier = Modifier
                                 .size(8.dp)
                                 .clip(CircleShape)
-                                .background(Color(android.graphics.Color.parseColor(hexColor)))
+                                .background(Color(hexColor.toColorInt()))
                                 .padding(end = 4.dp)
                         )
                     }

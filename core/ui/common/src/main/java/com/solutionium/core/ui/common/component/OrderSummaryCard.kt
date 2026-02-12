@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -133,22 +132,17 @@ fun OrderSummaryCard(
                 Text(
                     modifier = Modifier
                         .clip(MaterialTheme.shapes.small)
-                        .background(statusColor ?: Color.Gray)
+                        .background(statusColor)
                         .padding(8.dp)
                     ,
-                    text = statusText ?: order.status.replaceFirstChar { it.uppercase() },
+                    text = statusText,
                     style = MaterialTheme.typography.bodyMedium,
                     color = Color.White,
                     fontWeight = FontWeight.SemiBold
                 )
                 Spacer(modifier = Modifier.weight(1f))
                 PriceView(order.total.toDouble(), false, null)
-//                Text(
-//                    text = order.total,
-//                    style = MaterialTheme.typography.titleMedium,
-//                    fontWeight = FontWeight.Bold,
-//                    color = MaterialTheme.colorScheme.primary
-//                )
+
             }
         }
     }

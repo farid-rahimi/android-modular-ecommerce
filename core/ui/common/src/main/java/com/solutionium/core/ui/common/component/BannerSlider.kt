@@ -28,7 +28,7 @@ fun BannerSlider(
     modifier: Modifier = Modifier,
     items: List<BannerItem>,
     initialPage: Int = 0,
-    autoScrollDurationMillis: Long = 8000, // 5 seconds
+    autoScrollDurationMillis: Long = 8000,
     onBannerClick: (item: BannerItem) -> Unit
 ) {
     if (items.isEmpty()) {
@@ -114,14 +114,6 @@ fun BannerSlider(
 
         // Page Indicators
         if (actualItemCount > 1) {
-//            PagerIndicators(
-//                pageCount = actualItemCount, // Use actual item count for indicators
-//                currentPage = pagerState.currentPage % actualItemCount, // Map current virtual page to actual page
-//                modifier = Modifier
-//                    .align(Alignment.BottomCenter)
-//                    .padding(bottom = 12.dp)
-//            )
-
             LinePagerIndicators( // Use the new LinePagerIndicators
                 pageCount = actualItemCount,
                 currentPage = pagerState.currentPage % actualItemCount,

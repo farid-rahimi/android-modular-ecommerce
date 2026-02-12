@@ -5,30 +5,6 @@ import com.solutionium.data.model.Order
 import com.solutionium.data.model.UserDetails
 import com.solutionium.data.model.UserWallet
 
-//sealed interface AccountUiState {
-//
-//
-//    data object Loading : AccountUiState
-//    data object LoggedOut : AccountUiState // Initial state, show phone input
-//    data class OtpVerification(val phoneNumber: String) : AccountUiState
-//    data class NewUserDetailsInput(val phoneNumber: String, val otpVerifiedToken: String) : AccountUiState // For new users
-//    data class LoggedIn(
-//        val userDetails: UserDetails? = null,
-//        val userWallet: UserWallet? = null,
-//        val isLoadingWallet: Boolean = false,
-//        val latestOrder: Order? = null
-//    ) : AccountUiState
-//    data class ViewWalletTransactions(
-//        val userDetails: UserDetails,
-//        val userWallet: UserWallet? = null,
-//    ) : AccountUiState
-//    // --- New states for sub-sections ---
-//    data class EditProfile(val userDetails: UserDetails) : AccountUiState
-//
-//    data class Error(val message: String) : AccountUiState
-//
-//}
-
 data class AccountUIState(
     val lastStage: AccountStage? = null,
 

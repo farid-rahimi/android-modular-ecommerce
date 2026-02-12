@@ -137,14 +137,12 @@ class AccountViewModel @Inject constructor(
         }
     }
 
-    // --- Actions to change to sub-states ---
     fun onNavigateToEditProfile() {
         _state.update { it.copy(stage = AccountStage.EditProfile) }
 
     }
 
 
-    // --- Action to go back to the main LoggedIn screen ---
     fun onNavigateBackToAccount() {
         _state.update { it.copy(stage = AccountStage.LoggedIn) }
 
@@ -485,7 +483,7 @@ class AccountViewModel @Inject constructor(
     private fun logout() {
         viewModelScope.launch {
             _state.update { it.copy(isLoading = true) }
-            logoutUseCase().collect { isSuccess ->
+            logoutUseCase().collect { _ ->
 
                 _state.update {
                     it.copy(

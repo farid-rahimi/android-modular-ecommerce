@@ -56,10 +56,7 @@ import java.time.format.FormatStyle
 @Composable
 fun ReviewItem(review: Review, modifier: Modifier = Modifier) {
 
-    val context = LocalContext.current // <-- Get the context
-//    val formattedDate = remember(review.dateCreated) {
-//        DateHelper.convertDateStringToJalali(review.dateCreated)
-//    }
+    val context = LocalContext.current
 
     Column(modifier = modifier) {
         // --- Header Section ---
@@ -338,14 +335,7 @@ fun ReviewSummaryItemCard(review: Review, modifier: Modifier = Modifier) {
 }
 
 
-// --- Utility Functions ---
-private fun String.toFormattedDate(): String {
-    return try {
-        OffsetDateTime.parse(this).format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM))
-    } catch (e: Exception) {
-        this
-    }
-}
+
 
 private fun String.stripHtmlTags(): String {
     return this.replace(Regex("<.*?>"), "")

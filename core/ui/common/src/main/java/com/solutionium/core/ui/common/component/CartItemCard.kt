@@ -15,7 +15,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -26,12 +25,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
+import com.solutionium.core.ui.common.R
 import com.solutionium.data.model.CartItem
-
 
 @Composable
 fun CartItemCard(
@@ -41,7 +41,6 @@ fun CartItemCard(
     Card(
         modifier = modifier
             .fillMaxWidth()
-            //.background(MaterialTheme.colorScheme.surfaceContainerLowest)
             .padding(2.dp),
         colors = CardDefaults.cardColors()
             .copy(containerColor = MaterialTheme.colorScheme.surfaceContainerLowest),
@@ -98,11 +97,6 @@ fun CartItemCard(
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp),
-        //shape = RoundedCornerShape(8.dp),
-        //elevation = CardDefaults.cardElevation(1.dp),
-//        colors = CardDefaults.cardColors(
-//            containerColor = Color.White,
-//        ),
     ) {
         Row(
             modifier = Modifier
@@ -138,23 +132,18 @@ fun CartItemCard(
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
 
-//                    Text(
-//                        text = "Price: \$${cartItem.currentPrice}",
-//                        fontSize = 14.sp,
-//                        color = Color.Gray
-//                    )
 
                     Column {
                         Row {
                             Text(
-                                text = "قسطی",
-                                fontSize = 11.sp,
+                                text = stringResource(R.string.installment_pay),
+                                fontSize = 10.sp,
                                 color = Color.Gray
                             )
                             Spacer(modifier = Modifier.width(4.dp))
                             Text(
                                 " x 4 ",
-                                fontSize = 11.sp,
+                                fontSize = 10.sp,
                                 color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f)
                             )
                             PriceView(
@@ -166,8 +155,8 @@ fun CartItemCard(
                         discountedPrice(cartItem.currentPrice)?.let {
                             Row {
                                 Text(
-                                    text = "نقدی",
-                                    fontSize = 11.sp,
+                                    text = stringResource(R.string.full_pay),
+                                    fontSize = 10.sp,
                                     color = Color.Gray
                                 )
                                 Spacer(modifier = Modifier.width(4.dp))
@@ -180,21 +169,7 @@ fun CartItemCard(
                             }
                         }
                     }
-//                    FormattedPriceV2(
-//                        cartItem.currentPrice.toLong()
-//                    )
-//                    cartItem.regularPrice?.let {
-//                        FormattedPriceV2(
-//                            it.toLong(),
-//                            currency = "",
-//                            mainStyle = TextStyle(
-//                                fontSize = 13.sp,
-//                                color = Color.Gray,
-//                                textDecoration = TextDecoration.LineThrough
-//                            )
-//                        )
-//                    }
-                    //}
+//
 
                     Spacer(modifier = Modifier.weight(1f))
 
@@ -207,14 +182,8 @@ fun CartItemCard(
 
                 }
 
-                //Text("Test")
-
 
                 if (cartItem.variationAttributes.any { it.slug != "pa_color" }) {
-//                    Row(
-//                        modifier = Modifier.fillMaxWidth(),
-//                        horizontalArrangement = Arrangement.spacedBy(8.dp)
-//                    ) {
                     cartItem.variationAttributes.filter { it.slug != "pa_color" }
                         .forEach { attribute ->
                             Text(
@@ -223,7 +192,6 @@ fun CartItemCard(
                                 color = Color.DarkGray
                             )
                         }
-                    //}
                 }
 
             }
