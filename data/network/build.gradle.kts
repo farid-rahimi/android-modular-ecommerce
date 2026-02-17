@@ -23,11 +23,17 @@ android {
 
 dependencies {
 
-    //implementation(project(":data:local"))
-    implementation(libs.retrofit)
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.retrofit.kotlinx.serilization.converter)
-    implementation(libs.logging.interceptor) // Use the latest version
+
+    // Core and Android Engine
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.android) // Or ktor-client-okhttp
+
+    // Serialization (replaces Retrofit converters)
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
+
+    // Logging (replaces HttpLoggingInterceptor)
+    implementation(libs.ktor.client.logging)
 
 
 }

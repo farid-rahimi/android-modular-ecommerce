@@ -14,15 +14,13 @@ import com.solutionium.data.model.UserDetails
 import com.solutionium.data.model.UserWallet
 import com.solutionium.data.model.WalletConfig
 import com.solutionium.data.network.adapter.NetworkResponse
-import com.solutionium.data.network.services.DigitsService
-import com.solutionium.data.network.services.UserService
-import okhttp3.MultipartBody
-import okhttp3.RequestBody.Companion.toRequestBody
+import com.solutionium.data.network.clients.DigitsClient
+import com.solutionium.data.network.clients.UserClient
 import javax.inject.Inject
 
 internal class WooUserRemoteSourceImpl @Inject constructor(
-    private val authService: DigitsService,
-    private val userService: UserService
+    private val authService: DigitsClient,
+    private val userService: UserClient
 ) : WooUserRemoteSource {
     override suspend fun sendOtp(phoneNumber: String): Result<Unit, GeneralError> =
         when (val result = authService.sendOTP(
@@ -96,7 +94,9 @@ internal class WooUserRemoteSourceImpl @Inject constructor(
         pass: String
     ): Result<UserAccess, GeneralError> =
         when (val result = authService.loginUser(
-            user = user.toRequestBody(MultipartBody.FORM), password = pass.toRequestBody(MultipartBody.FORM)
+            //user = user.toRequestBody(MultipartBody.FORM), password = pass.toRequestBody(MultipartBody.FORM)
+            user = user,
+            password = pass
         )
         ) {
             is NetworkResponse.Success -> {

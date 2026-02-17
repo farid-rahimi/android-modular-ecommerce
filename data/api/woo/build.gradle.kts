@@ -20,7 +20,7 @@ android {
 
 dependencies {
 
-    implementation(libs.retrofit)
+    //implementation(libs.retrofit)
 
     implementation(project(":data:network"))
 

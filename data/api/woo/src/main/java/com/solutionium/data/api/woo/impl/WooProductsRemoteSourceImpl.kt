@@ -18,20 +18,18 @@ import com.solutionium.data.model.ProductThumbnail
 import com.solutionium.data.model.ProductVariation
 import com.solutionium.data.model.Result
 import com.solutionium.data.model.Review
-import com.solutionium.data.network.response.WooProductListResponse
-import com.solutionium.data.network.services.WooProductService
 import com.solutionium.data.network.adapter.NetworkResponse
-import com.solutionium.data.network.response.CartCheckError
+import com.solutionium.data.network.clients.WooProductClient
 import com.solutionium.data.network.response.CartCheckListResponse
-import com.solutionium.data.network.response.WooBrandListResponse
 import javax.inject.Inject
 
 internal class WooProductsRemoteSourceImpl @Inject constructor(
-    private val wooProductService: WooProductService,
+
+    private val productApi: WooProductClient
 ) : WooProductsRemoteSource {
     override suspend fun getProductDetails(productId: Int): Result<ProductDetail, GeneralError> =
         handleNetworkResponse(
-            networkCall = { wooProductService.getProductDetails(productId) },
+            networkCall = { productApi.getProductDetails(productId) },
             mapper = { response ->
                 response.toProductDetail()
             }
@@ -39,7 +37,7 @@ internal class WooProductsRemoteSourceImpl @Inject constructor(
 
     override suspend fun getProductDetails(slug: String): Result<ProductDetail, GeneralError> =
         handleNetworkResponse(
-            networkCall = { wooProductService.getProductList(queries = mapOf("slug" to slug)) },
+            networkCall = { productApi.getProductList(queries = mapOf("slug" to slug)) },
             mapper = { response ->
                 response.first().toProductDetail()
             }
@@ -52,7 +50,7 @@ internal class WooProductsRemoteSourceImpl @Inject constructor(
     ): Result<List<ProductThumbnail>, GeneralError> =
         handleNetworkResponse(
             //networkCall = { wooProductService.getProductList(page, queries) },
-            networkCall = { wooProductService.getFastProduct(page, queries) },
+            networkCall = { productApi.getFastProduct(page, queries) },
             mapper = { responseList ->
                 responseList.products?.map { it.toProductThumbnail() } ?: emptyList()
             }
@@ -62,7 +60,7 @@ internal class WooProductsRemoteSourceImpl @Inject constructor(
         productId: Int
     ): Result<List<ProductVariation>, GeneralError> =
         handleNetworkResponse(
-            networkCall = { wooProductService.getProductVariations(productId) },
+            networkCall = { productApi.getProductVariations(productId) },
             mapper = { responseList ->
                 responseList.map { it.toModel() }
             }
@@ -72,7 +70,7 @@ internal class WooProductsRemoteSourceImpl @Inject constructor(
         queries: Map<String, String>
     ): Result<List<Brand>, GeneralError> =
         handleNetworkResponse(
-            networkCall = { wooProductService.getProductBrands(queries) },
+            networkCall = { productApi.getProductBrands(queries) },
             mapper = { brandResponseList ->
                 brandResponseList.map { it.toBrand() }
             }
@@ -85,7 +83,7 @@ internal class WooProductsRemoteSourceImpl @Inject constructor(
         queries: Map<String, String>
     ): Result<List<AttributeTerm>, GeneralError> =
         handleNetworkResponse(
-            networkCall = { wooProductService.getAttributeTerms(attributeId, queries) },
+            networkCall = { productApi.getAttributeTerms(attributeId, queries) },
             mapper = { responseList ->
                 responseList.map { it.toAttributeTerm() }
             }
@@ -96,7 +94,7 @@ internal class WooProductsRemoteSourceImpl @Inject constructor(
         queries: Map<String, String>
     ): Result<List<Review>, GeneralError> =
         handleNetworkResponse(
-            networkCall = { wooProductService.getProductReviews(page, queries) },
+            networkCall = { productApi.getProductReviews(page, queries) },
             mapper = { responseList ->
                 responseList.map { it.toModel() }
             }
@@ -106,7 +104,7 @@ internal class WooProductsRemoteSourceImpl @Inject constructor(
         review: NewReview
     ): Result<Review, GeneralError> =
         handleNetworkResponse(
-            networkCall = { wooProductService.submitReview(review.toRequestBody()) },
+            networkCall = { productApi.submitReview(review.toRequestBody()) },
             mapper = { response ->
                 response.toModel()
             }
@@ -127,7 +125,7 @@ internal class WooProductsRemoteSourceImpl @Inject constructor(
 
     override suspend fun getCartUpdateServer(queries: Map<String, String>): Result<List<CartItemServer>, GeneralError> =
 
-        when (val result = wooProductService.getCartItemUpdate(queries)) {
+        when (val result = productApi.getCartItemUpdate(queries)) {
             is NetworkResponse.Success -> {
                 val listResponse : CartCheckListResponse = result.body ?: emptyList()
                 Result.Success(listResponse.map { it.toModel() })
