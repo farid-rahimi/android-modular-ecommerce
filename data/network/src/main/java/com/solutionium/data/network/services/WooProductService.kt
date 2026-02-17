@@ -87,25 +87,3 @@ interface WooProductService {
 
 }
 
-
-suspend fun main() {
-    val json = Json { ignoreUnknownKeys = true }
-    val client = OkHttpClient.Builder()
-        .addInterceptor(
-            BasicAuthInterceptor(BuildConfig.CONSUMER_KEY, BuildConfig.CONSUMER_SECRET)
-        )
-        .build()
-
-
-    val retrofit = Retrofit.Builder()
-        .baseUrl(BuildConfig.BASE_URL)
-        .client(client)
-        .addConverterFactory(
-            json.asConverterFactory("application/json".toMediaType())
-        )
-        .build()
-
-    val service = retrofit.create(WooProductService::class.java)
-    //val result = service.getProductList()
-    //println(result)
-}

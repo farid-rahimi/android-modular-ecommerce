@@ -29,7 +29,6 @@ dependencies {
     implementation(libs.retrofit.kotlinx.serilization.converter)
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0") // Use the latest version
 
-    val ktorVersion = "2.3.12" // Use the latest stable version
 
     // Core and Android Engine
     implementation(libs.ktor.client.core)

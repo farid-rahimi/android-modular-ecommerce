@@ -54,27 +54,4 @@ interface DigitsService {
     suspend fun logout(@Header("Authorization") token: String): NetworkResponse<DigitsSimpleResponse, DigitsSimpleResponse>
 
 
-
-}
-
-suspend fun main() {
-    val json = Json { ignoreUnknownKeys = true }
-//    val client = OkHttpClient.Builder()
-//        .addInterceptor(
-//            BasicAuthInterceptor(BuildConfig.CONSUMER_KEY, BuildConfig.CONSUMER_SECRET)
-//        )
-//        .build()
-
-
-    val retrofit = Retrofit.Builder()
-        .baseUrl(BuildConfig.BASE_URL)
-        //.client(client)
-        .addConverterFactory(
-            json.asConverterFactory("multipart/form-data".toMediaType())
-        )
-        .build()
-
-    val service = retrofit.create(DigitsService::class.java)
-    val result = service.loginUser("m_hameedat".toRequestBody(MultipartBody.FORM), "569254724@H".toRequestBody(MultipartBody.FORM))
-    println(result)
 }
