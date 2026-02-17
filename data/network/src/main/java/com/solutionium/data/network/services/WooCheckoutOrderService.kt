@@ -1,8 +1,5 @@
 package com.solutionium.data.network.services
 
-import com.solutionium.data.network.interceptor.BasicAuthInterceptor
-import com.solutionium.data.network.BuildConfig
-import com.solutionium.data.network.adapter.NetworkCallAdapterFactory
 import com.solutionium.data.network.adapter.NetworkResponse
 import com.solutionium.data.network.request.OrderRequest
 import com.solutionium.data.network.response.PaymentGatewayListResponse
@@ -10,12 +7,6 @@ import com.solutionium.data.network.response.ShippingMethodsResponse
 import com.solutionium.data.network.response.WooCouponListResponse
 import com.solutionium.data.network.response.WooErrorResponse
 import com.solutionium.data.network.response.WooOrderResponse
-import kotlinx.serialization.json.Json
-import okhttp3.MediaType
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.OkHttpClient
-import retrofit2.Retrofit
-import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -50,26 +41,3 @@ interface WooCheckoutOrderService {
 }
 
 
-suspend fun main() {
-    val json = Json { ignoreUnknownKeys = true }
-    val client = OkHttpClient.Builder()
-        .addInterceptor(
-            BasicAuthInterceptor(BuildConfig.CONSUMER_KEY, BuildConfig.CONSUMER_SECRET)
-        )
-        .build()
-
-
-    val retrofit = Retrofit.Builder()
-        .baseUrl(BuildConfig.BASE_URL)
-        .client(client)
-        .addCallAdapterFactory(NetworkCallAdapterFactory())
-        .addConverterFactory(
-            json.asConverterFactory("application/json".toMediaType())
-        )
-        .build()
-
-    val service = retrofit.create(WooCheckoutOrderService::class.java)
-    val result = service.getShippingMethods()
-    println(result)
-
-}

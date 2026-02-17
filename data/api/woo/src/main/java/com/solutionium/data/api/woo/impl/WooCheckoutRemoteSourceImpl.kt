@@ -12,18 +12,16 @@ import com.solutionium.data.model.Order
 import com.solutionium.data.model.PaymentGateway
 import com.solutionium.data.model.Result
 import com.solutionium.data.model.ShippingMethod
-import com.solutionium.data.network.services.WooCheckoutOrderService
-import com.solutionium.data.network.adapter.NetworkResponse
-import com.solutionium.data.network.services.WooOrderService
+import com.solutionium.data.network.clients.WooCheckoutOrderClient
 import javax.inject.Inject
 
 internal class WooCheckoutRemoteSourceImpl @Inject constructor(
-    private val wooCheckoutOrderService: WooCheckoutOrderService,
-    private val wooOrderService: WooOrderService
+    //private val wooCheckoutOrderService: WooCheckoutOrderService,
+    private val checkoutOrderApi: WooCheckoutOrderClient
 ) : WooCheckoutRemoteSource {
     override suspend fun getPaymentGateways(forcedEnabled: List<String>): Result<List<PaymentGateway>, GeneralError> =
         handleNetworkResponse(
-            networkCall = { wooCheckoutOrderService.getPaymentGateways() },
+            networkCall = { checkoutOrderApi.getPaymentGateways() },
             mapper = { responseList ->
                 responseList.filter { it.enabled == true || forcedEnabled.contains(it.id) }.map { it.toPaymentGateway() }
             }
@@ -32,7 +30,7 @@ internal class WooCheckoutRemoteSourceImpl @Inject constructor(
 
     override suspend fun getShippingMethods(): Result<List<ShippingMethod>, GeneralError> =
         handleNetworkResponse(
-            networkCall = { wooCheckoutOrderService.getShippingMethods() },
+            networkCall = { checkoutOrderApi.getShippingMethods() },
             mapper = { responseList ->
                 responseList.filter { it.enabled == true }.map { it.toShippingMethod() }
             }
@@ -41,7 +39,7 @@ internal class WooCheckoutRemoteSourceImpl @Inject constructor(
 
     override suspend fun createOrder(orderData: NewOrderData): Result<Order, GeneralError> =
         handleNetworkResponse(
-            networkCall = { wooCheckoutOrderService.createOrder(orderData.toRequestBody()) },
+            networkCall = { checkoutOrderApi.createOrder(orderData.toRequestBody()) },
             mapper = { response -> response.toModel() }
         )
 
