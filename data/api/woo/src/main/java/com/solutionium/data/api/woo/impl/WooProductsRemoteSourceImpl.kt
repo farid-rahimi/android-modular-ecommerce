@@ -18,14 +18,13 @@ import com.solutionium.data.model.ProductThumbnail
 import com.solutionium.data.model.ProductVariation
 import com.solutionium.data.model.Result
 import com.solutionium.data.model.Review
-import com.solutionium.data.network.services.WooProductService
 import com.solutionium.data.network.adapter.NetworkResponse
 import com.solutionium.data.network.clients.WooProductClient
 import com.solutionium.data.network.response.CartCheckListResponse
 import javax.inject.Inject
 
 internal class WooProductsRemoteSourceImpl @Inject constructor(
-    private val wooProductService: WooProductService,
+
     private val productApi: WooProductClient
 ) : WooProductsRemoteSource {
     override suspend fun getProductDetails(productId: Int): Result<ProductDetail, GeneralError> =

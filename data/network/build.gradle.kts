@@ -23,12 +23,6 @@ android {
 
 dependencies {
 
-    //implementation(project(":data:local"))
-    implementation(libs.retrofit)
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.retrofit.kotlinx.serilization.converter)
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0") // Use the latest version
-
 
     // Core and Android Engine
     implementation(libs.ktor.client.core)
