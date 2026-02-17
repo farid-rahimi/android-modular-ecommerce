@@ -9,8 +9,8 @@ android {
 
     defaultConfig {
         applicationId = "com.solutionium.woo"
-        versionCode = 14
-        versionName = "2.3"
+        versionCode = 15
+        versionName = "2.4"
         //resourceConfigurations.addAll(listOf("fa", "en"))
     }
 
