@@ -27,7 +27,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.retrofit.kotlinx.serilization.converter)
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0") // Use the latest version
+    implementation(libs.logging.interceptor) // Use the latest version
 
 
 }
