@@ -13,7 +13,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -67,7 +66,7 @@ class MainActivity : ComponentActivity() {
 
     override fun attachBaseContext(newBase: Context) {
         val lang = AppPreferencesImpl(newBase).getLanguage()
-        val localeToSet = Locale(lang ?: "fa")
+        val localeToSet = Locale.forLanguageTag(lang ?: "fa")
         val config = Configuration(newBase.resources.configuration)
         Locale.setDefault(localeToSet)
         config.setLocale(localeToSet)

@@ -54,7 +54,7 @@ interface CartDao {
 
 
     @Query("SELECT * FROM cart_item WHERE productId = :productId AND variationId = :variationId LIMIT 1")
-    fun getItemByProductId(productId: Int, variationId: Int): Flow<CartItemEntity>
+    fun getItemByProductId(productId: Int, variationId: Int): Flow<CartItemEntity?>
 
     @Query("UPDATE cart_item SET requiresAttention = 0, validationInfo = NULL")
     suspend fun confirmValidation()

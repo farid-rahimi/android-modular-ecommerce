@@ -75,11 +75,11 @@ dependencies {
 
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.foundation)
     implementation(libs.androidx.material3)
     implementation(libs.lifecycle.runtime.compose)
     implementation(libs.koin.androidx.compose.navigation)
-    implementation(libs.navigation.compose)
     //implementation(libs.androidx.browser)
 
 }

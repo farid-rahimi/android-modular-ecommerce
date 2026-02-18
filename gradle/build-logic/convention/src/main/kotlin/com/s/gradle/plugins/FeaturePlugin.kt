@@ -20,6 +20,9 @@ class FeaturePlugin : Plugin<Project> {
                 add("implementation", project(":core:ui:common"))
                 add("implementation", project(":core:design-system"))
 
+                add("implementation", libs.findLibrary("androidx.navigation.compose").get())
+                add("implementation", libs.findLibrary("androidx.navigation.runtime.ktx").get())
+
                 add("implementation", libs.findLibrary("koin.androidx.compose.navigation").get())
                 add("implementation", libs.findLibrary("lifecycle.runtime.compose").get())
                 add("implementation", libs.findLibrary("lifecycle.viewmodel.compose").get())

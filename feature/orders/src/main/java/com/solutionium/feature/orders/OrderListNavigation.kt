@@ -33,4 +33,3 @@ fun NavController.navigateOrdersList(
 ) {
     navigate("${rootRoute.route}/${ROUTE_ORDERS_SCREEN}")
 }
-
