@@ -12,7 +12,6 @@ class FeaturePlugin : Plugin<Project> {
         with(target) {
             pluginManager.apply {
                 apply("com.s.gradle.android.library")
-                //apply("com.s.gradle.android.hilt")
                 apply("com.s.gradle.android.koin")
             }
 
@@ -20,8 +19,6 @@ class FeaturePlugin : Plugin<Project> {
                 add("implementation", project(":data:model"))
                 add("implementation", project(":core:ui:common"))
                 add("implementation", project(":core:design-system"))
-
-                add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
 
                 add("implementation", libs.findLibrary("koin.androidx.compose.navigation").get())
                 add("implementation", libs.findLibrary("lifecycle.runtime.compose").get())

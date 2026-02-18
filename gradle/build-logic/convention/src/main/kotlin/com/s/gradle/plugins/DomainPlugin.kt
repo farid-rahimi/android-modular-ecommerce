@@ -11,7 +11,6 @@ class DomainPlugin : Plugin<Project> {
         with(target) {
             pluginManager.apply {
                 apply("com.s.gradle.android.library")
-                //apply("com.s.gradle.android.hilt")
                 apply("com.s.gradle.android.koin")
 
             }

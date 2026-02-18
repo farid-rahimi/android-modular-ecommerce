@@ -36,7 +36,6 @@ import com.solutionium.feature.home.GRAPH_HOME_ROUTE
 import com.solutionium.feature.home.navigateToHome
 import com.solutionium.feature.product.detail.navigateProductDetail
 import com.solutionium.woo.ui.WooApp
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import org.koin.compose.viewmodel.koinViewModel
 import java.util.Locale

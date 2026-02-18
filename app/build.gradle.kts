@@ -78,7 +78,8 @@ dependencies {
     implementation(libs.androidx.foundation)
     implementation(libs.androidx.material3)
     implementation(libs.lifecycle.runtime.compose)
-    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.koin.androidx.compose.navigation)
+    implementation(libs.navigation.compose)
     //implementation(libs.androidx.browser)
 
 }
