@@ -13,5 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
-/gradle/build-logic
+/gradle/build-logic/.gradle
+/gradle/build-logic/convention/build
 /.kotlin
