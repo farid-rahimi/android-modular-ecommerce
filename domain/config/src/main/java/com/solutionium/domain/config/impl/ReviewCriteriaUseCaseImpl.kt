@@ -3,9 +3,8 @@ package com.solutionium.domain.config.impl
 import com.solutionium.data.config.AppConfigRepository
 import com.solutionium.data.model.Result
 import com.solutionium.domain.config.ReviewCriteriaUseCase
-import javax.inject.Inject
 
-class ReviewCriteriaUseCaseImpl @Inject constructor(
+class ReviewCriteriaUseCaseImpl(
     private val appConfigRepository: AppConfigRepository
 ) : ReviewCriteriaUseCase {
     override suspend fun invoke(catIds: List<Int>): List<String> =

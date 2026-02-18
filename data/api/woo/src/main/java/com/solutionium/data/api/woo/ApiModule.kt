@@ -8,53 +8,19 @@ import com.solutionium.data.api.woo.impl.WooFavoriteRemoteSourceImpl
 import com.solutionium.data.api.woo.impl.WooOrderRemoteSourceImpl
 import com.solutionium.data.api.woo.impl.WooProductsRemoteSourceImpl
 import com.solutionium.data.api.woo.impl.WooUserRemoteSourceImpl
-import dagger.Binds
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import com.solutionium.data.network.getNetworkDataModules
+import org.koin.dsl.module
 
-@Module
-@InstallIn(SingletonComponent::class)
-internal abstract class ApiModule {
+fun getApiModule() = setOf(apiModule) + getNetworkDataModules()
 
-    @Binds
-    abstract fun bindWooProductsRemoteSource(
-        impl: WooProductsRemoteSourceImpl
-    ): WooProductsRemoteSource
 
-    @Binds
-    abstract fun bindWooCategoriesRemoteSource(
-        impl: WooCategoryRemoteSourceImpl
-    ): WooCategoryRemoteSource
-
-    @Binds
-    abstract fun bindWooCheckoutRemoteSource(
-        impl: WooCheckoutRemoteSourceImpl
-    ): WooCheckoutRemoteSource
-
-    @Binds
-    abstract fun bindWooUserRemoteSource(
-        impl: WooUserRemoteSourceImpl
-    ): WooUserRemoteSource
-
-    @Binds
-    abstract fun bindWooOrderRemoteSource(
-        impl: WooOrderRemoteSourceImpl
-    ): WooOrderRemoteSource
-
-    @Binds
-    abstract fun bindWooCouponRemoteSource(
-        impl: WooCouponRemoteSourceImpl
-    ): WooCouponRemoteSource
-
-    @Binds
-    abstract fun bindWooFavoriteRemoteSource(
-        impl: WooFavoriteRemoteSourceImpl
-    ): WooFavoriteRemoteSource
-
-    @Binds
-    abstract fun bindWooConfigRemoteSource(
-        impl: WooConfigRemoteSourceImpl
-    ): WooConfigRemoteSource
-
+val apiModule = module {
+    single<WooProductsRemoteSource> { WooProductsRemoteSourceImpl(get()) }
+    single<WooCategoryRemoteSource> { WooCategoryRemoteSourceImpl(get()) }
+    single<WooCheckoutRemoteSource> { WooCheckoutRemoteSourceImpl(get()) }
+    single<WooUserRemoteSource> { WooUserRemoteSourceImpl(get(), get()) }
+    single<WooOrderRemoteSource> { WooOrderRemoteSourceImpl(get()) }
+    single<WooCouponRemoteSource> { WooCouponRemoteSourceImpl(get()) }
+    single<WooFavoriteRemoteSource> { WooFavoriteRemoteSourceImpl(get()) }
+    single<WooConfigRemoteSource> { WooConfigRemoteSourceImpl(get()) }
 }

@@ -17,7 +17,9 @@ class ApplicationPlugin : Plugin<Project> {
                 apply("org.jetbrains.kotlin.android")
                 apply("org.jetbrains.kotlin.plugin.compose")
                 apply("com.s.gradle.android.application.compose")
-                apply("com.s.gradle.android.hilt")
+                //apply("com.s.gradle.android.hilt") // will be removed
+                apply("com.s.gradle.android.koin")
+
             }
 
             extensions.configure<ApplicationExtension> {

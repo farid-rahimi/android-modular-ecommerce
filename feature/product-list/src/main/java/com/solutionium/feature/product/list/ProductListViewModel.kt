@@ -17,7 +17,6 @@ import com.solutionium.domain.favorite.ObserveFavoritesUseCase
 import com.solutionium.domain.favorite.ToggleFavoriteUseCase
 import com.solutionium.domain.user.CheckSuperUserUseCase
 import com.solutionium.domain.woo.products.GetProductListStreamUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -25,10 +24,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class ProductListViewModel @Inject constructor(
+class ProductListViewModel(
     savedStateHandle: SavedStateHandle,
     private val productList: GetProductListStreamUseCase,
     private val observeCartUseCase: ObserveCartUseCase,

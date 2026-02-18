@@ -4,9 +4,8 @@ import com.solutionium.data.config.AppConfigRepository
 import com.solutionium.data.model.AppVersion
 import com.solutionium.data.model.Result
 import com.solutionium.domain.config.GetVersionsUseCase
-import javax.inject.Inject
 
-class GetVersionsUseCaseImpl @Inject constructor(
+class GetVersionsUseCaseImpl(
     private val configRepository: AppConfigRepository
 ) : GetVersionsUseCase {
 

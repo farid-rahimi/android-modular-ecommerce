@@ -6,9 +6,8 @@ import com.solutionium.data.model.Result
 import com.solutionium.data.woo.categories.WooCategoryRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import javax.inject.Inject
 
-class GetCategoryListUseCaseImpl @Inject constructor(
+class GetCategoryListUseCaseImpl(
     private val wooCategoryRepository: WooCategoryRepository
 ): GetCategoryListUseCase {
     override suspend fun invoke(): Flow<Result<List<Category>, GeneralError>> = flow{

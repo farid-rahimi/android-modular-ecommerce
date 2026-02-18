@@ -1,7 +1,5 @@
 package com.solutionium.feature.cart
 
-import androidx.compose.ui.input.key.type
-import androidx.core.graphics.values
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.solutionium.data.model.CartItem
@@ -17,19 +15,15 @@ import com.solutionium.domain.cart.UpdateCartItemUseCase
 import com.solutionium.domain.cart.ValidateCartUseCase
 import com.solutionium.domain.config.PaymentMethodDiscountUseCase
 import com.solutionium.domain.user.CheckLoginUserUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class CartViewModel @Inject constructor(
+class CartViewModel(
     private val updateCartItemUseCase: UpdateCartItemUseCase,
     private val observeCartUseCase: ObserveCartUseCase,
     private val clearCartUseCase: ClearCartUseCase,

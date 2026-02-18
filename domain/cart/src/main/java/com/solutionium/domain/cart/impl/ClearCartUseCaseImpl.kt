@@ -2,9 +2,8 @@ package com.solutionium.domain.cart.impl
 
 import com.solutionium.data.cart.CartRepository
 import com.solutionium.domain.cart.ClearCartUseCase
-import javax.inject.Inject
 
-class ClearCartUseCaseImpl @Inject constructor(
+class ClearCartUseCaseImpl(
     private val cartRepository: CartRepository
 ) : ClearCartUseCase {
 

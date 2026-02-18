@@ -25,12 +25,13 @@ navigationCompose = "2.8.5"
 navigationCommonKtx = "2.8.5"
 paging = "3.3.5"
 room = "2.6.1"
-retrofit = "2.11.0"
 securityCrypto = "1.1.0-alpha06"
 core = "1.16.0"
 browser = "1.9.0"
 googleServices = "4.4.2"
 firebaseBom = "33.1.2"
+
+koin = "4.0.0"
 
 
 [libraries]
@@ -89,6 +90,14 @@ firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.r
 firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
 
+# Koin core & Android
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+
+# Koin Compose & Navigation (Replaces hilt-navigation-compose)
+koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
+koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
+koin-androidx-compose-navigation = { module = "io.insert-koin:koin-androidx-compose-navigation", version.ref = "koin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

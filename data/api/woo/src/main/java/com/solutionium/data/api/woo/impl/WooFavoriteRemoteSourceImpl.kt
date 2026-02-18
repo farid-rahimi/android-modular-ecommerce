@@ -4,9 +4,8 @@ import com.solutionium.data.api.woo.WooFavoriteRemoteSource
 import com.solutionium.data.model.GeneralError
 import com.solutionium.data.model.Result
 import com.solutionium.data.network.clients.UserClient
-import javax.inject.Inject
 
-class WooFavoriteRemoteSourceImpl @Inject constructor(
+class WooFavoriteRemoteSourceImpl(
 
     private val apiService: UserClient
 

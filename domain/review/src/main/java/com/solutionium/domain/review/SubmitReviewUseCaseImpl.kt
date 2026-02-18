@@ -5,9 +5,8 @@ import com.solutionium.data.model.NewReview
 import com.solutionium.data.model.Result
 import com.solutionium.data.model.Review
 import com.solutionium.data.woo.products.WooProductRepository
-import javax.inject.Inject
 
-class SubmitReviewUseCaseImpl @Inject constructor(
+class SubmitReviewUseCaseImpl(
 
     private val productRepository: WooProductRepository
 

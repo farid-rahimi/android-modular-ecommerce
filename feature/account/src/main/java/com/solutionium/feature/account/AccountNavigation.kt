@@ -1,6 +1,6 @@
 package com.solutionium.feature.account
 
-import androidx.hilt.navigation.compose.hiltViewModel
+import org.koin.compose.viewmodel.koinViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavGraphBuilder
@@ -40,7 +40,7 @@ fun NavGraphBuilder.accountScreen(
                 },
                 onOrdersClick = { onOrdersClick(GRAPH_ACCOUNT_ROUTE) },
                 onOrderClick = { onOrderClick(GRAPH_ACCOUNT_ROUTE, it) },
-                viewModel = hiltViewModel(),
+                viewModel = koinViewModel(),
                 onBack = onBack
             )
         }

@@ -23,7 +23,6 @@ import com.solutionium.domain.favorite.ToggleFavoriteUseCase
 import com.solutionium.domain.review.GetTopReviewsUseCase
 import com.solutionium.domain.woo.products.GetProductDetailsUseCase
 import com.solutionium.domain.woo.products.GetProductVariationsUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -33,10 +32,8 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class ProductDetailViewModel @Inject constructor(
+class ProductDetailViewModel(
     savedStateHandle: SavedStateHandle,
     private val getProductDetails: GetProductDetailsUseCase,
     private val getProductVariations: GetProductVariationsUseCase,

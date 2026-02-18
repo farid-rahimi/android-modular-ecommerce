@@ -4,9 +4,8 @@ import com.solutionium.data.config.AppConfigRepository
 import com.solutionium.data.model.Result
 import com.solutionium.data.model.StoryItem
 import com.solutionium.domain.config.GetStoriesUseCase
-import javax.inject.Inject
 
-class GetStoriesUseCaseImpl @Inject constructor(
+class GetStoriesUseCaseImpl(
     private val configRepository: AppConfigRepository
 ) : GetStoriesUseCase {
     override suspend fun invoke(): List<StoryItem> =

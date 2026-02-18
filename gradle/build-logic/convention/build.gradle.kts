@@ -51,9 +51,13 @@ gradlePlugin {
             id = "com.s.gradle.android.domain"
             implementationClass = "com.s.gradle.plugins.DomainPlugin"
         }
-        register("androidHilt") {
-            id = "com.s.gradle.android.hilt"
-            implementationClass = "com.s.gradle.plugins.HiltPlugin"
+//        register("androidHilt") {
+//            id = "com.s.gradle.android.hilt"
+//            implementationClass = "com.s.gradle.plugins.HiltPlugin"
+//        }
+        register("androidKoin") {
+            id = "com.s.gradle.android.koin"
+            implementationClass = "com.s.gradle.plugins.KoinPlugin"
         }
         register("jvmLibrary") {
             id = "com.s.gradle.jvm.library"

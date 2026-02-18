@@ -38,14 +38,15 @@ import com.solutionium.feature.product.detail.navigateProductDetail
 import com.solutionium.woo.ui.WooApp
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
+import org.koin.compose.viewmodel.koinViewModel
 import java.util.Locale
 
 data class DeepLinkData(val uri: Uri)
 
-@AndroidEntryPoint
+//@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val viewModel: MainViewModel by viewModels()
+    //private val viewModel: MainViewModel by viewModels()
 
     private val pendingDeepLink = mutableStateOf<DeepLinkData?>(null)
 
@@ -86,6 +87,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
+            val viewModel: MainViewModel = koinViewModel()
             val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
             LaunchedEffect(uiState.languageCode) {

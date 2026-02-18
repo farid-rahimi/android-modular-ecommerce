@@ -1,7 +1,6 @@
 package com.solutionium.domain.user
 
 import com.solutionium.data.woo.user.WooUserRepository
-import javax.inject.Inject
 
 interface SetDefaultAddressUseCase {
 
@@ -9,7 +8,7 @@ interface SetDefaultAddressUseCase {
 
 }
 
-internal class SetDefaultAddressUseCaseImpl @Inject constructor(
+internal class SetDefaultAddressUseCaseImpl(
 
     private val userRepository: WooUserRepository
 

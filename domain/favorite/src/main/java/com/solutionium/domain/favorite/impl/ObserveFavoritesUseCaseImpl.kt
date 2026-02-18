@@ -3,13 +3,9 @@ package com.solutionium.domain.favorite.impl
 import com.solutionium.data.favorite.FavoriteRepository
 import com.solutionium.data.woo.user.WooUserRepository
 import com.solutionium.domain.favorite.ObserveFavoritesUseCase
-import com.solutionium.domain.user.CheckLoginUserUseCase
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flatMapLatest
-import kotlinx.coroutines.flow.flowOf
-import javax.inject.Inject
 
-class ObserveFavoritesUseCaseImpl @Inject constructor(
+class ObserveFavoritesUseCaseImpl(
     private val favoriteRepository: FavoriteRepository,
     private val userRepository: WooUserRepository,
     //private val checkLoginUserUseCase: CheckLoginUserUseCase

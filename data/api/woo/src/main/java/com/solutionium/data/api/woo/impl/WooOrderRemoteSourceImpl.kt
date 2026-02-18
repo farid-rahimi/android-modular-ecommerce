@@ -7,9 +7,8 @@ import com.solutionium.data.model.GeneralError
 import com.solutionium.data.model.Order
 import com.solutionium.data.model.Result
 import com.solutionium.data.network.clients.WooOrderClient
-import javax.inject.Inject
 
-class WooOrderRemoteSourceImpl @Inject constructor(
+class WooOrderRemoteSourceImpl(
     private val wooOrderService: WooOrderClient
 ): WooOrderRemoteSource {
 

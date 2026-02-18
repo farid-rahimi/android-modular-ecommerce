@@ -13,9 +13,8 @@ import com.solutionium.data.model.PaymentGateway
 import com.solutionium.data.model.Result
 import com.solutionium.data.model.ShippingMethod
 import com.solutionium.data.network.clients.WooCheckoutOrderClient
-import javax.inject.Inject
 
-internal class WooCheckoutRemoteSourceImpl @Inject constructor(
+internal class WooCheckoutRemoteSourceImpl(
     //private val wooCheckoutOrderService: WooCheckoutOrderService,
     private val checkoutOrderApi: WooCheckoutOrderClient
 ) : WooCheckoutRemoteSource {

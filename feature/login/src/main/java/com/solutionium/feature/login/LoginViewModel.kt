@@ -39,12 +39,10 @@ data class LoginUiState(
 )
 
 
-@HiltViewModel
-class LoginViewModel @Inject constructor(
+class LoginViewModel(
     private val requestOtpUseCase: SendOtpUseCase,
     private val loginOrRegisterUseCase: LoginOrRegisterUseCase,
     private val checkLoginUserUseCase: CheckLoginUserUseCase,
-    private val getCurrentUserUseCase: GetCurrentUserUseCase,
     private val editUserDetailsUseCase: EditUserDetailsUseCase,
 ) : ViewModel() {
 

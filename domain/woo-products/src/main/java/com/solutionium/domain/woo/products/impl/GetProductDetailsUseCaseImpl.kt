@@ -5,10 +5,8 @@ import com.solutionium.data.model.ProductDetail
 import com.solutionium.data.model.Result
 import com.solutionium.data.woo.products.WooProductRepository
 import com.solutionium.domain.woo.products.GetProductDetailsUseCase
-import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
 
-internal class GetProductDetailsUseCaseImpl @Inject constructor(
+internal class GetProductDetailsUseCaseImpl(
     private val wooProductRepository: WooProductRepository
 ) : GetProductDetailsUseCase {
     override suspend fun invoke(productId: Int): Result<ProductDetail, GeneralError> =

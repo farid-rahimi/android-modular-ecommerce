@@ -14,7 +14,6 @@ import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.conflate
 import java.io.IOException
 import java.security.GeneralSecurityException
-import javax.inject.Inject
 
 // Interface for easier testing and abstraction (optional but good practice)
 interface TokenStore {
@@ -29,7 +28,7 @@ interface TokenStore {
     fun observeSuperUser(): Flow<Boolean?>
 }
 
-class AuthTokenLocalDataSource @Inject constructor(
+class AuthTokenLocalDataSource(
     private val appContext: Context
 ) : TokenStore {
 

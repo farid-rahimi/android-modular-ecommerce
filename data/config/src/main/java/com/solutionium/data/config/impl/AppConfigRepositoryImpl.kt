@@ -6,11 +6,8 @@ import com.solutionium.data.model.AppConfig
 import com.solutionium.data.model.GeneralError
 import com.solutionium.data.model.Result
 import java.util.concurrent.TimeUnit
-import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
-internal class AppConfigRepositoryImpl @Inject constructor(
+internal class AppConfigRepositoryImpl(
     private val appConfigDataSource: WooConfigRemoteSource
 ) : AppConfigRepository {
 

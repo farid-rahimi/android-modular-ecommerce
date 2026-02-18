@@ -5,9 +5,8 @@ import com.solutionium.data.database.entity.StoryViewEntity
 import com.solutionium.data.model.ViewedStory
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 
-internal class StoryViewRepositoryImpl @Inject constructor(
+internal class StoryViewRepositoryImpl(
     private val storyViewDao: StoryViewDao
 ) : StoryViewRepository {
     override fun getViewedStoryIds(): Flow<List<ViewedStory>> =

@@ -16,9 +16,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import java.text.NumberFormat
 import java.util.Locale
-import javax.inject.Inject
 
-class ValidateCartUseCaseImpl @Inject constructor(
+class ValidateCartUseCaseImpl(
     private val cartRepository: CartRepository,
     private val productRepository: WooProductRepository,
 ): ValidateCartUseCase {

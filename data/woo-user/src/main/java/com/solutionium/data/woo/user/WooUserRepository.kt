@@ -12,10 +12,7 @@ import com.solutionium.data.model.UserDetails
 import com.solutionium.data.model.UserWallet
 import com.solutionium.data.model.WalletConfig
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
-import javax.inject.Singleton
 
 interface WooUserRepository {
 
@@ -49,8 +46,7 @@ interface WooUserRepository {
 
 }
 
-@Singleton
-internal class WooUserRepositoryImpl @Inject constructor(
+internal class WooUserRepositoryImpl(
     private val wooUserRemoteSource: WooUserRemoteSource,
     private val tokenStore: TokenStore,
     private val appPreferences: AppPreferences,

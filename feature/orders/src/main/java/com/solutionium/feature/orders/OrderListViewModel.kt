@@ -9,17 +9,14 @@ import com.solutionium.data.model.FilterCriterion
 import com.solutionium.data.model.Order
 import com.solutionium.data.model.OrderFilterKey
 import com.solutionium.domain.order.GetOrderListPagingUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.update
-import javax.inject.Inject
 
 
-@HiltViewModel
-class OrderListViewModel @Inject constructor(
+class OrderListViewModel(
     private val getOrdersUseCase: GetOrderListPagingUseCase
 ) : ViewModel() {
 

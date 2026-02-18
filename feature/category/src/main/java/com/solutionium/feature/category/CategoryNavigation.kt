@@ -1,6 +1,6 @@
 package com.solutionium.feature.category
 
-import androidx.hilt.navigation.compose.hiltViewModel
+import org.koin.compose.viewmodel.koinViewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
@@ -27,7 +27,7 @@ fun NavGraphBuilder.categoryScreen(
                 navigateToProductList = { navigateToProductList(GRAPH_CATEGORY_ROUTE, it) },
                 onNavigateBack = {},
                 onProductClick = { onProductClick(GRAPH_CATEGORY_ROUTE, it) },
-                viewModel = hiltViewModel()
+                viewModel =koinViewModel()
             )
         }
         nestedGraphs(GRAPH_CATEGORY_ROUTE)

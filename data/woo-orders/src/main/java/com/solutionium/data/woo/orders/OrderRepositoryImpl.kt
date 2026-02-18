@@ -12,9 +12,8 @@ import com.solutionium.data.model.Order
 import com.solutionium.data.model.OrderFilterKey
 import com.solutionium.data.model.Result
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
 
-class OrderRepositoryImpl @Inject constructor(
+class OrderRepositoryImpl(
     private val orderRemoteSource: WooOrderRemoteSource,
     private val tokenStore: TokenStore,
 ) : OrderRepository {

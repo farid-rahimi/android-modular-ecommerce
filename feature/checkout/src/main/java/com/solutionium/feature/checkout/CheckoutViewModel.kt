@@ -8,7 +8,6 @@ import com.solutionium.data.model.Address
 import com.solutionium.data.model.CartItem
 import com.solutionium.data.model.Coupon
 import com.solutionium.data.model.FeeLine
-import com.solutionium.data.model.GeneralError
 import com.solutionium.data.model.Metadata
 import com.solutionium.data.model.NewOrderData
 import com.solutionium.data.model.PaymentGateway
@@ -32,39 +31,31 @@ import com.solutionium.domain.user.CheckSuperUserUseCase
 import com.solutionium.domain.user.GetUserWalletUseCase
 import com.solutionium.domain.user.LoadAddressesUseCase
 import com.solutionium.domain.user.SetDefaultAddressUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 object FeeKeys {
     const val PAYMENT_DISCOUNT = "payment_discount"
 }
 
-@HiltViewModel
-class CheckoutViewModel @Inject constructor(
-    private val checkLoginUserUseCase: CheckLoginUserUseCase,
+class CheckoutViewModel(
     private val observeCartUseCase: ObserveCartUseCase,
     private val getShippingMethodsUseCase: GetShippingMethodsUseCase,
     private val getForcedEnabledPayment: ForcedEnabledPaymentUseCase,
     private val getPaymentGatewaysUseCase: GetPaymentGatewaysUseCase,
     private val loadAddressesUseCase: LoadAddressesUseCase,
-    private val setDefaultAddressUseCase: SetDefaultAddressUseCase,
     private val applyCouponUseCase: ApplyCouponUseCase, // <-- New Use Case
-    //private val removeCouponUseCase: RemoveCouponUseCase, // <-- New Use Case
     private val createOrderUseCase: CreateOrderUseCase,
     private val clearCartUseCase: ClearCartUseCase,
     private val getOrderStatusUseCase: GetOrderStatusUseCase, // ADD THIS DEPENDENCY
     private val paymentMethodDiscountUseCase: PaymentMethodDiscountUseCase,
     private val getBACSDetails: GetBACSDetailsUseCase,
     private val getUserWalletUseCase: GetUserWalletUseCase,
-    private val checkSuperUser: CheckSuperUserUseCase,
-    @ApplicationContext private val context: Context
+    private val context: Context
 ) : ViewModel() {
 
     private val _state: MutableStateFlow<CheckoutUiState> =

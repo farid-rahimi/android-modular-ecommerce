@@ -2,12 +2,11 @@ package com.solutionium.data.local
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.core.content.edit
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.conflate
-import javax.inject.Inject
-import androidx.core.content.edit
 
 // In your core/data module
 interface AppPreferences {
@@ -21,7 +20,7 @@ interface AppPreferences {
 }
 
 // In the implementation of the repository
-class AppPreferencesImpl @Inject constructor(
+class AppPreferencesImpl(
     private val appContext: Context
 ) : AppPreferences {
 

@@ -4,7 +4,6 @@ import com.solutionium.data.model.GeneralError
 import com.solutionium.data.model.Result
 import com.solutionium.data.model.UserDetails
 import com.solutionium.data.woo.user.WooUserRepository
-import javax.inject.Inject
 
 interface EditUserDetailsUseCase {
 
@@ -12,7 +11,7 @@ interface EditUserDetailsUseCase {
 
 }
 
-class EditUserDetailsUseCaseImpl @Inject constructor(
+class EditUserDetailsUseCaseImpl(
     private val userRepository: WooUserRepository
 ): EditUserDetailsUseCase {
     override suspend fun invoke(userDetails: UserDetails): Result<UserDetails, GeneralError> =

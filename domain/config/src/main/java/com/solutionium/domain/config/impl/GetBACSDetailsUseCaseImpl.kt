@@ -4,9 +4,8 @@ import com.solutionium.data.config.AppConfigRepository
 import com.solutionium.data.model.BACSDetails
 import com.solutionium.data.model.Result
 import com.solutionium.domain.config.GetBACSDetailsUseCase
-import javax.inject.Inject
 
-class GetBACSDetailsUseCaseImpl @Inject constructor(
+class GetBACSDetailsUseCaseImpl(
     private val appConfigRepository: AppConfigRepository
 ) : GetBACSDetailsUseCase {
     override suspend fun invoke(): BACSDetails? =

@@ -1,6 +1,5 @@
 package com.solutionium.data.network.clients
 
-import com.solutionium.data.network.BasicAuthKtorClient
 import com.solutionium.data.network.request.OrderRequest
 import com.solutionium.data.network.response.PaymentGatewayListResponse
 import com.solutionium.data.network.response.ShippingMethodsResponse
@@ -16,34 +15,33 @@ import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpMethod
 import io.ktor.http.appendPathSegments
 import io.ktor.http.path
-import javax.inject.Inject
 
-class WooCheckoutOrderClient @Inject constructor(
-    @BasicAuthKtorClient private val client: HttpClient
+class WooCheckoutOrderClient(
+    private val client: HttpClient
 ) {
 
     suspend fun getShippingMethods() =
         client.safeRequest<ShippingMethodsResponse, WooErrorResponse> {
-            method = HttpMethod.Companion.Get
+            method = HttpMethod.Get
             url { path("wp-json/wc/v3/shipping/zones/1/methods") }
         }
 
     suspend fun getPaymentGateways() =
         client.safeRequest<PaymentGatewayListResponse, WooErrorResponse> {
-            method = HttpMethod.Companion.Get
+            method = HttpMethod.Get
             url { path("wp-json/wc/v3/payment_gateways") }
         }
 
     suspend fun createOrder(order: OrderRequest) =
         client.safeRequest<WooOrderResponse, WooErrorResponse> {
-            method = HttpMethod.Companion.Post
+            method = HttpMethod.Post
             url { path("wp-json/wc/v3/orders") }
             setBody(order)
         }
 
     suspend fun updateOrder(orderId: Int, order: OrderRequest) =
         client.safeRequest<WooOrderResponse, WooErrorResponse> {
-            method = HttpMethod.Companion.Post
+            method = HttpMethod.Post
             url {
                 path("wp-json/wc/v3/orders/")
                 appendPathSegments(orderId.toString())
@@ -53,7 +51,7 @@ class WooCheckoutOrderClient @Inject constructor(
 
     suspend fun getCoupons(code: String) =
         client.safeRequest<WooCouponListResponse, WooErrorResponse> {
-            method = HttpMethod.Companion.Get
+            method = HttpMethod.Get
             url {
                 path("wp-json/wc/v3/coupons")
                 parameter("code", code)

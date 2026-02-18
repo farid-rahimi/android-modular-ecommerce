@@ -21,9 +21,8 @@ import com.solutionium.data.model.Review
 import com.solutionium.data.network.adapter.NetworkResponse
 import com.solutionium.data.network.clients.WooProductClient
 import com.solutionium.data.network.response.CartCheckListResponse
-import javax.inject.Inject
 
-internal class WooProductsRemoteSourceImpl @Inject constructor(
+internal class WooProductsRemoteSourceImpl(
 
     private val productApi: WooProductClient
 ) : WooProductsRemoteSource {

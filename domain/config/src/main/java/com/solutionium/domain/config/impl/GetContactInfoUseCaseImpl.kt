@@ -4,9 +4,8 @@ import com.solutionium.data.config.AppConfigRepository
 import com.solutionium.data.model.ContactInfo
 import com.solutionium.data.model.Result
 import com.solutionium.domain.config.GetContactInfoUseCase
-import javax.inject.Inject
 
-class GetContactInfoUseCaseImpl @Inject constructor(
+class GetContactInfoUseCaseImpl(
     private val configRepository: AppConfigRepository
 ) : GetContactInfoUseCase {
     override suspend fun invoke(): ContactInfo? =

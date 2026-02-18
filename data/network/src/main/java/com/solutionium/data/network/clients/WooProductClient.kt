@@ -1,6 +1,5 @@
 package com.solutionium.data.network.clients
 
-import com.solutionium.data.network.BasicAuthKtorClient
 import com.solutionium.data.network.request.ReviewRequest
 import com.solutionium.data.network.response.CartCheckError
 import com.solutionium.data.network.response.CartCheckListResponse
@@ -20,11 +19,10 @@ import io.ktor.client.request.setBody
 import io.ktor.http.HttpMethod
 import io.ktor.http.appendPathSegments
 import io.ktor.http.path
-import javax.inject.Inject
 
 
-class WooProductClient @Inject constructor(
-    @BasicAuthKtorClient private val client: HttpClient
+class WooProductClient(
+    private val client: HttpClient
 ) {
 
     suspend fun getProductDetails(productId: Int) =

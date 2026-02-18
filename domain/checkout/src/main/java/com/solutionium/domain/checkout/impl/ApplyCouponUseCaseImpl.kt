@@ -2,7 +2,6 @@ package com.solutionium.domain.checkout.impl
 
 import com.solutionium.data.model.CartItem
 import com.solutionium.data.model.Coupon
-import com.solutionium.data.model.GeneralError
 import com.solutionium.data.model.Result
 import com.solutionium.data.woo.checkout.CouponRepository
 import com.solutionium.domain.checkout.ApplyCouponUseCase
@@ -11,14 +10,8 @@ import com.solutionium.domain.checkout.CouponErrorType
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeParseException
-import javax.inject.Inject
-import kotlin.collections.intersect
-import kotlin.collections.isEmpty
-import kotlin.collections.isNotEmpty
-import kotlin.collections.toSet
-import kotlin.text.equals
 
-class ApplyCouponUseCaseImpl @Inject constructor(
+class ApplyCouponUseCaseImpl(
     private val couponRepository: CouponRepository // Inject the repository to fetch coupon data
 ) : ApplyCouponUseCase {
     override suspend fun invoke(

@@ -21,7 +21,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.net.toUri
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
@@ -44,6 +43,7 @@ import com.solutionium.woo.ui.navigation.RootScreen.Category
 import com.solutionium.woo.ui.navigation.RootScreen.Cart
 import com.solutionium.woo.ui.navigation.RootScreen.Account
 import com.solutionium.woo.ui.navigation.WooNavHost
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun WooApp(
@@ -52,9 +52,9 @@ fun WooApp(
 ) {
     val currentBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = currentBackStackEntry?.destination?.route
-    val cartUiState by hiltViewModel<CartViewModel>().uiState.collectAsState()
+    val cartUiState by koinViewModel<CartViewModel>().uiState.collectAsState()
 
-    val homeViewModel: HomeViewModel = hiltViewModel()
+    val homeViewModel: HomeViewModel = koinViewModel()
     val homeState by homeViewModel.state.collectAsStateWithLifecycle()
 
     // 2. Manage the state for showing the StoryViewer here.

@@ -4,9 +4,8 @@ import com.solutionium.data.cart.CartRepository
 import com.solutionium.data.model.CartItem
 import com.solutionium.domain.cart.GetCartItemByProductUseCase
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
 
-class GetCartItemByProductUseCaseImpl @Inject constructor(
+class GetCartItemByProductUseCaseImpl(
     private val cartRepository: CartRepository
 ) : GetCartItemByProductUseCase {
     override suspend fun invoke(productId: Int, variationId: Int): Flow<CartItem?> =

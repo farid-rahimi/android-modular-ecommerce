@@ -2,7 +2,6 @@ package com.solutionium.domain.user
 
 import com.solutionium.data.model.Address
 import com.solutionium.data.woo.user.WooUserRepository
-import javax.inject.Inject
 
 interface DeleteAddressUseCase {
 
@@ -10,7 +9,7 @@ interface DeleteAddressUseCase {
 
 }
 
-internal class DeleteAddressUseCaseImpl @Inject constructor(
+internal class DeleteAddressUseCaseImpl(
 
     private val userRepository: WooUserRepository
 

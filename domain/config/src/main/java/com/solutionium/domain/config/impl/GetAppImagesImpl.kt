@@ -3,9 +3,8 @@ package com.solutionium.domain.config.impl
 import com.solutionium.data.config.AppConfigRepository
 import com.solutionium.data.model.Result
 import com.solutionium.domain.config.GetAppImages
-import javax.inject.Inject
 
-internal class GetAppImagesImpl @Inject constructor(
+internal class GetAppImagesImpl(
     private val appConfigRepository: AppConfigRepository
 ) : GetAppImages {
     override suspend fun invoke(): Map<Int, String> =

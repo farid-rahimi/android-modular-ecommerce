@@ -4,9 +4,8 @@ import com.solutionium.data.config.AppConfigRepository
 import com.solutionium.data.model.BannerItem
 import com.solutionium.data.model.Result
 import com.solutionium.domain.config.HomeBannersUseCase
-import javax.inject.Inject
 
-internal class HomeBannersUseCaseImpl @Inject constructor(
+internal class HomeBannersUseCaseImpl(
     private val configRepository: AppConfigRepository
 ) : HomeBannersUseCase {
     override suspend fun invoke(): List<BannerItem> =

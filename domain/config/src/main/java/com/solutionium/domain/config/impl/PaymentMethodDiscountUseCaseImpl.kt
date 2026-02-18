@@ -3,9 +3,8 @@ package com.solutionium.domain.config.impl
 import com.solutionium.data.config.AppConfigRepository
 import com.solutionium.data.model.Result
 import com.solutionium.domain.config.PaymentMethodDiscountUseCase
-import javax.inject.Inject
 
-class PaymentMethodDiscountUseCaseImpl @Inject constructor(
+class PaymentMethodDiscountUseCaseImpl(
     private val appConfigRepository: AppConfigRepository
 ) : PaymentMethodDiscountUseCase {
     override suspend fun invoke(): Map<String, Double> =

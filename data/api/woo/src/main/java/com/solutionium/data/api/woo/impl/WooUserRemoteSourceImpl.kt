@@ -16,9 +16,8 @@ import com.solutionium.data.model.WalletConfig
 import com.solutionium.data.network.adapter.NetworkResponse
 import com.solutionium.data.network.clients.DigitsClient
 import com.solutionium.data.network.clients.UserClient
-import javax.inject.Inject
 
-internal class WooUserRemoteSourceImpl @Inject constructor(
+internal class WooUserRemoteSourceImpl(
     private val authService: DigitsClient,
     private val userService: UserClient
 ) : WooUserRemoteSource {

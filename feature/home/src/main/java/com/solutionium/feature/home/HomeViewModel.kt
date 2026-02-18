@@ -1,17 +1,12 @@
 package com.solutionium.feature.home
 
 import android.content.Context
-import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.distinctUntilChanged
 import androidx.lifecycle.viewModelScope
-import com.solutionium.core.ui.common.GlobalUiState
-import com.solutionium.data.model.BannerItem
 import com.solutionium.data.model.Link
 import com.solutionium.data.model.ProductListType
 import com.solutionium.data.model.ProductThumbnail
 import com.solutionium.data.model.Result
-import com.solutionium.data.model.StoryItem
 import com.solutionium.data.model.toCartItem
 import com.solutionium.domain.cart.AddToCartUseCase
 import com.solutionium.domain.cart.ObserveCartUseCase
@@ -29,11 +24,7 @@ import com.solutionium.domain.user.CheckLoginUserUseCase
 import com.solutionium.domain.user.CheckSuperUserUseCase
 import com.solutionium.domain.user.GetAllStoryViewUseCase
 import com.solutionium.domain.woo.categories.GetCategoryListUseCase
-import com.solutionium.domain.woo.products.GetProductListStreamUseCase
 import com.solutionium.domain.woo.products.GetProductsListUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -41,21 +32,12 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
-import kotlin.text.map
-import kotlin.text.toIntOrNull
-import kotlin.text.toSet
 
 sealed interface HomeNavigationEvent {
     data class ToProduct(val productId: Int) : HomeNavigationEvent
@@ -74,13 +56,11 @@ data class UpdateInfo(
     val latestVersionName: String = ""
 )
 
-@HiltViewModel
-class HomeViewModel @Inject constructor(
+class HomeViewModel(
 
-    @ApplicationContext private val context: Context, // Inject context
+    private val context: Context, // Inject context
     private val getProductsUseCase: GetProductsListUseCase,
     private val getCategoriesUseCase: GetCategoryListUseCase,
-    private val productList: GetProductListStreamUseCase,
     private val observeCartUseCase: ObserveCartUseCase,
     private val addToCart: AddToCartUseCase,
     private val updateCartItem: UpdateCartItemUseCase,

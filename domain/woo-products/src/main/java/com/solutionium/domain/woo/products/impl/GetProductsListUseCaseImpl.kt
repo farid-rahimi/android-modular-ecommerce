@@ -8,9 +8,8 @@ import com.solutionium.data.woo.products.WooProductRepository
 import com.solutionium.domain.woo.products.GetProductsListUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import javax.inject.Inject
 
-internal class GetProductsListUseCaseImpl @Inject constructor(
+internal class GetProductsListUseCaseImpl(
     private val wooProductRepository: WooProductRepository
 ) : GetProductsListUseCase {
     override suspend fun invoke(productListType: ProductListType): Flow<Result<List<ProductThumbnail>, GeneralError>> = flow {

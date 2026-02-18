@@ -1,6 +1,7 @@
 plugins {
     id("com.s.gradle.android.data")
     id("kotlinx-serialization")
+    id("com.google.devtools.ksp")
 }
 
 android {

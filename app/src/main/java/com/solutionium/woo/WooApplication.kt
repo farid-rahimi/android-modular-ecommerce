@@ -1,14 +1,19 @@
 package com.solutionium.woo
 
 import android.app.Application
-import android.content.Context
-import dagger.hilt.android.HiltAndroidApp
-import java.util.Locale
-import android.content.res.Configuration
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.GlobalContext.startKoin
 
 
-@HiltAndroidApp
 class WooApplication : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+        startKoin {
+            androidContext(this@WooApplication)
+            modules(allModules) // From AppModule.kt
+        }
+    }
 
 //    override fun attachBaseContext(base: Context) {
 //        // This is the most reliable place to force the app's locale.

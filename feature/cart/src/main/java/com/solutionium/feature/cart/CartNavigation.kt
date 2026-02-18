@@ -1,6 +1,6 @@
 package com.solutionium.feature.cart
 
-import androidx.hilt.navigation.compose.hiltViewModel
+import org.koin.compose.viewmodel.koinViewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
@@ -30,7 +30,7 @@ fun NavGraphBuilder.cartScreen(
                 onCheckoutClick = { onCheckoutClick(GRAPH_CART_ROUTE)},
                 onProductClick = { onProductClick(GRAPH_CART_ROUTE, it) },
                 onNavigateToAccount = onNavigateAccount,
-                viewModel = hiltViewModel()
+                viewModel =koinViewModel()
             )
         }
         nestedGraphs(GRAPH_CART_ROUTE)

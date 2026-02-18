@@ -5,9 +5,8 @@ import com.solutionium.data.database.dao.FavoriteDao
 import com.solutionium.data.model.Favorite
 import com.solutionium.data.model.Result
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
 
-class FavoriteRepositoryImpl @Inject constructor(
+class FavoriteRepositoryImpl(
     private val favoriteDao: FavoriteDao,
     private val remoteDataSource: WooFavoriteRemoteSource // Your Retrofit/Ktor service
 ) : FavoriteRepository {

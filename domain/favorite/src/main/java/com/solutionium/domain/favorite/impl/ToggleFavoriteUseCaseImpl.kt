@@ -2,9 +2,8 @@ package com.solutionium.domain.favorite.impl
 
 import com.solutionium.data.favorite.FavoriteRepository
 import com.solutionium.domain.favorite.ToggleFavoriteUseCase
-import javax.inject.Inject
 
-class ToggleFavoriteUseCaseImpl @Inject constructor(
+class ToggleFavoriteUseCaseImpl(
     private val favoriteRepository: FavoriteRepository
 ) : ToggleFavoriteUseCase {
     override suspend fun invoke(productId: Int, isCurrentlyFavorite: Boolean) =

@@ -1,6 +1,6 @@
 package com.solutionium.feature.review
 
-import androidx.hilt.navigation.compose.hiltViewModel
+import org.koin.compose.viewmodel.koinViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
@@ -28,7 +28,7 @@ fun NavGraphBuilder.reviewScreen(
 
         ) {
         ReviewListScreen(
-            viewModel = hiltViewModel(),
+            viewModel =koinViewModel(),
             onBackClick = onBackClick
         )
     }

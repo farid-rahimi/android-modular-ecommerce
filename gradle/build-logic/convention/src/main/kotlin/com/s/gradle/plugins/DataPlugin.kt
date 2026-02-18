@@ -9,8 +9,13 @@ class DataPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply {
+
+                //apply("com.google.devtools.ksp")
+
                 apply("com.s.gradle.android.library")
-                apply("com.s.gradle.android.hilt")
+                //apply("com.s.gradle.android.hilt")
+                apply("com.s.gradle.android.koin")
+
             }
 
             dependencies {

@@ -20,7 +20,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+import org.koin.compose.viewmodel.koinViewModel
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
@@ -35,7 +35,7 @@ fun ProductListScreen(
     onProductClick: (id: Int) -> Unit,
     onBack: () -> Unit,
 ) {
-    val viewModel = hiltViewModel<ProductListViewModel>()
+    val viewModel =koinViewModel<ProductListViewModel>()
     val pagedList = viewModel.pagedList.collectAsLazyPagingItems()
     val state by viewModel.state.collectAsState()
 

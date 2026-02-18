@@ -6,7 +6,6 @@ import com.solutionium.data.model.UserWallet
 import com.solutionium.data.woo.user.WooUserRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import javax.inject.Inject
 
 interface GetUserWalletUseCase {
 
@@ -14,7 +13,7 @@ interface GetUserWalletUseCase {
 
 }
 
-internal class GetUserWalletUseCaseImpl @Inject constructor(
+internal class GetUserWalletUseCaseImpl(
 
     private val userRepository: WooUserRepository
 

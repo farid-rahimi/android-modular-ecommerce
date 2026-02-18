@@ -1,20 +1,14 @@
 package com.solutionium.data.woo.user
 
-import dagger.Binds
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import com.solutionium.data.api.woo.apiModule
+import com.solutionium.data.api.woo.getApiModule
+import com.solutionium.data.database.databaseModule
+import com.solutionium.data.local.localModule
+import org.koin.dsl.module
 
-@Module
-@InstallIn(SingletonComponent::class)
-internal abstract class WooUserModule {
-    @Binds
-    abstract fun bindWooUserRepository(
-        impl: WooUserRepositoryImpl
-    ): WooUserRepository
+fun getUserDataModules() = setOf(userDataModule, databaseModule, localModule) + getApiModule()
 
-    @Binds
-    abstract fun bindStoryViewRepository(
-        impl: StoryViewRepositoryImpl
-    ): StoryViewRepository
+val userDataModule = module {
+    single<WooUserRepository> { WooUserRepositoryImpl(get(), get(), get(), get()) }
+    single<StoryViewRepository> { StoryViewRepositoryImpl(get()) }
 }

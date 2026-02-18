@@ -17,16 +17,9 @@ import com.solutionium.data.model.ProductThumbnail
 import com.solutionium.data.model.ProductVariation
 import com.solutionium.data.model.Result
 import com.solutionium.data.model.Review
-import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 
-internal class WooProductRepositoryImpl @Inject constructor(
+internal class WooProductRepositoryImpl(
     private val wooProductsRemoteSource: WooProductsRemoteSource,
     private val productDetailDao: ProductDetailDao,
 ) : WooProductRepository {

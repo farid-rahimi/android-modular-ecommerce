@@ -8,9 +8,8 @@ import com.solutionium.data.model.Order
 import com.solutionium.data.model.PaymentGateway
 import com.solutionium.data.model.Result
 import com.solutionium.data.model.ShippingMethod
-import javax.inject.Inject
 
-class CheckoutRepositoryImpl @Inject constructor(
+class CheckoutRepositoryImpl(
     private val checkoutRemoteSource: WooCheckoutRemoteSource,
     private val tokenStore: TokenStore,
 ) : CheckoutRepository {

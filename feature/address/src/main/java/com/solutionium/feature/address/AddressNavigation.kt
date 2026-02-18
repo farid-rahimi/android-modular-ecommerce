@@ -8,7 +8,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
-import androidx.hilt.navigation.compose.hiltViewModel
+import org.koin.compose.viewmodel.koinViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
@@ -31,7 +31,7 @@ fun NavGraphBuilder.addressScreen(
         AddressListScreen(
             onNavigateToEditAddress = onAddEditAddress,
             onBackNavigation = onBack,
-            viewModel = hiltViewModel()
+            viewModel =koinViewModel()
         )
     }
 
@@ -58,7 +58,7 @@ fun NavGraphBuilder.addressScreen(
                 // ViewModel will get address_id_or_new from its SavedStateHandle
                 onSaved = onConfirm,
                 onBack = onBack,
-                viewModel = hiltViewModel()
+                viewModel =koinViewModel()
             )
         }
     }

@@ -1,13 +1,13 @@
 package com.solutionium.data.network
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.util.Base64
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.components.SingletonComponent
+import com.solutionium.data.network.clients.DigitsClient
+import com.solutionium.data.network.clients.UserClient
+import com.solutionium.data.network.clients.WooCategoryClient
+import com.solutionium.data.network.clients.WooCheckoutOrderClient
+import com.solutionium.data.network.clients.WooOrderClient
+import com.solutionium.data.network.clients.WooProductClient
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
 import io.ktor.client.plugins.DefaultRequest
@@ -19,40 +19,23 @@ import io.ktor.http.ContentType
 import io.ktor.http.HttpHeaders
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
-import javax.inject.Qualifier
-import javax.inject.Singleton
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.qualifier.named
+import org.koin.dsl.module
 
-@Qualifier
-@Retention(AnnotationRetention.BINARY)
-annotation class BasicAuthKtorClient
+fun getNetworkDataModules() = setOf(networkModule)
 
-@Qualifier
-@Retention(AnnotationRetention.BINARY)
-annotation class BearerAuthKtorClient
+val networkModule = module {
 
-@Qualifier
-@Retention(AnnotationRetention.BINARY)
-annotation class NoAuthKtorClient
-
-
-@Module
-@InstallIn(SingletonComponent::class)
-internal object NetworkModule {
-
-    private const val CACHE_SIZE_BYTES = 10 * 1024 * 1024L // 10 MB Cache
-
-    @Provides
-    @Singleton
-    fun providesJson(): Json {
-        return Json { ignoreUnknownKeys = true }
+    single {
+        Json { ignoreUnknownKeys = true }
     }
 
-    @Provides
-    @Singleton
-    @BasicAuthKtorClient
-    fun provideBasicAuthKtorClient(json: Json): HttpClient {
-        return HttpClient(Android) {
-            install(ContentNegotiation) { json(json) }
+    // --- HTTP CLIENTS ---
+
+    single(named("BasicAuthKtorClient")) {
+        HttpClient(Android) {
+            install(ContentNegotiation) { json(get()) }
             install(Logging) { level = if (BuildConfig.DEBUG) LogLevel.BODY else LogLevel.NONE }
             install(DefaultRequest) {
                 url(BuildConfig.BASE_URL)
@@ -64,32 +47,21 @@ internal object NetworkModule {
         }
     }
 
-    @Provides
-    @Singleton
-    @BearerAuthKtorClient
-    fun provideBearerAuthKtorClient(
-        json: Json,
-        // Inject TokenStore here to get the real token
-        // tokenStore: TokenStore 
-    ): HttpClient {
-        return HttpClient(Android) {
-            install(ContentNegotiation) { json(json) }
+    single(named("BearerAuthKtorClient")) {
+        HttpClient(Android) {
+            install(ContentNegotiation) { json(get()) }
             install(Logging) { level = if (BuildConfig.DEBUG) LogLevel.BODY else LogLevel.NONE }
             install(DefaultRequest) {
                 url(BuildConfig.BASE_URL)
                 header(HttpHeaders.ContentType, ContentType.Application.Json)
-                // val token = tokenStore.getToken()
-                // if (token != null) header(HttpHeaders.Authorization, "Bearer $token")
+                // Inject TokenStore here if needed for dynamic Bearer tokens
             }
         }
     }
 
-    @Provides
-    @Singleton
-    @NoAuthKtorClient
-    fun provideNoAuthKtorClient(json: Json): HttpClient {
-        return HttpClient(Android) {
-            install(ContentNegotiation) { json(json) }
+    single(named("NoAuthKtorClient")) {
+        HttpClient(Android) {
+            install(ContentNegotiation) { json(get()) }
             install(Logging) { level = if (BuildConfig.DEBUG) LogLevel.BODY else LogLevel.NONE }
             install(DefaultRequest) {
                 url(BuildConfig.BASE_URL)
@@ -98,16 +70,20 @@ internal object NetworkModule {
         }
     }
 
-    @Singleton
-    @Provides
-    fun provideSharedPreference(@ApplicationContext context: Context): SharedPreferences {
-        return context.getSharedPreferences(context.packageName + "_preferences", Context.MODE_PRIVATE)
+    // --- API CLIENTS (Mapping them to the correct HttpClient) ---
+
+    single { WooProductClient(get(named("BasicAuthKtorClient"))) }
+    single { WooCategoryClient(get(named("BasicAuthKtorClient"))) }
+    single { WooCheckoutOrderClient(get(named("BasicAuthKtorClient"))) }
+    single { WooOrderClient(get(named("BasicAuthKtorClient"))) }
+    
+    single { DigitsClient(get(named("NoAuthKtorClient"))) }
+    single { UserClient(get(named("NoAuthKtorClient"))) }
+
+    // --- OTHER ---
+
+    single {
+        val context = androidContext()
+        context.getSharedPreferences(context.packageName + "_preferences", Context.MODE_PRIVATE)
     }
-
-//    @Provides
-//    @Singleton
-//    fun providesNetworkCallAdapterFactory(): CallAdapter.Factory {
-//        return NetworkCallAdapterFactory()
-//    }
-
 }

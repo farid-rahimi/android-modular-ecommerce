@@ -21,7 +21,6 @@ import com.solutionium.domain.user.LogoutUseCase
 import com.solutionium.domain.user.ObserveLanguageUseCase
 import com.solutionium.domain.user.SendOtpUseCase
 import com.solutionium.domain.user.SetLanguageUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -29,12 +28,9 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 
-// In your feature.account package or a dedicated viewmodel package
-@HiltViewModel
-class AccountViewModel @Inject constructor(
+class AccountViewModel(
     private val checkLoginUserUseCase: CheckLoginUserUseCase,
     private val sendOtpUseCase: SendOtpUseCase,
     private val loginOrRegisterUseCase: LoginOrRegisterUseCase,

@@ -7,10 +7,8 @@ import com.solutionium.data.model.Category
 import com.solutionium.data.model.GeneralError
 import com.solutionium.data.model.Result
 import com.solutionium.data.network.clients.WooCategoryClient
-import javax.inject.Inject
 
-class WooCategoryRemoteSourceImpl @Inject constructor(
-    //private val wooCategoryService: WooCategoryService,
+class WooCategoryRemoteSourceImpl(
     private val categoryApi: WooCategoryClient
 ) : WooCategoryRemoteSource {
     override suspend fun getCategory(categoryId: Int): Result<Category, GeneralError> =

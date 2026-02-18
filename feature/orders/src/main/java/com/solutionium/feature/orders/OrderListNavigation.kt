@@ -1,6 +1,6 @@
 package com.solutionium.feature.orders
 
-import androidx.hilt.navigation.compose.hiltViewModel
+import org.koin.compose.viewmodel.koinViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
@@ -23,7 +23,7 @@ fun NavGraphBuilder.ordersListScreen(
 
             onOrderClick = { onOrderClick(rootRoute, it) },
             onBack = onBack,
-            viewModel = hiltViewModel()
+            viewModel =koinViewModel()
         )
     }
 }

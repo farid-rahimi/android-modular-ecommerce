@@ -18,15 +18,12 @@ import com.solutionium.domain.review.GetReviewListPagingUseCase
 import com.solutionium.domain.review.SubmitReviewUseCase
 import com.solutionium.domain.user.CheckLoginUserUseCase
 import com.solutionium.domain.user.GetCurrentUserUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
-import kotlin.collections.toMutableMap
 
 // State holder for the new review form
 data class ReviewFormState(
@@ -40,8 +37,7 @@ data class ReviewFormState(
     val userDetails: UserDetails? = null,
 )
 
-@HiltViewModel
-class ReviewViewModel @Inject constructor(
+class ReviewViewModel(
     savedStateHandle: SavedStateHandle,
     getReviewListPaging: GetReviewListPagingUseCase, // Inject your repository
     private val submitReviewUseCase: SubmitReviewUseCase,

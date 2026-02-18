@@ -4,9 +4,8 @@ import com.solutionium.data.database.dao.CartDao
 import com.solutionium.data.model.CartItem
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 
-class CartRepositoryImpl @Inject constructor(
+class CartRepositoryImpl(
     private val cartDao: CartDao,
 ) : CartRepository {
     override suspend fun addCartItem(cartItem: CartItem) =

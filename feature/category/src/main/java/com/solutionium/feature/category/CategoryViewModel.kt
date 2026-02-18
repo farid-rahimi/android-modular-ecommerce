@@ -14,7 +14,6 @@ import com.solutionium.domain.user.CheckSuperUserUseCase
 import com.solutionium.domain.woo.products.GetAttributeTermsUseCase
 import com.solutionium.domain.woo.products.GetBrandsUseCase
 import com.solutionium.domain.woo.products.SearchProductsUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -32,12 +31,6 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
-import kotlin.Boolean
-import kotlin.Int
-import kotlin.String
-import kotlin.Unit
-
 
 
 enum class CategoryDisplayType {
@@ -70,8 +63,7 @@ data class CategoryScreenState(
 )
 
 
-@HiltViewModel
-class CategoryViewModel @Inject constructor(
+class CategoryViewModel(
 
     //private val categoryRepository: CategoryRepository,
     private val getBrands: GetBrandsUseCase,

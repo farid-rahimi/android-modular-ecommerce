@@ -1,6 +1,5 @@
 package com.solutionium.data.network.clients
 
-import com.solutionium.data.network.BasicAuthKtorClient
 import com.solutionium.data.network.adapter.NetworkResponse
 import com.solutionium.data.network.response.WooErrorResponse
 import com.solutionium.data.network.response.WooOrderListResponse
@@ -13,15 +12,14 @@ import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpMethod
 import io.ktor.http.appendPathSegments
 import io.ktor.http.path
-import javax.inject.Inject
 
-class WooOrderClient @Inject constructor(
-    @BasicAuthKtorClient private val client: HttpClient
+class WooOrderClient(
+    private val client: HttpClient
 ) {
 
     suspend fun getOrderById(orderId: Int): NetworkResponse<WooOrderResponse, WooErrorResponse> =
         client.safeRequest {
-            method = HttpMethod.Companion.Get
+            method = HttpMethod.Get
             url {
                 path("wp-json/wc/v3/orders/")
                 appendPathSegments(orderId.toString())
@@ -34,7 +32,7 @@ class WooOrderClient @Inject constructor(
         queries: Map<String, String>
     ): NetworkResponse<WooOrderListResponse, WooErrorResponse> =
         client.safeRequest {
-            method = HttpMethod.Companion.Get
+            method = HttpMethod.Get
             url {
                 path("wp-json/wc/v3/orders")
                 parameter("page", page)
