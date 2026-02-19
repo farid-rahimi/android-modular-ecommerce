@@ -66,6 +66,7 @@
             <option value="$PROJECT_DIR$/feature/review" />
             <option value="$PROJECT_DIR$/gradle/build-logic" />
             <option value="$PROJECT_DIR$/gradle/build-logic/convention" />
+            <option value="$PROJECT_DIR$/shared" />
           </set>
         </option>
       </GradleProjectSettings>
