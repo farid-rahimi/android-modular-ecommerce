@@ -2,6 +2,23 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.kotlin.multiplatform.library)
     alias(libs.plugins.android.lint)
+    alias(libs.plugins.buildkonfig)
+    alias(libs.plugins.kotlinx.serilization)
+}
+
+buildkonfig {
+    packageName = "com.solutionium.shared"
+
+    defaultConfigs {
+        buildConfigField(com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING, "BASE_URL", "https://qeshminora.com/")
+        buildConfigField(com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING, "CONSUMER_KEY", System.getenv("WOO_CONSUMER_KEY") ?: "fallback_key")
+        buildConfigField(com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING, "CONSUMER_SECRET", System.getenv("WOO_CONSUMER_SECRET") ?: "fallback_secret")
+    }
+
+//    buildConfigField("String", "BASE_URL", "\"https://qeshminora.com/\"")
+//    buildConfigField("String", "CONSUMER_KEY", "\"${System.getenv("WOO_CONSUMER_KEY")}\"")
+//    buildConfigField("String", "CONSUMER_SECRET", "\"${System.getenv("WOO_CONSUMER_SECRET")}\"")
+
 }
 
 kotlin {
@@ -61,6 +78,13 @@ kotlin {
             dependencies {
                 implementation(libs.kotlin.stdlib)
                 // Add KMP dependencies here
+                // Core Ktor & Koin (KMP versions)
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.client.content.negotiation)
+                implementation(libs.ktor.serialization.kotlinx.json)
+                implementation(libs.koin.core)
+                implementation(libs.multiplatform.settings)
+                implementation(libs.kotlinx.serialization.json)
             }
         }
 
@@ -75,6 +99,8 @@ kotlin {
                 // Add Android-specific dependencies here. Note that this source set depends on
                 // commonMain by default and will correctly pull the Android artifacts of any KMP
                 // dependencies declared in commonMain.
+                implementation(libs.ktor.client.okhttp)
+                implementation(libs.ktor.client.android)
             }
         }
 
@@ -93,6 +119,7 @@ kotlin {
                 // part of KMP’s default source set hierarchy. Note that this source set depends
                 // on common by default and will correctly pull the iOS artifacts of any
                 // KMP dependencies declared in commonMain.
+                implementation(libs.ktor.client.darwin)
             }
         }
     }

@@ -9,13 +9,13 @@ import com.solutionium.data.model.Link
 import com.solutionium.data.model.LinkType
 import com.solutionium.data.model.ReviewCriteria
 import com.solutionium.data.model.StoryItem
-import com.solutionium.data.network.response.AppConfigResponse
-import com.solutionium.data.network.response.AppVersionResponse
-import com.solutionium.data.network.response.BACSDetailsResponse
-import com.solutionium.data.network.response.ConfigLink
-import com.solutionium.data.network.response.ContactResponse
-import com.solutionium.data.network.response.HomeBanner
-import com.solutionium.data.network.response.StoryItemR
+import com.solutionium.shared.data.network.response.AppConfigResponse
+import com.solutionium.shared.data.network.response.AppVersionResponse
+import com.solutionium.shared.data.network.response.BACSDetailsResponse
+import com.solutionium.shared.data.network.response.ConfigLink
+import com.solutionium.shared.data.network.response.ContactResponse
+import com.solutionium.shared.data.network.response.HomeBanner
+import com.solutionium.shared.data.network.response.StoryItemR
 
 fun AppConfigResponse.toModel() = AppConfig(
     message = message,

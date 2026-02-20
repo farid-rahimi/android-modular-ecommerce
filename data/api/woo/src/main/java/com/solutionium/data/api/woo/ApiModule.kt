@@ -1,5 +1,6 @@
 package com.solutionium.data.api.woo
 
+import androidx.appcompat.view.ActionBarPolicy
 import com.solutionium.data.api.woo.impl.WooCategoryRemoteSourceImpl
 import com.solutionium.data.api.woo.impl.WooCheckoutRemoteSourceImpl
 import com.solutionium.data.api.woo.impl.WooConfigRemoteSourceImpl
@@ -8,7 +9,9 @@ import com.solutionium.data.api.woo.impl.WooFavoriteRemoteSourceImpl
 import com.solutionium.data.api.woo.impl.WooOrderRemoteSourceImpl
 import com.solutionium.data.api.woo.impl.WooProductsRemoteSourceImpl
 import com.solutionium.data.api.woo.impl.WooUserRemoteSourceImpl
-import com.solutionium.data.network.getNetworkDataModules
+import com.solutionium.shared.data.network.getNetworkDataModules
+import org.koin.core.qualifier.named
+import org.koin.core.scope.get
 import org.koin.dsl.module
 
 fun getApiModule() = setOf(apiModule) + getNetworkDataModules()

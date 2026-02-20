@@ -9,6 +9,7 @@ import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -34,6 +35,7 @@ import com.solutionium.data.local.AppPreferencesImpl
 import com.solutionium.feature.home.GRAPH_HOME_ROUTE
 import com.solutionium.feature.home.navigateToHome
 import com.solutionium.feature.product.detail.navigateProductDetail
+import com.solutionium.shared.Greeting
 import com.solutionium.woo.ui.WooApp
 import kotlinx.coroutines.delay
 import org.koin.compose.viewmodel.koinViewModel
@@ -79,6 +81,9 @@ class MainActivity : ComponentActivity() {
     @SuppressLint("UnsafeOptInUsageError")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Log.i("Login Activity", "Hello from shared module: " + (Greeting().greet()))
+
 
         parseIntentForDeepLink(intent)
         askNotificationPermission()

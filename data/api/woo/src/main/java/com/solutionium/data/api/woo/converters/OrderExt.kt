@@ -8,16 +8,18 @@ import com.solutionium.data.model.LineItem
 import com.solutionium.data.model.Metadata
 import com.solutionium.data.model.NewOrderData
 import com.solutionium.data.model.Order
-import com.solutionium.data.network.BuildConfig.BASE_URL
-import com.solutionium.data.network.common.WooAddress
-import com.solutionium.data.network.common.WooFeeLine
-import com.solutionium.data.network.request.CouponLine
-import com.solutionium.data.network.request.LineItemRequest
-import com.solutionium.data.network.request.OrderMetadata
-import com.solutionium.data.network.request.OrderRequest
-import com.solutionium.data.network.request.ShippingLine
-import com.solutionium.data.network.response.WooLineItem
-import com.solutionium.data.network.response.WooOrderResponse
+
+//import com.solutionium.data.network.BuildConfig.BASE_URL
+//import com.solutionium.shared.BuildKonfig.BASE_URL
+import com.solutionium.shared.data.network.common.WooAddress
+import com.solutionium.shared.data.network.common.WooFeeLine
+import com.solutionium.shared.data.network.request.CouponLine
+import com.solutionium.shared.data.network.request.LineItemRequest
+import com.solutionium.shared.data.network.request.OrderMetadata
+import com.solutionium.shared.data.network.request.OrderRequest
+import com.solutionium.shared.data.network.request.ShippingLine
+import com.solutionium.shared.data.network.response.WooLineItem
+import com.solutionium.shared.data.network.response.WooOrderResponse
 
 fun NewOrderData.toRequestBody(): OrderRequest =
     OrderRequest(
@@ -98,7 +100,7 @@ fun WooOrderResponse.toModel(): Order = Order(
     paymentMethod = paymentMethod,
     paymentMethodTitle = paymentMethodTitle,
     orderKey = orderKey, //orderKey
-    paymentUrl = "${BASE_URL}checkout/order-pay/${id}/?key=${orderKey}", //paymentUrl
+    paymentUrl = "${"BASE_URL"}checkout/order-pay/${id}/?key=${orderKey}", //paymentUrl // TODO()
     lineItems = lineItems.map { it.toModel() }
 )
 

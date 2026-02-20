@@ -3,10 +3,10 @@ package com.solutionium.data.api.woo.converters
 import com.solutionium.data.model.ActionType
 import com.solutionium.data.model.UserAccess
 import com.solutionium.data.model.UserDetails
-import com.solutionium.data.network.request.EditUserFCMTokenMeta
-import com.solutionium.data.network.request.EditUserRequest
-import com.solutionium.data.network.response.DigitsLoginRegisterData
-import com.solutionium.data.network.response.WpUserResponse
+import com.solutionium.shared.data.network.request.EditUserFCMTokenMeta
+import com.solutionium.shared.data.network.request.EditUserRequest
+import com.solutionium.shared.data.network.response.DigitsLoginRegisterData
+import com.solutionium.shared.data.network.response.WpUserResponse
 
 
 fun DigitsLoginRegisterData.toUserAccess(): UserAccess = UserAccess(

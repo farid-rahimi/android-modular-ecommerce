@@ -1,7 +1,7 @@
 package com.solutionium.data.api.woo.converters
 
 import com.solutionium.data.model.Category
-import com.solutionium.data.network.response.WooCategoryResponse
+import com.solutionium.shared.data.network.response.WooCategoryResponse
 
 fun WooCategoryResponse.toCategory(): Category =
     Category(

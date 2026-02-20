@@ -6,7 +6,7 @@ import com.solutionium.data.api.woo.handleNetworkResponse
 import com.solutionium.data.model.Category
 import com.solutionium.data.model.GeneralError
 import com.solutionium.data.model.Result
-import com.solutionium.data.network.clients.WooCategoryClient
+import com.solutionium.shared.data.network.clients.WooCategoryClient
 
 class WooCategoryRemoteSourceImpl(
     private val categoryApi: WooCategoryClient

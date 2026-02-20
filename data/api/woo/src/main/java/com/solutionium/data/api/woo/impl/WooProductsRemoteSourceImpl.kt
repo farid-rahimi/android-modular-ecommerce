@@ -18,9 +18,10 @@ import com.solutionium.data.model.ProductThumbnail
 import com.solutionium.data.model.ProductVariation
 import com.solutionium.data.model.Result
 import com.solutionium.data.model.Review
-import com.solutionium.data.network.adapter.NetworkResponse
-import com.solutionium.data.network.clients.WooProductClient
-import com.solutionium.data.network.response.CartCheckListResponse
+import com.solutionium.shared.data.network.adapter.NetworkResponse
+import com.solutionium.shared.data.network.clients.WooProductClient
+import com.solutionium.shared.data.network.response.CartCheckListResponse
+
 
 internal class WooProductsRemoteSourceImpl(
 

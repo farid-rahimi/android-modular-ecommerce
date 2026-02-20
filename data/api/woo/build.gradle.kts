@@ -22,6 +22,7 @@ dependencies {
 
     //implementation(libs.retrofit)
 
-    implementation(project(":data:network"))
+    //implementation(project(":data:network"))
+    implementation(project(":shared"))
 
 }

@@ -1,9 +1,9 @@
 package com.solutionium.data.api.woo.converters
 
 import com.solutionium.data.model.Coupon
-import com.solutionium.data.network.response.WooCouponResponse
-import com.solutionium.data.network.response.excludedBrandIds
-import com.solutionium.data.network.response.includedBrandIds
+import com.solutionium.shared.data.network.response.WooCouponResponse
+import com.solutionium.shared.data.network.response.excludedBrandIds
+import com.solutionium.shared.data.network.response.includedBrandIds
 
 fun WooCouponResponse.toModel() = Coupon(
     id = id,

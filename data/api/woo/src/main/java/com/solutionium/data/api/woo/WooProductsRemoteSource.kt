@@ -10,7 +10,6 @@ import com.solutionium.data.model.ProductThumbnail
 import com.solutionium.data.model.ProductVariation
 import com.solutionium.data.model.Result
 import com.solutionium.data.model.Review
-import com.solutionium.data.network.response.CartCheckError
 
 interface WooProductsRemoteSource {
 

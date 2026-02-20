@@ -2,8 +2,8 @@ package com.solutionium.data.api.woo.converters
 
 import com.solutionium.data.model.ProductVariation
 import com.solutionium.data.model.VariationAttribute
-import com.solutionium.data.network.response.WooProductVariationResponse
-import com.solutionium.data.network.response.WooVariationAttribute
+import com.solutionium.shared.data.network.response.WooProductVariationResponse
+import com.solutionium.shared.data.network.response.WooVariationAttribute
 
 fun WooProductVariationResponse.toModel(): ProductVariation {
     return ProductVariation(

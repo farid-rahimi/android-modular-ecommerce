@@ -1,7 +1,7 @@
 package com.solutionium.data.api.woo.converters
 
 import com.solutionium.data.model.CartItemServer
-import com.solutionium.data.network.response.CartCheckResponse
+import com.solutionium.shared.data.network.response.CartCheckResponse
 
 fun CartCheckResponse.toModel() = CartItemServer(
     id = id,

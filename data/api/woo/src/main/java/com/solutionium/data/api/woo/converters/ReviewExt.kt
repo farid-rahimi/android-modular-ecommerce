@@ -4,10 +4,10 @@ import com.solutionium.data.model.CriteriaRating
 import com.solutionium.data.model.NewReview
 import com.solutionium.data.model.Review
 import com.solutionium.data.model.ReviewChild
-import com.solutionium.data.network.request.ReviewRequest
-import com.solutionium.data.network.response.CriteriaRatingResponse
-import com.solutionium.data.network.response.ReviewChildResponse
-import com.solutionium.data.network.response.WooReviewResponse
+import com.solutionium.shared.data.network.request.ReviewRequest
+import com.solutionium.shared.data.network.response.CriteriaRatingResponse
+import com.solutionium.shared.data.network.response.ReviewChildResponse
+import com.solutionium.shared.data.network.response.WooReviewResponse
 
 fun WooReviewResponse.toModel() = Review(
     id = id,

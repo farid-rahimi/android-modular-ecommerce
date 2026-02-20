@@ -6,7 +6,7 @@ import com.solutionium.data.api.woo.handleNetworkResponse
 import com.solutionium.data.model.GeneralError
 import com.solutionium.data.model.Order
 import com.solutionium.data.model.Result
-import com.solutionium.data.network.clients.WooOrderClient
+import com.solutionium.shared.data.network.clients.WooOrderClient
 
 class WooOrderRemoteSourceImpl(
     private val wooOrderService: WooOrderClient

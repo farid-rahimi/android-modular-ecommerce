@@ -8,13 +8,13 @@ import com.solutionium.data.model.ProductDetail
 import com.solutionium.data.model.ProductThumbnail
 import com.solutionium.data.model.ProductVarType
 import com.solutionium.data.model.SimpleTerm
-import com.solutionium.data.network.common.valueString
-import com.solutionium.data.network.response.WooAttributeResponse
-import com.solutionium.data.network.response.WooBrandResponse
-import com.solutionium.data.network.response.WooCategory
-import com.solutionium.data.network.response.WooProduct
-import com.solutionium.data.network.response.WooProductDetailsResponse
-import com.solutionium.data.network.response.WooTerm
+import com.solutionium.shared.data.network.common.valueString
+import com.solutionium.shared.data.network.response.WooAttributeResponse
+import com.solutionium.shared.data.network.response.WooBrandResponse
+import com.solutionium.shared.data.network.response.WooCategory
+import com.solutionium.shared.data.network.response.WooProduct
+import com.solutionium.shared.data.network.response.WooProductDetailsResponse
+import com.solutionium.shared.data.network.response.WooTerm
 
 
 fun WooProduct.toProductThumbnail(): ProductThumbnail {

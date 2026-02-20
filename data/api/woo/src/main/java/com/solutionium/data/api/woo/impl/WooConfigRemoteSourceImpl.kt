@@ -6,7 +6,7 @@ import com.solutionium.data.api.woo.handleNetworkResponse
 import com.solutionium.data.model.AppConfig
 import com.solutionium.data.model.GeneralError
 import com.solutionium.data.model.Result
-import com.solutionium.data.network.clients.UserClient
+import com.solutionium.shared.data.network.clients.UserClient
 
 internal class WooConfigRemoteSourceImpl(
     private val userService: UserClient,

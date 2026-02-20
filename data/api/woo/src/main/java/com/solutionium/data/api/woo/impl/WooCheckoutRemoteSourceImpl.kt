@@ -12,7 +12,7 @@ import com.solutionium.data.model.Order
 import com.solutionium.data.model.PaymentGateway
 import com.solutionium.data.model.Result
 import com.solutionium.data.model.ShippingMethod
-import com.solutionium.data.network.clients.WooCheckoutOrderClient
+import com.solutionium.shared.data.network.clients.WooCheckoutOrderClient
 
 internal class WooCheckoutRemoteSourceImpl(
     //private val wooCheckoutOrderService: WooCheckoutOrderService,

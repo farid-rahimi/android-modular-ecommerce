@@ -67,6 +67,10 @@ dependencies {
     implementation(project(":feature:review"))
 
 
+    implementation(project(":shared"))
+
+
+
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.messaging) // For Cloud Messaging
     implementation(libs.firebase.analytics) // Recommended for tracking

@@ -13,9 +13,9 @@ import com.solutionium.data.model.UserAccess
 import com.solutionium.data.model.UserDetails
 import com.solutionium.data.model.UserWallet
 import com.solutionium.data.model.WalletConfig
-import com.solutionium.data.network.adapter.NetworkResponse
-import com.solutionium.data.network.clients.DigitsClient
-import com.solutionium.data.network.clients.UserClient
+import com.solutionium.shared.data.network.adapter.NetworkResponse
+import com.solutionium.shared.data.network.clients.DigitsClient
+import com.solutionium.shared.data.network.clients.UserClient
 
 internal class WooUserRemoteSourceImpl(
     private val authService: DigitsClient,

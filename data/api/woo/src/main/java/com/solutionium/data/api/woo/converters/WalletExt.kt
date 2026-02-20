@@ -6,8 +6,8 @@ import com.solutionium.data.model.Transaction
 import com.solutionium.data.model.Type
 import com.solutionium.data.model.UserWallet
 import com.solutionium.data.model.WalletConfig
-import com.solutionium.data.network.response.WooUserWalletResponse
-import com.solutionium.data.network.response.WooWalletConfigResponse
+import com.solutionium.shared.data.network.response.WooUserWalletResponse
+import com.solutionium.shared.data.network.response.WooWalletConfigResponse
 
 fun WooUserWalletResponse.toUserWallet(): UserWallet =
     UserWallet(
