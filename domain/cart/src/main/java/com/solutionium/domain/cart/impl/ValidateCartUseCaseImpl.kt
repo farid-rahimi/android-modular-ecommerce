@@ -1,12 +1,12 @@
 package com.solutionium.domain.cart.impl
 
 import com.solutionium.data.cart.CartRepository
-import com.solutionium.data.model.CartItem
-import com.solutionium.data.model.CartItemServer
-import com.solutionium.data.model.ChangeType
-import com.solutionium.data.model.GeneralError
-import com.solutionium.data.model.Result
-import com.solutionium.data.model.ValidationInfo
+import com.solutionium.shared.data.model.CartItem
+import com.solutionium.shared.data.model.CartItemServer
+import com.solutionium.shared.data.model.ChangeType
+import com.solutionium.shared.data.model.GeneralError
+import com.solutionium.shared.data.model.Result
+import com.solutionium.shared.data.model.ValidationInfo
 import com.solutionium.data.woo.products.WooProductRepository
 import com.solutionium.domain.cart.CartItemValidationResult
 import com.solutionium.domain.cart.CartItemValidationStatus

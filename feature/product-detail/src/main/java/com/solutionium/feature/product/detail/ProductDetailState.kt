@@ -1,11 +1,11 @@
 package com.solutionium.feature.product.detail
 
-import com.solutionium.data.model.CartItem
-import com.solutionium.data.model.Comment
-import com.solutionium.data.model.GeneralError
-import com.solutionium.data.model.ProductDetail
-import com.solutionium.data.model.ProductThumbnail
-import com.solutionium.data.model.Review
+import com.solutionium.shared.data.model.CartItem
+import com.solutionium.shared.data.model.Comment
+import com.solutionium.shared.data.model.GeneralError
+import com.solutionium.shared.data.model.ProductDetail
+import com.solutionium.shared.data.model.ProductThumbnail
+import com.solutionium.shared.data.model.Review
 
 data class ProductDetailState(
     val product: ProductDetail? = null,

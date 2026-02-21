@@ -114,14 +114,14 @@ import coil3.request.crossfade
 import com.solutionium.core.designsystem.composable.HtmlText
 import com.solutionium.core.ui.common.component.PriceView
 import com.solutionium.core.ui.common.component.ReviewSummaryItemCard
-import com.solutionium.data.model.Comment
-import com.solutionium.data.model.PRODUCT_ARG_BRAND_ID
-import com.solutionium.data.model.PRODUCT_ARG_TITLE
-import com.solutionium.data.model.ProductAttribute
-import com.solutionium.data.model.ProductDetail
-import com.solutionium.data.model.ProductVarType
-import com.solutionium.data.model.Review
-import com.solutionium.data.model.SimpleTerm
+import com.solutionium.shared.data.model.Comment
+import com.solutionium.shared.data.model.PRODUCT_ARG_BRAND_ID
+import com.solutionium.shared.data.model.PRODUCT_ARG_TITLE
+import com.solutionium.shared.data.model.ProductAttribute
+import com.solutionium.shared.data.model.ProductDetail
+import com.solutionium.shared.data.model.ProductVarType
+import com.solutionium.shared.data.model.Review
+import com.solutionium.shared.data.model.SimpleTerm
 import kotlinx.coroutines.delay
 import kotlin.ranges.coerceIn
 

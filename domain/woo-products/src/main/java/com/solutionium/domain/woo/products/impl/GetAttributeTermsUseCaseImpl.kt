@@ -1,6 +1,6 @@
 package com.solutionium.domain.woo.products.impl
 
-import com.solutionium.data.model.AttributeTermsListType
+import com.solutionium.shared.data.model.AttributeTermsListType
 import com.solutionium.data.woo.products.WooProductRepository
 import com.solutionium.domain.woo.products.GetAttributeTermsUseCase
 import kotlinx.coroutines.flow.flow

@@ -1,6 +1,6 @@
 package com.solutionium.domain.cart
 
-import com.solutionium.data.model.CartItem
+import com.solutionium.shared.data.model.CartItem
 
 sealed class CartItemValidationStatus {
     data object Valid : CartItemValidationStatus()

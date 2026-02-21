@@ -3,11 +3,11 @@ package com.solutionium.feature.home
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.solutionium.data.model.Link
-import com.solutionium.data.model.ProductListType
-import com.solutionium.data.model.ProductThumbnail
-import com.solutionium.data.model.Result
-import com.solutionium.data.model.toCartItem
+import com.solutionium.shared.data.model.Link
+import com.solutionium.shared.data.model.ProductListType
+import com.solutionium.shared.data.model.ProductThumbnail
+import com.solutionium.shared.data.model.Result
+import com.solutionium.shared.data.model.toCartItem
 import com.solutionium.domain.cart.AddToCartUseCase
 import com.solutionium.domain.cart.ObserveCartUseCase
 import com.solutionium.domain.cart.UpdateCartItemUseCase

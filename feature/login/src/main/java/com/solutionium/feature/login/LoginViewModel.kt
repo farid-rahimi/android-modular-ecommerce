@@ -2,9 +2,9 @@ package com.solutionium.feature.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.solutionium.data.model.ActionType
-import com.solutionium.data.model.Result
-import com.solutionium.data.model.UserDetails
+import com.solutionium.shared.data.model.ActionType
+import com.solutionium.shared.data.model.Result
+import com.solutionium.shared.data.model.UserDetails
 import com.solutionium.domain.user.CheckLoginUserUseCase
 import com.solutionium.domain.user.EditUserDetailsUseCase
 import com.solutionium.domain.user.GetCurrentUserUseCase

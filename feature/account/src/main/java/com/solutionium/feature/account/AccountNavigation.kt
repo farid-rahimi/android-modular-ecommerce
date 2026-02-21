@@ -7,8 +7,8 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import com.solutionium.core.ui.common.DestinationRoute
-import com.solutionium.data.model.PRODUCT_ARG_IDS
-import com.solutionium.data.model.PRODUCT_ARG_TITLE
+import com.solutionium.shared.data.model.PRODUCT_ARG_IDS
+import com.solutionium.shared.data.model.PRODUCT_ARG_TITLE
 
 
 val GRAPH_ACCOUNT_ROUTE = DestinationRoute("account_graph_route")

@@ -42,7 +42,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.net.toUri
 import com.solutionium.core.ui.common.component.FormattedPriceV2
-import com.solutionium.data.model.BACSDetails
+import com.solutionium.shared.data.model.BACSDetails
 import java.net.URLEncoder
 
 // In a new file, e.g., OrderSuccessfulScreen.kt

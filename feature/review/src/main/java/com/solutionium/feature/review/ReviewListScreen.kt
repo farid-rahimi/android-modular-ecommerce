@@ -44,8 +44,8 @@ import com.solutionium.core.ui.common.component.CriteriaRatingBar
 import com.solutionium.core.ui.common.component.OrderSummaryCard
 import com.solutionium.core.ui.common.component.OrderSummaryCardPlaceholder
 import com.solutionium.core.ui.common.component.ReviewItem
-import com.solutionium.data.model.Review
-import com.solutionium.data.model.ReviewChild
+import com.solutionium.shared.data.model.Review
+import com.solutionium.shared.data.model.ReviewChild
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle

@@ -1,13 +1,13 @@
 package com.solutionium.data.woo.checkout
 
-import com.solutionium.data.api.woo.WooCheckoutRemoteSource
+import com.solutionium.shared.data.api.woo.WooCheckoutRemoteSource
 import com.solutionium.data.local.TokenStore
-import com.solutionium.data.model.GeneralError
-import com.solutionium.data.model.NewOrderData
-import com.solutionium.data.model.Order
-import com.solutionium.data.model.PaymentGateway
-import com.solutionium.data.model.Result
-import com.solutionium.data.model.ShippingMethod
+import com.solutionium.shared.data.model.GeneralError
+import com.solutionium.shared.data.model.NewOrderData
+import com.solutionium.shared.data.model.Order
+import com.solutionium.shared.data.model.PaymentGateway
+import com.solutionium.shared.data.model.Result
+import com.solutionium.shared.data.model.ShippingMethod
 
 class CheckoutRepositoryImpl(
     private val checkoutRemoteSource: WooCheckoutRemoteSource,

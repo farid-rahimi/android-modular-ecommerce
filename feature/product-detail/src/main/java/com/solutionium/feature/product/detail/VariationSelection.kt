@@ -35,8 +35,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.toColorInt
 import coil3.compose.AsyncImage
-import com.solutionium.data.model.ProductAttribute
-import com.solutionium.data.model.ProductVariation
+import com.solutionium.shared.data.model.ProductAttribute
+import com.solutionium.shared.data.model.ProductVariation
 
 @Composable
 fun VariationSelectionSection(

@@ -1,9 +1,9 @@
 package com.solutionium.data.favorite
 
-import com.solutionium.data.api.woo.WooFavoriteRemoteSource
+import com.solutionium.shared.data.api.woo.WooFavoriteRemoteSource
 import com.solutionium.data.database.dao.FavoriteDao
-import com.solutionium.data.model.Favorite
-import com.solutionium.data.model.Result
+import com.solutionium.shared.data.model.Favorite
+import com.solutionium.shared.data.model.Result
 import kotlinx.coroutines.flow.Flow
 
 class FavoriteRepositoryImpl(

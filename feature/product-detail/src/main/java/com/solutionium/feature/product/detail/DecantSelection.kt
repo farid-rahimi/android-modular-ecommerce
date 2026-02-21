@@ -23,7 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.solutionium.core.ui.common.component.FormattedPriceV2
-import com.solutionium.data.model.Decant
+import com.solutionium.shared.data.model.Decant
 
 // In ProductDetailScreen.kt
 // 1. Update the DecantSelectionSection composable

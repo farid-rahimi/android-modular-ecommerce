@@ -1,6 +1,6 @@
 package com.solutionium.domain.config
 
-import com.solutionium.data.model.AppVersion
+import com.solutionium.shared.data.model.AppVersion
 
 interface GetVersionsUseCase {
 

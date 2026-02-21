@@ -10,7 +10,8 @@ android {
 
 dependencies {
 
-    implementation(project(":data:model"))
+    implementation(project(":shared"))
+
     implementation(libs.accompanist.pager) // For HorizontalPager
     implementation(libs.androidx.material3)
     implementation(libs.androidx.activity.compose) // Or the latest version

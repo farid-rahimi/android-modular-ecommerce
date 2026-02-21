@@ -1,9 +1,9 @@
 package com.solutionium.feature.product.detail
 
 
-import com.solutionium.data.model.ProductAttribute
-import com.solutionium.data.model.ProductVariation
-import com.solutionium.data.model.VariationAttribute
+import com.solutionium.shared.data.model.ProductAttribute
+import com.solutionium.shared.data.model.ProductVariation
+import com.solutionium.shared.data.model.VariationAttribute
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

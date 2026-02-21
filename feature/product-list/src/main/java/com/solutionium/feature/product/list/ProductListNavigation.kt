@@ -7,19 +7,19 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.solutionium.core.ui.common.DestinationRoute
-import com.solutionium.data.model.FilterCriterion
-import com.solutionium.data.model.PRODUCT_ARG_ATTRIBUTE
-import com.solutionium.data.model.PRODUCT_ARG_ATTRIBUTE_TERM
-import com.solutionium.data.model.PRODUCT_ARG_BRAND_ID
-import com.solutionium.data.model.PRODUCT_ARG_CATEGORY
-import com.solutionium.data.model.PRODUCT_ARG_FEATURED
-import com.solutionium.data.model.PRODUCT_ARG_IDS
-import com.solutionium.data.model.PRODUCT_ARG_ON_SALE
-import com.solutionium.data.model.PRODUCT_ARG_SEARCH
-import com.solutionium.data.model.PRODUCT_ARG_TAG
-import com.solutionium.data.model.PRODUCT_ARG_TITLE
-import com.solutionium.data.model.ProductFilterKey
-import com.solutionium.data.model.ProductListType
+import com.solutionium.shared.data.model.FilterCriterion
+import com.solutionium.shared.data.model.PRODUCT_ARG_ATTRIBUTE
+import com.solutionium.shared.data.model.PRODUCT_ARG_ATTRIBUTE_TERM
+import com.solutionium.shared.data.model.PRODUCT_ARG_BRAND_ID
+import com.solutionium.shared.data.model.PRODUCT_ARG_CATEGORY
+import com.solutionium.shared.data.model.PRODUCT_ARG_FEATURED
+import com.solutionium.shared.data.model.PRODUCT_ARG_IDS
+import com.solutionium.shared.data.model.PRODUCT_ARG_ON_SALE
+import com.solutionium.shared.data.model.PRODUCT_ARG_SEARCH
+import com.solutionium.shared.data.model.PRODUCT_ARG_TAG
+import com.solutionium.shared.data.model.PRODUCT_ARG_TITLE
+import com.solutionium.shared.data.model.ProductFilterKey
+import com.solutionium.shared.data.model.ProductListType
 
 internal const val PRODUCT_LIST_ROUTE = "productList"
 internal const val PRODUCT_ARG_LIST_TYPE = "listType"

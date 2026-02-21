@@ -8,7 +8,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.solutionium.data.database.entity.CartItemEntity
-import com.solutionium.data.model.CartItem
+import com.solutionium.shared.data.model.CartItem
 import kotlinx.coroutines.flow.Flow
 
 @Dao

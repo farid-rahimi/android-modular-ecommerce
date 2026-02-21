@@ -1,8 +1,8 @@
 package com.solutionium.domain.checkout
 
-import com.solutionium.data.model.GeneralError
-import com.solutionium.data.model.Result
-import com.solutionium.data.model.ShippingMethod
+import com.solutionium.shared.data.model.GeneralError
+import com.solutionium.shared.data.model.Result
+import com.solutionium.shared.data.model.ShippingMethod
 import kotlinx.coroutines.flow.Flow
 
 interface GetShippingMethodsUseCase {

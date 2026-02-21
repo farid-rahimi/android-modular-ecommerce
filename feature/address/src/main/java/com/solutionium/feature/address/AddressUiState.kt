@@ -1,6 +1,6 @@
 package com.solutionium.feature.address
 
-import com.solutionium.data.model.Address
+import com.solutionium.shared.data.model.Address
 
 
 // Field names for error mapping

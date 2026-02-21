@@ -16,7 +16,7 @@ class DataPlugin : Plugin<Project> {
             }
 
             dependencies {
-                add("implementation", project(":data:model"))
+                add("implementation", project(":shared"))
             }
         }
     }

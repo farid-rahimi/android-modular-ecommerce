@@ -1,7 +1,7 @@
 package com.solutionium.domain.cart.impl
 
 import com.solutionium.data.cart.CartRepository
-import com.solutionium.data.model.CartItem
+import com.solutionium.shared.data.model.CartItem
 import com.solutionium.domain.cart.GetCartItemByProductUseCase
 import kotlinx.coroutines.flow.Flow
 

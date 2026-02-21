@@ -26,7 +26,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import com.solutionium.core.ui.common.R
-import com.solutionium.data.model.ContactInfo
+import com.solutionium.shared.data.model.ContactInfo
 
 @Composable
 fun ContactSupportDialog(

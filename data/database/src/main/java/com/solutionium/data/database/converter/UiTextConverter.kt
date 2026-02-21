@@ -1,8 +1,8 @@
 package com.solutionium.data.database.converter
 
 import androidx.room.TypeConverter
-import com.solutionium.data.model.ChangeType
-import com.solutionium.data.model.ValidationInfo
+import com.solutionium.shared.data.model.ChangeType
+import com.solutionium.shared.data.model.ValidationInfo
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 

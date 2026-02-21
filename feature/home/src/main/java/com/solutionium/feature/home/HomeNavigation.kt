@@ -8,8 +8,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.navDeepLink
 import com.solutionium.core.ui.common.DestinationRoute
-import com.solutionium.data.model.ProductListType
-import com.solutionium.data.model.StoryItem
+import com.solutionium.shared.data.model.ProductListType
+import com.solutionium.shared.data.model.StoryItem
 
 val GRAPH_HOME_ROUTE = DestinationRoute("home_graph_route")
 private const val ROUTE_HOME_SCREEN = "home"

@@ -1,6 +1,6 @@
 package com.solutionium.feature.product.list
 
-import com.solutionium.data.model.CartItem
+import com.solutionium.shared.data.model.CartItem
 
 data class ProductListUiState(
     val isLoading: Boolean,

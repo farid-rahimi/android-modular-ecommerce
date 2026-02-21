@@ -2,8 +2,8 @@ package com.solutionium.data.cart
 
 import com.solutionium.data.database.entity.CartItemEntity
 import com.solutionium.data.database.entity.VariationAttributeSerializable
-import com.solutionium.data.model.CartItem
-import com.solutionium.data.model.VariationAttribute
+import com.solutionium.shared.data.model.CartItem
+import com.solutionium.shared.data.model.VariationAttribute
 
 fun CartItemEntity?.toModel(): CartItem? {
     if (this == null) {

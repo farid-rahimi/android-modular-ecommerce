@@ -1,8 +1,8 @@
 package com.solutionium.domain.config.impl
 
-import com.solutionium.data.config.AppConfigRepository
-import com.solutionium.data.model.ContactInfo
-import com.solutionium.data.model.Result
+import com.solutionium.shared.data.config.AppConfigRepository
+import com.solutionium.shared.data.model.ContactInfo
+import com.solutionium.shared.data.model.Result
 import com.solutionium.domain.config.GetContactInfoUseCase
 
 class GetContactInfoUseCaseImpl(

@@ -1,7 +1,7 @@
 package com.solutionium.data.woo.user
 
 import com.solutionium.data.database.entity.AddressEntity
-import com.solutionium.data.model.Address
+import com.solutionium.shared.data.model.Address
 
 fun AddressEntity.toModel() = Address(
     id = id,

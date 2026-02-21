@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import coil3.compose.AsyncImage
-import com.solutionium.data.model.Category
+import com.solutionium.shared.data.model.Category
 
 @Composable
 fun CategoryThumbnailCard(

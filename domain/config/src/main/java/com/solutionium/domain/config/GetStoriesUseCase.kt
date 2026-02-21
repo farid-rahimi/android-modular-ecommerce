@@ -1,6 +1,6 @@
 package com.solutionium.domain.config
 
-import com.solutionium.data.model.StoryItem
+import com.solutionium.shared.data.model.StoryItem
 
 interface GetStoriesUseCase {
 

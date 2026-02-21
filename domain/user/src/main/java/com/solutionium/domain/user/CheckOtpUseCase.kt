@@ -1,6 +1,6 @@
 package com.solutionium.domain.user
 
-import com.solutionium.data.model.Result
+import com.solutionium.shared.data.model.Result
 
 interface CheckOtpUseCase {
     suspend operator fun invoke(phoneNumber: String, otp: String): Result<Boolean, Unit>

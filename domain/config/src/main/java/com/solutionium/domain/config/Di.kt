@@ -1,6 +1,6 @@
 package com.solutionium.domain.config
 
-import com.solutionium.data.config.appConfigDataModule
+import com.solutionium.shared.data.config.appConfigDataModule
 import com.solutionium.domain.config.impl.ForcedEnabledPaymentUseCaseImpl
 import com.solutionium.domain.config.impl.GetAppImagesImpl
 import com.solutionium.domain.config.impl.GetBACSDetailsUseCaseImpl

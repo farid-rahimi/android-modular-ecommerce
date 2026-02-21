@@ -67,9 +67,9 @@ import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.solutionium.core.ui.common.R
-import com.solutionium.data.model.FeatureType
-import com.solutionium.data.model.ProductCatType
-import com.solutionium.data.model.ProductThumbnail
+import com.solutionium.shared.data.model.FeatureType
+import com.solutionium.shared.data.model.ProductCatType
+import com.solutionium.shared.data.model.ProductThumbnail
 import kotlinx.coroutines.delay
 import androidx.core.graphics.toColorInt
 

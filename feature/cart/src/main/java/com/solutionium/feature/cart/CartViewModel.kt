@@ -2,12 +2,12 @@ package com.solutionium.feature.cart
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.solutionium.data.model.CartItem
-import com.solutionium.data.model.ChangeType
-import com.solutionium.data.model.GeneralError
-import com.solutionium.data.model.Result
-import com.solutionium.data.model.UiText
-import com.solutionium.data.model.ValidationInfo
+import com.solutionium.shared.data.model.CartItem
+import com.solutionium.shared.data.model.ChangeType
+import com.solutionium.shared.data.model.GeneralError
+import com.solutionium.shared.data.model.Result
+import com.solutionium.shared.data.model.UiText
+import com.solutionium.shared.data.model.ValidationInfo
 import com.solutionium.domain.cart.ClearCartUseCase
 import com.solutionium.domain.cart.ConfirmValidationUseCase
 import com.solutionium.domain.cart.ObserveCartUseCase

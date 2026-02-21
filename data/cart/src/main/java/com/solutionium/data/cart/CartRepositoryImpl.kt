@@ -1,7 +1,7 @@
 package com.solutionium.data.cart
 
 import com.solutionium.data.database.dao.CartDao
-import com.solutionium.data.model.CartItem
+import com.solutionium.shared.data.model.CartItem
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

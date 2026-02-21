@@ -3,20 +3,20 @@ package com.solutionium.data.woo.products
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.solutionium.data.api.woo.WooProductsRemoteSource
+import com.solutionium.shared.data.api.woo.WooProductsRemoteSource
 import com.solutionium.data.database.dao.ProductDetailDao
-import com.solutionium.data.model.AttributeTerm
-import com.solutionium.data.model.AttributeTermsListType
-import com.solutionium.data.model.Brand
-import com.solutionium.data.model.BrandListType
-import com.solutionium.data.model.CartItemServer
-import com.solutionium.data.model.GeneralError
-import com.solutionium.data.model.NewReview
-import com.solutionium.data.model.ProductDetail
-import com.solutionium.data.model.ProductThumbnail
-import com.solutionium.data.model.ProductVariation
-import com.solutionium.data.model.Result
-import com.solutionium.data.model.Review
+import com.solutionium.shared.data.model.AttributeTerm
+import com.solutionium.shared.data.model.AttributeTermsListType
+import com.solutionium.shared.data.model.Brand
+import com.solutionium.shared.data.model.BrandListType
+import com.solutionium.shared.data.model.CartItemServer
+import com.solutionium.shared.data.model.GeneralError
+import com.solutionium.shared.data.model.NewReview
+import com.solutionium.shared.data.model.ProductDetail
+import com.solutionium.shared.data.model.ProductThumbnail
+import com.solutionium.shared.data.model.ProductVariation
+import com.solutionium.shared.data.model.Result
+import com.solutionium.shared.data.model.Review
 import kotlinx.coroutines.flow.Flow
 
 internal class WooProductRepositoryImpl(

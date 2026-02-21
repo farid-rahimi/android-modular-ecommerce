@@ -50,14 +50,14 @@ import com.solutionium.core.ui.common.component.ProductCarouselPlaceholder
 import com.solutionium.core.ui.common.component.ProductThumbnailCard
 import com.solutionium.core.ui.common.component.StoryReelPlaceholder
 import com.solutionium.core.ui.common.component.StoryReelSection
-import com.solutionium.data.model.Category
-import com.solutionium.data.model.PRODUCT_ARG_FEATURED
-import com.solutionium.data.model.PRODUCT_ARG_ON_SALE
-import com.solutionium.data.model.PRODUCT_ARG_TAG
-import com.solutionium.data.model.PRODUCT_ARG_TITLE
-import com.solutionium.data.model.ProductListType
-import com.solutionium.data.model.ProductThumbnail
-import com.solutionium.data.model.StoryItem
+import com.solutionium.shared.data.model.Category
+import com.solutionium.shared.data.model.PRODUCT_ARG_FEATURED
+import com.solutionium.shared.data.model.PRODUCT_ARG_ON_SALE
+import com.solutionium.shared.data.model.PRODUCT_ARG_TAG
+import com.solutionium.shared.data.model.PRODUCT_ARG_TITLE
+import com.solutionium.shared.data.model.ProductListType
+import com.solutionium.shared.data.model.ProductThumbnail
+import com.solutionium.shared.data.model.StoryItem
 
 @Composable
 fun HomeScreen(

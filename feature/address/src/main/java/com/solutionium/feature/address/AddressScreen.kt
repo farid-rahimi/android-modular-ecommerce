@@ -55,7 +55,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.solutionium.data.model.Address
+import com.solutionium.shared.data.model.Address
 import kotlin.text.isNullOrBlank
 
 

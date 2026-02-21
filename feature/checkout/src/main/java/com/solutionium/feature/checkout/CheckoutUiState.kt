@@ -1,16 +1,16 @@
 package com.solutionium.feature.checkout
 
 import androidx.annotation.StringRes
-import com.solutionium.data.model.Address
-import com.solutionium.data.model.BACSDetails
-import com.solutionium.data.model.CartItem
-import com.solutionium.data.model.Coupon
-import com.solutionium.data.model.GeneralError
-import com.solutionium.data.model.Order
-import com.solutionium.data.model.PaymentGateway
-import com.solutionium.data.model.ShippingMethod
-import com.solutionium.data.model.UserDetails
-import com.solutionium.data.model.UserWallet
+import com.solutionium.shared.data.model.Address
+import com.solutionium.shared.data.model.BACSDetails
+import com.solutionium.shared.data.model.CartItem
+import com.solutionium.shared.data.model.Coupon
+import com.solutionium.shared.data.model.GeneralError
+import com.solutionium.shared.data.model.Order
+import com.solutionium.shared.data.model.PaymentGateway
+import com.solutionium.shared.data.model.ShippingMethod
+import com.solutionium.shared.data.model.UserDetails
+import com.solutionium.shared.data.model.UserWallet
 import com.solutionium.domain.checkout.CouponError
 import java.util.UUID
 

@@ -2,7 +2,7 @@ package com.solutionium.data.database.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.solutionium.data.model.ProductVarType
+import com.solutionium.shared.data.model.ProductVarType
 import kotlinx.serialization.Serializable
 
 @Entity(tableName = "product_detail")

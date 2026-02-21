@@ -1,9 +1,9 @@
 package com.solutionium.domain.woo.products
 
-import com.solutionium.data.model.GeneralError
-import com.solutionium.data.model.ProductListType
-import com.solutionium.data.model.ProductThumbnail
-import com.solutionium.data.model.Result
+import com.solutionium.shared.data.model.GeneralError
+import com.solutionium.shared.data.model.ProductListType
+import com.solutionium.shared.data.model.ProductThumbnail
+import com.solutionium.shared.data.model.Result
 import kotlinx.coroutines.flow.Flow
 
 interface GetProductsListUseCase {

@@ -81,11 +81,11 @@ import androidx.lifecycle.map
 import com.solutionium.core.ui.common.component.CartItemCard
 import com.solutionium.core.ui.common.component.CenteredCircularProgress
 import com.solutionium.core.ui.common.component.FormattedPriceV2
-import com.solutionium.data.model.Address
-import com.solutionium.data.model.CartItem
-import com.solutionium.data.model.PaymentGateway
-import com.solutionium.data.model.ShippingMethod
-import com.solutionium.data.model.toThrowable
+import com.solutionium.shared.data.model.Address
+import com.solutionium.shared.data.model.CartItem
+import com.solutionium.shared.data.model.PaymentGateway
+import com.solutionium.shared.data.model.ShippingMethod
+import com.solutionium.shared.data.model.toThrowable
 import com.solutionium.domain.cart.impl.toFormattedString
 import com.solutionium.domain.checkout.CouponError
 import com.solutionium.domain.checkout.CouponErrorType

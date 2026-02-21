@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.solutionium.data.model.BannerItem
+import com.solutionium.shared.data.model.BannerItem
 
 
 @Composable

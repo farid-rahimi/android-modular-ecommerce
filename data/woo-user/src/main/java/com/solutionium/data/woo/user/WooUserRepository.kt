@@ -1,16 +1,16 @@
 package com.solutionium.data.woo.user
 
-import com.solutionium.data.api.woo.WooUserRemoteSource
+import com.solutionium.shared.data.api.woo.WooUserRemoteSource
 import com.solutionium.data.database.dao.AddressDao
 import com.solutionium.data.local.AppPreferences
 import com.solutionium.data.local.TokenStore
-import com.solutionium.data.model.ActionType
-import com.solutionium.data.model.Address
-import com.solutionium.data.model.GeneralError
-import com.solutionium.data.model.Result
-import com.solutionium.data.model.UserDetails
-import com.solutionium.data.model.UserWallet
-import com.solutionium.data.model.WalletConfig
+import com.solutionium.shared.data.model.ActionType
+import com.solutionium.shared.data.model.Address
+import com.solutionium.shared.data.model.GeneralError
+import com.solutionium.shared.data.model.Result
+import com.solutionium.shared.data.model.UserDetails
+import com.solutionium.shared.data.model.UserWallet
+import com.solutionium.shared.data.model.WalletConfig
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

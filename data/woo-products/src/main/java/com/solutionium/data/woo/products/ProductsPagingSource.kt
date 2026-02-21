@@ -3,12 +3,12 @@ package com.solutionium.data.woo.products
 import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.solutionium.data.api.woo.WooProductsRemoteSource
-import com.solutionium.data.model.FilterKey
-import com.solutionium.data.model.ProductFilterKey
-import com.solutionium.data.model.ProductThumbnail
-import com.solutionium.data.model.Result
-import com.solutionium.data.model.toThrowable
+import com.solutionium.shared.data.api.woo.WooProductsRemoteSource
+import com.solutionium.shared.data.model.FilterKey
+import com.solutionium.shared.data.model.ProductFilterKey
+import com.solutionium.shared.data.model.ProductThumbnail
+import com.solutionium.shared.data.model.Result
+import com.solutionium.shared.data.model.toThrowable
 
 // This PagingSource fetches pages of ProductThumbnail items from the WooProductsRemoteSource
 internal class ProductsPagingSource(

@@ -76,6 +76,7 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
+                implementation(libs.napier)
                 implementation(libs.kotlin.stdlib)
                 // Add KMP dependencies here
                 // Core Ktor & Koin (KMP versions)

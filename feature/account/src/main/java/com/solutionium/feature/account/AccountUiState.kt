@@ -1,9 +1,9 @@
 package com.solutionium.feature.account
 
-import com.solutionium.data.model.ContactInfo
-import com.solutionium.data.model.Order
-import com.solutionium.data.model.UserDetails
-import com.solutionium.data.model.UserWallet
+import com.solutionium.shared.data.model.ContactInfo
+import com.solutionium.shared.data.model.Order
+import com.solutionium.shared.data.model.UserDetails
+import com.solutionium.shared.data.model.UserWallet
 
 data class AccountUIState(
     val lastStage: AccountStage? = null,

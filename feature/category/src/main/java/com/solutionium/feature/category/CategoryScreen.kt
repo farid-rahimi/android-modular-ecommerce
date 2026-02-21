@@ -60,18 +60,18 @@ import com.solutionium.core.ui.common.component.CategoryScreenPlaceholder
 import com.solutionium.core.ui.common.component.PerfumeAttributes
 import com.solutionium.core.ui.common.component.PriceView
 import com.solutionium.core.ui.common.component.ShoeAttributes
-import com.solutionium.data.model.AttributeTerm
-import com.solutionium.data.model.DisplayableTerm
-import com.solutionium.data.model.PERFUME_CAT_ID
-import com.solutionium.data.model.PRODUCT_ARG_ATTRIBUTE
-import com.solutionium.data.model.PRODUCT_ARG_ATTRIBUTE_TERM
-import com.solutionium.data.model.PRODUCT_ARG_BRAND_ID
-import com.solutionium.data.model.PRODUCT_ARG_CATEGORY
-import com.solutionium.data.model.PRODUCT_ARG_SEARCH
-import com.solutionium.data.model.PRODUCT_ARG_TITLE
-import com.solutionium.data.model.ProductCatType
-import com.solutionium.data.model.ProductThumbnail
-import com.solutionium.data.model.SHOES_CAT_ID
+import com.solutionium.shared.data.model.AttributeTerm
+import com.solutionium.shared.data.model.DisplayableTerm
+import com.solutionium.shared.data.model.PERFUME_CAT_ID
+import com.solutionium.shared.data.model.PRODUCT_ARG_ATTRIBUTE
+import com.solutionium.shared.data.model.PRODUCT_ARG_ATTRIBUTE_TERM
+import com.solutionium.shared.data.model.PRODUCT_ARG_BRAND_ID
+import com.solutionium.shared.data.model.PRODUCT_ARG_CATEGORY
+import com.solutionium.shared.data.model.PRODUCT_ARG_SEARCH
+import com.solutionium.shared.data.model.PRODUCT_ARG_TITLE
+import com.solutionium.shared.data.model.ProductCatType
+import com.solutionium.shared.data.model.ProductThumbnail
+import com.solutionium.shared.data.model.SHOES_CAT_ID
 
 
 @Composable

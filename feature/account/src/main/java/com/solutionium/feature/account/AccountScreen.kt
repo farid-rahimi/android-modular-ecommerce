@@ -70,11 +70,11 @@ import com.solutionium.core.ui.common.component.ContactSupportDialog
 import com.solutionium.core.ui.common.component.FormattedPriceV2
 import com.solutionium.core.ui.common.component.LanguageSelectionScreen
 import com.solutionium.core.ui.common.component.OrderSummaryCard
-import com.solutionium.data.model.Order
-import com.solutionium.data.model.Transaction
-import com.solutionium.data.model.Type
-import com.solutionium.data.model.UserDetails
-import com.solutionium.data.model.UserWallet
+import com.solutionium.shared.data.model.Order
+import com.solutionium.shared.data.model.Transaction
+import com.solutionium.shared.data.model.Type
+import com.solutionium.shared.data.model.UserDetails
+import com.solutionium.shared.data.model.UserWallet
 
 
 @Composable

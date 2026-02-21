@@ -56,8 +56,8 @@ import coil3.compose.AsyncImage
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
 import com.solutionium.core.ui.common.R
-import com.solutionium.data.model.Link
-import com.solutionium.data.model.StoryItem
+import com.solutionium.shared.data.model.Link
+import com.solutionium.shared.data.model.StoryItem
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt

@@ -3,7 +3,7 @@ package com.solutionium.feature.address
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.solutionium.data.model.Address
+import com.solutionium.shared.data.model.Address
 import com.solutionium.domain.user.DeleteAddressUseCase
 import com.solutionium.domain.user.LoadAddressesUseCase
 import com.solutionium.domain.user.SaveAddressUseCase

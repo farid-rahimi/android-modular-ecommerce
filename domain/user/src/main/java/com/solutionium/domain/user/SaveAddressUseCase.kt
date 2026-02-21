@@ -1,6 +1,6 @@
 package com.solutionium.domain.user
 
-import com.solutionium.data.model.Address
+import com.solutionium.shared.data.model.Address
 import com.solutionium.data.woo.user.WooUserRepository
 
 interface SaveAddressUseCase {

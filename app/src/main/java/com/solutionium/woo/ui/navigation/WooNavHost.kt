@@ -8,7 +8,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.solutionium.core.ui.common.DestinationRoute
-import com.solutionium.data.model.StoryItem
+import com.solutionium.shared.data.model.StoryItem
 import com.solutionium.feature.account.accountScreen
 import com.solutionium.feature.account.navigateToAccount
 import com.solutionium.feature.address.addressScreen

@@ -1,7 +1,7 @@
 package com.solutionium.domain.cart
 
-import com.solutionium.data.model.GeneralError
-import com.solutionium.data.model.Result
+import com.solutionium.shared.data.model.GeneralError
+import com.solutionium.shared.data.model.Result
 import kotlinx.coroutines.flow.Flow
 
 interface ValidateCartUseCase {

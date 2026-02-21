@@ -1,6 +1,6 @@
 package com.solutionium.domain.woo.categories
 
-import com.solutionium.data.woo.categories.categoryDataModule
+import com.solutionium.shared.data.categories.categoryDataModule
 import org.koin.dsl.module
 
 fun getCategoryDomainModules() = setOf(categoryDomainModule, categoryDataModule)

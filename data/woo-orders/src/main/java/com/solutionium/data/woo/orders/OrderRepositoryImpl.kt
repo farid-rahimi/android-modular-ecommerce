@@ -3,14 +3,14 @@ package com.solutionium.data.woo.orders
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.solutionium.data.api.woo.WooOrderRemoteSource
-import com.solutionium.data.api.woo.WooProductsRemoteSource
+import com.solutionium.shared.data.api.woo.WooOrderRemoteSource
+import com.solutionium.shared.data.api.woo.WooProductsRemoteSource
 import com.solutionium.data.local.TokenStore
-import com.solutionium.data.model.FilterKey
-import com.solutionium.data.model.GeneralError
-import com.solutionium.data.model.Order
-import com.solutionium.data.model.OrderFilterKey
-import com.solutionium.data.model.Result
+import com.solutionium.shared.data.model.FilterKey
+import com.solutionium.shared.data.model.GeneralError
+import com.solutionium.shared.data.model.Order
+import com.solutionium.shared.data.model.OrderFilterKey
+import com.solutionium.shared.data.model.Result
 import kotlinx.coroutines.flow.Flow
 
 class OrderRepositoryImpl(

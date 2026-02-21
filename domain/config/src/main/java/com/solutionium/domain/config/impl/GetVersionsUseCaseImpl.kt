@@ -1,8 +1,8 @@
 package com.solutionium.domain.config.impl
 
-import com.solutionium.data.config.AppConfigRepository
-import com.solutionium.data.model.AppVersion
-import com.solutionium.data.model.Result
+import com.solutionium.shared.data.config.AppConfigRepository
+import com.solutionium.shared.data.model.AppVersion
+import com.solutionium.shared.data.model.Result
 import com.solutionium.domain.config.GetVersionsUseCase
 
 class GetVersionsUseCaseImpl(

@@ -28,7 +28,7 @@ import com.solutionium.core.designsystem.plus
 import com.solutionium.core.ui.common.LoginPromptDialog
 import com.solutionium.core.ui.common.component.ProductThumbnailCard
 import com.solutionium.core.ui.common.component.ProductThumbnailPlaceholder
-import com.solutionium.data.model.ProductThumbnail
+import com.solutionium.shared.data.model.ProductThumbnail
 
 @Composable
 fun ProductListScreen(

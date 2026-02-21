@@ -6,9 +6,9 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.filter
-import com.solutionium.data.model.PRODUCT_ARG_TITLE
-import com.solutionium.data.model.ProductThumbnail
-import com.solutionium.data.model.toCartItem
+import com.solutionium.shared.data.model.PRODUCT_ARG_TITLE
+import com.solutionium.shared.data.model.ProductThumbnail
+import com.solutionium.shared.data.model.toCartItem
 import com.solutionium.domain.cart.AddToCartUseCase
 import com.solutionium.domain.cart.ObserveCartUseCase
 import com.solutionium.domain.cart.UpdateCartItemUseCase

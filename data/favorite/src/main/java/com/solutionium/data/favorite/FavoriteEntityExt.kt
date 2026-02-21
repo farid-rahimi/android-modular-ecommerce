@@ -1,7 +1,7 @@
 package com.solutionium.data.favorite
 
 import com.solutionium.data.database.entity.FavoriteEntity
-import com.solutionium.data.model.Favorite
+import com.solutionium.shared.data.model.Favorite
 
 fun FavoriteEntity.toModel() = Favorite(
     productId = productId

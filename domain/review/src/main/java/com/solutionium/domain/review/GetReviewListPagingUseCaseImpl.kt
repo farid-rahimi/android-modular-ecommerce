@@ -1,9 +1,9 @@
 package com.solutionium.domain.review
 
 import androidx.paging.PagingData
-import com.solutionium.data.model.FilterCriterion
-import com.solutionium.data.model.Review
-import com.solutionium.data.model.toQueryMap
+import com.solutionium.shared.data.model.FilterCriterion
+import com.solutionium.shared.data.model.Review
+import com.solutionium.shared.data.model.toQueryMap
 import com.solutionium.data.woo.products.WooProductRepository
 import kotlinx.coroutines.flow.Flow
 

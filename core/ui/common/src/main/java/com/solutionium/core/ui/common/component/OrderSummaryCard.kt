@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.solutionium.core.ui.common.DateHelper
 import com.solutionium.core.ui.common.R
-import com.solutionium.data.model.Order
+import com.solutionium.shared.data.model.Order
 
 enum class OrderStatusFilter(val key: String, val titleResourceId: Int, val colorId: Int) {
     ALL("all", R.string.all, R.color.all),

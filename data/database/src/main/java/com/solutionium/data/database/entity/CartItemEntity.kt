@@ -1,8 +1,8 @@
 package com.solutionium.data.database.entity
 
 import androidx.room.Entity
-import com.solutionium.data.model.ChangeType
-import com.solutionium.data.model.ValidationInfo
+import com.solutionium.shared.data.model.ChangeType
+import com.solutionium.shared.data.model.ValidationInfo
 
 /**
  * Entity class for cart item.

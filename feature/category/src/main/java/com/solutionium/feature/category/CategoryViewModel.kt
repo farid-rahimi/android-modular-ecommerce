@@ -3,12 +3,12 @@ package com.solutionium.feature.category
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.solutionium.data.model.AttributeTerm
-import com.solutionium.data.model.AttributeTermsListType
-import com.solutionium.data.model.Brand
-import com.solutionium.data.model.BrandListType
-import com.solutionium.data.model.ProductThumbnail
-import com.solutionium.data.model.Result
+import com.solutionium.shared.data.model.AttributeTerm
+import com.solutionium.shared.data.model.AttributeTermsListType
+import com.solutionium.shared.data.model.Brand
+import com.solutionium.shared.data.model.BrandListType
+import com.solutionium.shared.data.model.ProductThumbnail
+import com.solutionium.shared.data.model.Result
 import com.solutionium.domain.config.GetAppImages
 import com.solutionium.domain.user.CheckSuperUserUseCase
 import com.solutionium.domain.woo.products.GetAttributeTermsUseCase

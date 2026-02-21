@@ -2,14 +2,10 @@ package com.solutionium.data.woo.orders
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.solutionium.data.api.woo.WooOrderRemoteSource
-import com.solutionium.data.api.woo.WooProductsRemoteSource
-import com.solutionium.data.model.FilterKey
-import com.solutionium.data.model.Order
-import com.solutionium.data.model.ProductFilterKey
-import com.solutionium.data.model.ProductThumbnail
-import com.solutionium.data.model.Result
-import com.solutionium.data.model.toThrowable
+import com.solutionium.shared.data.api.woo.WooOrderRemoteSource
+import com.solutionium.shared.data.model.Order
+import com.solutionium.shared.data.model.Result
+import com.solutionium.shared.data.model.toThrowable
 
 // This PagingSource fetches pages of ProductThumbnail items from the WooProductsRemoteSource
 internal class OrdersPagingSource(

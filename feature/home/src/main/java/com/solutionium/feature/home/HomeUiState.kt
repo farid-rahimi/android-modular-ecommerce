@@ -1,12 +1,12 @@
 package com.solutionium.feature.home
 
-import com.solutionium.data.model.BannerItem
-import com.solutionium.data.model.CartItem
-import com.solutionium.data.model.Category
-import com.solutionium.data.model.ContactInfo
-import com.solutionium.data.model.ProductListType
-import com.solutionium.data.model.ProductThumbnail
-import com.solutionium.data.model.StoryItem
+import com.solutionium.shared.data.model.BannerItem
+import com.solutionium.shared.data.model.CartItem
+import com.solutionium.shared.data.model.Category
+import com.solutionium.shared.data.model.ContactInfo
+import com.solutionium.shared.data.model.ProductListType
+import com.solutionium.shared.data.model.ProductThumbnail
+import com.solutionium.shared.data.model.StoryItem
 
 data class HomeUiState(
     val updateInfo: UpdateInfo = UpdateInfo(), // Add this

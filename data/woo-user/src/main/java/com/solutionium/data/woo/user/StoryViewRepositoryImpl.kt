@@ -2,7 +2,7 @@ package com.solutionium.data.woo.user
 
 import com.solutionium.data.database.dao.StoryViewDao
 import com.solutionium.data.database.entity.StoryViewEntity
-import com.solutionium.data.model.ViewedStory
+import com.solutionium.shared.data.model.ViewedStory
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

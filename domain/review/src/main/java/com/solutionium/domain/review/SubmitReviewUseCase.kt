@@ -1,9 +1,9 @@
 package com.solutionium.domain.review
 
-import com.solutionium.data.model.GeneralError
-import com.solutionium.data.model.NewReview
-import com.solutionium.data.model.Result
-import com.solutionium.data.model.Review
+import com.solutionium.shared.data.model.GeneralError
+import com.solutionium.shared.data.model.NewReview
+import com.solutionium.shared.data.model.Result
+import com.solutionium.shared.data.model.Review
 
 interface SubmitReviewUseCase {
 

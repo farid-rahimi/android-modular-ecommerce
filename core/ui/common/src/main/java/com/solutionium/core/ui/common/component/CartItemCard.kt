@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.solutionium.core.ui.common.R
-import com.solutionium.data.model.CartItem
+import com.solutionium.shared.data.model.CartItem
 
 @Composable
 fun CartItemCard(

@@ -1,9 +1,9 @@
 package com.solutionium.data.woo.checkout
 
-import com.solutionium.data.api.woo.WooCouponRemoteSource
-import com.solutionium.data.model.Coupon
-import com.solutionium.data.model.GeneralError
-import com.solutionium.data.model.Result
+import com.solutionium.shared.data.api.woo.WooCouponRemoteSource
+import com.solutionium.shared.data.model.Coupon
+import com.solutionium.shared.data.model.GeneralError
+import com.solutionium.shared.data.model.Result
 
 class CouponRepositoryImpl(
     private val remoteSource: WooCouponRemoteSource

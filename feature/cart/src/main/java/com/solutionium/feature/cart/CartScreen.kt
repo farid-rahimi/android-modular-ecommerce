@@ -48,9 +48,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.solutionium.core.ui.common.LoginPromptDialog
 import com.solutionium.core.ui.common.component.CartItemCard
 import com.solutionium.core.ui.common.component.PriceView
-import com.solutionium.data.model.CartItem
-import com.solutionium.data.model.UiText
-import com.solutionium.data.model.ValidationInfo
+import com.solutionium.shared.data.model.CartItem
+import com.solutionium.shared.data.model.UiText
+import com.solutionium.shared.data.model.ValidationInfo
 import kotlin.collections.toTypedArray
 
 @Composable

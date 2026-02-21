@@ -1,8 +1,8 @@
 package com.solutionium.feature.cart
 
-import com.solutionium.data.model.CartItem
-import com.solutionium.data.model.UiText
-import com.solutionium.data.model.ValidationInfo
+import com.solutionium.shared.data.model.CartItem
+import com.solutionium.shared.data.model.UiText
+import com.solutionium.shared.data.model.ValidationInfo
 import com.solutionium.domain.cart.CartItemValidationResult
 
 data class CartScreenUiState(

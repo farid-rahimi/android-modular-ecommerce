@@ -1,8 +1,8 @@
 package com.solutionium.domain.checkout.impl
 
-import com.solutionium.data.model.CartItem
-import com.solutionium.data.model.Coupon
-import com.solutionium.data.model.Result
+import com.solutionium.shared.data.model.CartItem
+import com.solutionium.shared.data.model.Coupon
+import com.solutionium.shared.data.model.Result
 import com.solutionium.data.woo.checkout.CouponRepository
 import com.solutionium.domain.checkout.ApplyCouponUseCase
 import com.solutionium.domain.checkout.CouponError

@@ -35,7 +35,9 @@ runner = "1.7.0"
 coreVersion = "1.7.0"
 multiplatformSettings = "1.2.0"
 
+
 [libraries]
+napier = { module = "io.github.aakira:napier", version = "2.7.1" }
 multiplatform-settings = { module = "com.russhwolf:multiplatform-settings-no-arg", version.ref = "multiplatformSettings" }
 accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanistPager" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
