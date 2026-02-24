@@ -1,10 +1,10 @@
-package com.solutionium.data.database.dao
+package com.solutionium.shared.data.database.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.solutionium.data.database.entity.FavoriteEntity
+import com.solutionium.shared.data.database.entity.FavoriteEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

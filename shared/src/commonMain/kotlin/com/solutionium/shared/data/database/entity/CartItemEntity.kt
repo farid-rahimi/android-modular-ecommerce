@@ -1,7 +1,6 @@
-package com.solutionium.data.database.entity
+package com.solutionium.shared.data.database.entity
 
 import androidx.room.Entity
-import com.solutionium.shared.data.model.ChangeType
 import com.solutionium.shared.data.model.ValidationInfo
 
 /**

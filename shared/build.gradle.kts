@@ -4,6 +4,9 @@ plugins {
     alias(libs.plugins.android.lint)
     alias(libs.plugins.buildkonfig)
     alias(libs.plugins.kotlinx.serilization)
+    alias(libs.plugins.devtools.ksp)
+    alias(libs.plugins.androidx.room)
+
 }
 
 buildkonfig {
@@ -73,8 +76,10 @@ kotlin {
                 implementation(libs.paging.common)
                 implementation(libs.napier)
                 implementation(libs.kotlin.stdlib)
-                // Add KMP dependencies here
-                // Core Ktor & Koin (KMP versions)
+
+                implementation(libs.room.runtime)
+                implementation(libs.sqlite.bundled)
+
                 implementation(libs.ktor.client.core)
                 implementation(libs.ktor.client.content.negotiation)
                 implementation(libs.ktor.serialization.kotlinx.json)
@@ -124,4 +129,14 @@ kotlin {
         }
     }
 
+}
+
+dependencies {
+    add("kspAndroid", libs.room.compiler)
+    add("kspIosSimulatorArm64", libs.room.compiler)
+    add("kspIosArm64", libs.room.compiler)
+}
+
+room {
+    schemaDirectory("$projectDir/schemas")
 }

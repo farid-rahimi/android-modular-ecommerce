@@ -1,7 +1,7 @@
 package com.solutionium.data.favorite
 
 import com.solutionium.shared.data.api.woo.WooFavoriteRemoteSource
-import com.solutionium.data.database.dao.FavoriteDao
+import com.solutionium.shared.data.database.dao.FavoriteDao
 import com.solutionium.shared.data.model.Favorite
 import com.solutionium.shared.data.model.Result
 import kotlinx.coroutines.flow.Flow

@@ -1,14 +1,12 @@
-package com.solutionium.data.database.dao
+package com.solutionium.shared.data.database.dao
 
-import android.icu.math.BigDecimal
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.solutionium.data.database.entity.CartItemEntity
-import com.solutionium.shared.data.model.CartItem
+import com.solutionium.shared.data.database.entity.CartItemEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

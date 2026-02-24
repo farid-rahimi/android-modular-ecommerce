@@ -1,4 +1,4 @@
-package com.solutionium.data.database.converter
+package com.solutionium.shared.data.database.converter
 
 import androidx.room.TypeConverter
 import com.solutionium.shared.data.model.ChangeType

@@ -1,7 +1,7 @@
 package com.solutionium.data.woo.user
 
 import com.solutionium.shared.data.api.woo.WooUserRemoteSource
-import com.solutionium.data.database.dao.AddressDao
+import com.solutionium.shared.data.database.dao.AddressDao
 import com.solutionium.shared.data.local.AppPreferences
 import com.solutionium.shared.data.local.TokenStore
 import com.solutionium.shared.data.model.ActionType

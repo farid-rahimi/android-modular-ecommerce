@@ -1,6 +1,5 @@
 package com.solutionium.shared.data.products
 
-import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.solutionium.shared.data.api.woo.WooProductsRemoteSource
@@ -89,18 +88,18 @@ class ProductsPagingSource2(
                 if (result.data.isNotEmpty()) {
                     // If we got results, the next key is for the next page of the *current* status.
                     nextKey = currentKey.copy(page = currentKey.page + 1)
-                    Log.d(TAG, "load: ${currentKey.page}")
+                    //Log.d(TAG, "load: ${currentKey.page}")
                 } else {
-                    Log.d(TAG, "list is empty: ${currentKey.page}")
+                    //Log.d(TAG, "list is empty: ${currentKey.page}")
                     // If we got NO results, it's time to move to the *next* stock status.
                     val currentStatusIndex = statusOrder.indexOf(currentKey.status)
                     if (currentStatusIndex < statusOrder.lastIndex) {
                         // Move to the first page of the next status in our list.
                         val nextStatus = statusOrder[currentStatusIndex + 1]
-                        Log.d(TAG, "load: $nextStatus")
+                        //Log.d(TAG, "load: $nextStatus")
                         nextKey = ProductPagingKey(status = nextStatus, page = 1)
                     } else {
-                        Log.d(TAG, "load: last one")
+                        //Log.d(TAG, "load: last one")
                         // If we've exhausted the last status, there's nothing more to load.
                         nextKey = null
                     }
@@ -109,7 +108,7 @@ class ProductsPagingSource2(
                 // If the current load was empty, but we have a nextKey (for the next status),
                 // we should trigger an immediate load of that next key.
                 if (result.data.isEmpty() && nextKey != null) {
-                    Log.d(TAG, "load: No Data, loading next status ${nextKey.status}")
+                    //Log.d(TAG, "load: No Data, loading next status ${nextKey.status}")
                     return load(
                         LoadParams.Refresh(
                             key = nextKey,
@@ -128,7 +127,7 @@ class ProductsPagingSource2(
             }
 
             is Result.Failure -> {
-                Log.e(TAG, "load: failed", result.error.toThrowable())
+                //Log.e(TAG, "load: failed", result.error.toThrowable())
                 LoadResult.Error(result.error.toThrowable())
             }
 

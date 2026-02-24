@@ -1,9 +1,8 @@
-package com.solutionium.data.database.converter
+package com.solutionium.shared.data.database.converter
 
 import androidx.room.TypeConverter
-import com.solutionium.data.database.entity.ProductAttributeSerializable
-import com.solutionium.data.database.entity.VariationAttributeSerializable
-import kotlinx.serialization.encodeToString
+import com.solutionium.shared.data.database.entity.ProductAttributeSerializable
+import com.solutionium.shared.data.database.entity.VariationAttributeSerializable
 import kotlinx.serialization.json.Json
 
 

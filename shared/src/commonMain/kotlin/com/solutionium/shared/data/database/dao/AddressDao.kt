@@ -1,13 +1,12 @@
-package com.solutionium.data.database.dao
+package com.solutionium.shared.data.database.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Transaction
 import androidx.room.Update
-import com.solutionium.data.database.entity.AddressEntity
+import com.solutionium.shared.data.database.entity.AddressEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

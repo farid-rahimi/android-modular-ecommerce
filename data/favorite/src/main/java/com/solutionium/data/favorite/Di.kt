@@ -1,7 +1,7 @@
 package com.solutionium.data.favorite
 
 import com.solutionium.shared.data.api.woo.getApiModule
-import com.solutionium.data.database.databaseModule
+import com.solutionium.shared.data.database.databaseModule
 import org.koin.dsl.module
 
 fun getFavoriteDataModules() = setOf(favoriteDataModule, databaseModule) + getApiModule()

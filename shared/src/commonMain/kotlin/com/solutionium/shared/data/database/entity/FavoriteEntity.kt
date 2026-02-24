@@ -1,4 +1,4 @@
-package com.solutionium.data.database.entity
+package com.solutionium.shared.data.database.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

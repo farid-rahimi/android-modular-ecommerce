@@ -1,7 +1,7 @@
 package com.solutionium.data.cart
 
-import com.solutionium.data.database.entity.CartItemEntity
-import com.solutionium.data.database.entity.VariationAttributeSerializable
+import com.solutionium.shared.data.database.entity.CartItemEntity
+import com.solutionium.shared.data.database.entity.VariationAttributeSerializable
 import com.solutionium.shared.data.model.CartItem
 import com.solutionium.shared.data.model.VariationAttribute
 
