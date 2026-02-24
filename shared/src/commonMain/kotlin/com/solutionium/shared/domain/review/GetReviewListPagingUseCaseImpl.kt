@@ -1,4 +1,4 @@
-package com.solutionium.domain.review
+package com.solutionium.shared.domain.review
 
 import androidx.paging.PagingData
 import com.solutionium.shared.data.model.FilterCriterion

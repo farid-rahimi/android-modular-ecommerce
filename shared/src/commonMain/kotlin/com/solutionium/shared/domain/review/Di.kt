@@ -1,4 +1,4 @@
-package com.solutionium.domain.review
+package com.solutionium.shared.domain.review
 
 import com.solutionium.shared.data.products.productsDataModule
 import org.koin.dsl.module

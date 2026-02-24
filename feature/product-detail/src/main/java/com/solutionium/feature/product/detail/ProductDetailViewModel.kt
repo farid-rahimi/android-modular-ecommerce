@@ -20,7 +20,7 @@ import com.solutionium.shared.domain.cart.UpdateCartItemUseCase
 import com.solutionium.shared.domain.config.PaymentMethodDiscountUseCase
 import com.solutionium.shared.domain.favorite.ObserveFavoritesUseCase
 import com.solutionium.shared.domain.favorite.ToggleFavoriteUseCase
-import com.solutionium.domain.review.GetTopReviewsUseCase
+import com.solutionium.shared.domain.review.GetTopReviewsUseCase
 import com.solutionium.domain.woo.products.GetProductDetailsUseCase
 import com.solutionium.domain.woo.products.GetProductVariationsUseCase
 import kotlinx.coroutines.delay

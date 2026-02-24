@@ -1,8 +1,7 @@
-package com.solutionium.domain.review
+package com.solutionium.shared.domain.review
 
 import androidx.paging.PagingData
 import com.solutionium.shared.data.model.FilterCriterion
-import com.solutionium.shared.data.model.Order
 import com.solutionium.shared.data.model.Review
 import kotlinx.coroutines.flow.Flow
 

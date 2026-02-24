@@ -1,4 +1,4 @@
-package com.solutionium.domain.review
+package com.solutionium.shared.domain.review
 
 import com.solutionium.shared.data.model.GeneralError
 import com.solutionium.shared.data.model.Result
