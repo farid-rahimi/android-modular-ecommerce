@@ -1,14 +1,12 @@
 package com.solutionium.feature.product.detail
 
-import android.content.Intent
 import org.koin.compose.viewmodel.koinViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import androidx.navigation.navDeepLink
-import com.solutionium.core.ui.common.DestinationRoute
+import com.solutionium.sharedui.common.DestinationRoute
 
 const val GRAPH_PRODUCT_ROUTE = "product_graph_route"
 fun NavGraphBuilder.productDetailScreen(

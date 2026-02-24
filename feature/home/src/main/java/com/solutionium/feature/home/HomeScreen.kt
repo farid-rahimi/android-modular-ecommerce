@@ -37,7 +37,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -46,9 +45,9 @@ import com.solutionium.core.ui.common.component.BannerSlider
 import com.solutionium.core.ui.common.component.CategoryThumbnailCard
 import com.solutionium.core.ui.common.component.ContactSupportDialog
 import com.solutionium.core.ui.common.component.HeaderLogo
-import com.solutionium.core.ui.common.component.ProductCarouselPlaceholder
+import com.solutionium.sharedui.common.component.ProductCarouselPlaceholder
 import com.solutionium.core.ui.common.component.ProductThumbnailCard
-import com.solutionium.core.ui.common.component.StoryReelPlaceholder
+import com.solutionium.sharedui.common.component.StoryReelPlaceholder
 import com.solutionium.core.ui.common.component.StoryReelSection
 import com.solutionium.shared.data.model.Category
 import com.solutionium.shared.data.model.PRODUCT_ARG_FEATURED

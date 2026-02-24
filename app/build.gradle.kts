@@ -54,7 +54,7 @@ dependencies {
 
     implementation(project(":data:model"))
     implementation(project(":data:local"))
-    implementation(project(":core:ui:common"))
+    implementation(project(":shared-ui"))
     implementation(project(":feature:product-detail"))
     implementation(project(":feature:home"))
     implementation(project(":feature:product-list"))
@@ -65,8 +65,6 @@ dependencies {
     implementation(project(":feature:address"))
     implementation(project(":feature:orders"))
     implementation(project(":feature:review"))
-
-
     implementation(project(":shared"))
 
 

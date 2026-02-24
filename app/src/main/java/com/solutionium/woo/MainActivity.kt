@@ -9,7 +9,6 @@ import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -29,9 +28,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.solutionium.core.designsystem.theme.WooTheme
-import com.solutionium.core.ui.common.component.LanguageSelectionScreen
-import com.solutionium.shared.data.local.AppPreferencesImpl
+import com.solutionium.sharedui.designsystem.theme.WooTheme
+import com.solutionium.sharedui.common.component.LanguageSelectionScreen
 import com.solutionium.feature.home.GRAPH_HOME_ROUTE
 import com.solutionium.feature.home.navigateToHome
 import com.solutionium.feature.product.detail.navigateProductDetail

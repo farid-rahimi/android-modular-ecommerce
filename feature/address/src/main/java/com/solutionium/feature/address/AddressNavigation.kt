@@ -15,7 +15,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.dialog
 import androidx.navigation.navArgument
-import com.solutionium.core.ui.common.DestinationRoute
+import com.solutionium.sharedui.common.DestinationRoute
 
 private const val ROUTE_ADDRESS_SCREEN = "address_route"
 private const val ROUTE_ADDRESS_LIST_SCREEN = "address_list_route"

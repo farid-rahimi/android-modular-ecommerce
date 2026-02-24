@@ -56,7 +56,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.solutionium.core.ui.common.component.CategoryScreenPlaceholder
+import com.solutionium.sharedui.common.component.CategoryScreenPlaceholder
 import com.solutionium.core.ui.common.component.PerfumeAttributes
 import com.solutionium.core.ui.common.component.PriceView
 import com.solutionium.core.ui.common.component.ShoeAttributes

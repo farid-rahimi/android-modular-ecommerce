@@ -2,11 +2,9 @@ package com.solutionium.feature.cart
 
 import org.koin.compose.viewmodel.koinViewModel
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import androidx.navigation.navArgument
-import com.solutionium.core.ui.common.DestinationRoute
+import com.solutionium.sharedui.common.DestinationRoute
 
 
 val GRAPH_CART_ROUTE = DestinationRoute("cart_graph_route")

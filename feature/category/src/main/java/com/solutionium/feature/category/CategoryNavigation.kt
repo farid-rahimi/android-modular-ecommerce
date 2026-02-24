@@ -4,7 +4,7 @@ import org.koin.compose.viewmodel.koinViewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import com.solutionium.core.ui.common.DestinationRoute
+import com.solutionium.sharedui.common.DestinationRoute
 
 val GRAPH_CATEGORY_ROUTE = DestinationRoute("category_graph_route")
 private const val ROUTE_CATEGORY_SCREEN = "category"

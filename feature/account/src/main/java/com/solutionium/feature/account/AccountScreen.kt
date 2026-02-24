@@ -68,7 +68,7 @@ import androidx.compose.ui.unit.sp
 import com.solutionium.core.ui.common.DateHelper
 import com.solutionium.core.ui.common.component.ContactSupportDialog
 import com.solutionium.core.ui.common.component.FormattedPriceV2
-import com.solutionium.core.ui.common.component.LanguageSelectionScreen
+import com.solutionium.sharedui.common.component.LanguageSelectionScreen
 import com.solutionium.core.ui.common.component.OrderSummaryCard
 import com.solutionium.shared.data.model.Order
 import com.solutionium.shared.data.model.Transaction

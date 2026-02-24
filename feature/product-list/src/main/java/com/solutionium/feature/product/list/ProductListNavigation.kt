@@ -6,7 +6,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.solutionium.core.ui.common.DestinationRoute
+import com.solutionium.sharedui.common.DestinationRoute
 import com.solutionium.shared.data.model.FilterCriterion
 import com.solutionium.shared.data.model.PRODUCT_ARG_ATTRIBUTE
 import com.solutionium.shared.data.model.PRODUCT_ARG_ATTRIBUTE_TERM
@@ -19,7 +19,6 @@ import com.solutionium.shared.data.model.PRODUCT_ARG_SEARCH
 import com.solutionium.shared.data.model.PRODUCT_ARG_TAG
 import com.solutionium.shared.data.model.PRODUCT_ARG_TITLE
 import com.solutionium.shared.data.model.ProductFilterKey
-import com.solutionium.shared.data.model.ProductListType
 
 internal const val PRODUCT_LIST_ROUTE = "productList"
 internal const val PRODUCT_ARG_LIST_TYPE = "listType"

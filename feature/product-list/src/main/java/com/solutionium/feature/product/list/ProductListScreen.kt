@@ -25,9 +25,8 @@ import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.solutionium.core.designsystem.plus
-import com.solutionium.core.ui.common.LoginPromptDialog
 import com.solutionium.core.ui.common.component.ProductThumbnailCard
-import com.solutionium.core.ui.common.component.ProductThumbnailPlaceholder
+import com.solutionium.sharedui.common.component.ProductThumbnailPlaceholder
 import com.solutionium.shared.data.model.ProductThumbnail
 
 @Composable

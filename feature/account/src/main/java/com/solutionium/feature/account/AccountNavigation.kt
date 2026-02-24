@@ -6,7 +6,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import com.solutionium.core.ui.common.DestinationRoute
+import com.solutionium.sharedui.common.DestinationRoute
 import com.solutionium.shared.data.model.PRODUCT_ARG_IDS
 import com.solutionium.shared.data.model.PRODUCT_ARG_TITLE
 

@@ -26,7 +26,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.navOptions
-import com.solutionium.core.ui.common.GlobalUiState
+import com.solutionium.sharedui.common.GlobalUiState
 import com.solutionium.core.ui.common.LoginPromptDialog
 import com.solutionium.core.ui.common.component.StoryViewer
 import com.solutionium.feature.account.navigateToAccount

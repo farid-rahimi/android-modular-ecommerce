@@ -9,9 +9,12 @@ kotlin {
     val frameworkBaseName = "sharedUIKit"
 
     androidLibrary {
-        namespace = "com.solutionium.sharedui"
+        namespace = "com.solutionium.core.ui.common"
         compileSdk = 36
         minSdk = 24
+        androidResources {
+            enable = true
+        }
     }
 
     iosArm64 {
@@ -33,12 +36,23 @@ kotlin {
                 implementation(compose.foundation)
                 implementation(compose.material3)
                 implementation(compose.ui)
+                implementation(compose.materialIconsExtended)
             }
         }
 
         commonTest {
             dependencies {
                 implementation(libs.kotlin.test)
+            }
+        }
+
+        androidMain {
+            dependencies {
+                implementation(project(":shared"))
+                implementation(libs.accompanist.pager)
+                implementation(libs.androidx.activity.compose)
+                implementation(libs.coil.compose)
+                implementation(libs.androidx.core.ktx)
             }
         }
     }

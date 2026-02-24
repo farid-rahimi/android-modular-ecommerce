@@ -1,14 +1,11 @@
 package com.solutionium.feature.home
 
-import android.content.Intent
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import androidx.navigation.navDeepLink
-import com.solutionium.core.ui.common.DestinationRoute
-import com.solutionium.shared.data.model.ProductListType
+import com.solutionium.sharedui.common.DestinationRoute
 import com.solutionium.shared.data.model.StoryItem
 
 val GRAPH_HOME_ROUTE = DestinationRoute("home_graph_route")
