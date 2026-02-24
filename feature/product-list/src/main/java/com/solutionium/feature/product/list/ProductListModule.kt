@@ -2,7 +2,7 @@ package com.solutionium.feature.product.list
 
 import com.solutionium.shared.domain.cart.getCartDomainModules
 import com.solutionium.shared.domain.config.getConfigDomainModules
-import com.solutionium.domain.favorite.getFavoriteDomainModules
+import com.solutionium.shared.domain.favorite.getFavoriteDomainModules
 import com.solutionium.domain.user.getUserDomainModules
 import com.solutionium.domain.woo.products.getProductsDomainModules
 import org.koin.core.module.dsl.viewModel

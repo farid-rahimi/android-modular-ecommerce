@@ -1,7 +1,7 @@
-package com.solutionium.domain.favorite.impl
+package com.solutionium.shared.domain.favorite.impl
 
 import com.solutionium.shared.data.favorite.FavoriteRepository
-import com.solutionium.domain.favorite.SyncFavoriteUseCase
+import com.solutionium.shared.domain.favorite.SyncFavoriteUseCase
 
 class SyncFavoriteUseCaseImpl(
     private val favoriteRepository: FavoriteRepository

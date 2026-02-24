@@ -1,4 +1,4 @@
-package com.solutionium.domain.favorite
+package com.solutionium.shared.domain.favorite
 
 interface ToggleFavoriteUseCase {
 

@@ -1,8 +1,8 @@
-package com.solutionium.domain.favorite.impl
+package com.solutionium.shared.domain.favorite.impl
 
 import com.solutionium.shared.data.favorite.FavoriteRepository
 import com.solutionium.shared.data.user.WooUserRepository
-import com.solutionium.domain.favorite.ObserveFavoritesUseCase
+import com.solutionium.shared.domain.favorite.ObserveFavoritesUseCase
 import kotlinx.coroutines.flow.Flow
 
 class ObserveFavoritesUseCaseImpl(

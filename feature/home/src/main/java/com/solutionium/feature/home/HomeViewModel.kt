@@ -17,8 +17,8 @@ import com.solutionium.shared.domain.config.GetStoriesUseCase
 import com.solutionium.shared.domain.config.GetVersionsUseCase
 import com.solutionium.shared.domain.config.HomeBannersUseCase
 import com.solutionium.shared.domain.config.PaymentMethodDiscountUseCase
-import com.solutionium.domain.favorite.ObserveFavoritesUseCase
-import com.solutionium.domain.favorite.ToggleFavoriteUseCase
+import com.solutionium.shared.domain.favorite.ObserveFavoritesUseCase
+import com.solutionium.shared.domain.favorite.ToggleFavoriteUseCase
 import com.solutionium.domain.user.AddStoryViewUseCase
 import com.solutionium.domain.user.CheckLoginUserUseCase
 import com.solutionium.domain.user.CheckSuperUserUseCase

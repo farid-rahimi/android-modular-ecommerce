@@ -9,7 +9,7 @@ import com.solutionium.shared.data.model.Result
 import com.solutionium.shared.data.model.UserDetails
 import com.solutionium.shared.domain.config.GetContactInfoUseCase
 import com.solutionium.shared.domain.config.GetPrivacyPolicyUseCase
-import com.solutionium.domain.favorite.ObserveFavoritesUseCase
+import com.solutionium.shared.domain.favorite.ObserveFavoritesUseCase
 import com.solutionium.domain.order.GetLatestOrderUseCase
 import com.solutionium.domain.user.CheckLoginUserUseCase
 import com.solutionium.domain.user.EditUserDetailsUseCase
