@@ -50,12 +50,6 @@ kotlin {
     // https://developer.android.com/kotlin/multiplatform/migrate
     val xcfName = "sharedKit"
 
-    iosX64 {
-        binaries.framework {
-            baseName = xcfName
-        }
-    }
-
     iosArm64 {
         binaries.framework {
             baseName = xcfName
@@ -76,6 +70,7 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
+                implementation(libs.paging.common)
                 implementation(libs.napier)
                 implementation(libs.kotlin.stdlib)
                 // Add KMP dependencies here
@@ -85,6 +80,7 @@ kotlin {
                 implementation(libs.ktor.serialization.kotlinx.json)
                 implementation(libs.koin.core)
                 implementation(libs.multiplatform.settings)
+                implementation(libs.multiplatform.settings.coroutines) // For observeToken()
                 implementation(libs.kotlinx.serialization.json)
             }
         }
@@ -97,11 +93,14 @@ kotlin {
 
         androidMain {
             dependencies {
-                // Add Android-specific dependencies here. Note that this source set depends on
-                // commonMain by default and will correctly pull the Android artifacts of any KMP
-                // dependencies declared in commonMain.
+                implementation(libs.paging.runtime)
+                implementation(libs.paging.compose)
+
+                implementation(libs.koin.android)
                 implementation(libs.ktor.client.okhttp)
                 implementation(libs.ktor.client.android)
+                implementation(libs.androidx.security.crypto) // Or latest stable/alpha version
+
             }
         }
 
@@ -116,7 +115,7 @@ kotlin {
         iosMain {
             dependencies {
                 // Add iOS-specific dependencies here. This a source set created by Kotlin Gradle
-                // Plugin (KGP) that each specific iOS target (e.g., iosX64) depends on as
+                // Plugin (KGP) that each specific iOS target depends on as
                 // part of KMP’s default source set hierarchy. Note that this source set depends
                 // on common by default and will correctly pull the iOS artifacts of any
                 // KMP dependencies declared in commonMain.

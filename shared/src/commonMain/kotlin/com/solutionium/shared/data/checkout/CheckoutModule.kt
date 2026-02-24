@@ -1,4 +1,4 @@
-package com.solutionium.data.woo.checkout
+package com.solutionium.shared.data.checkout
 
 import org.koin.dsl.module
 

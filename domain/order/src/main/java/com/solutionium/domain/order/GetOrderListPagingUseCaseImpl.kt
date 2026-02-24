@@ -4,7 +4,7 @@ import androidx.paging.PagingData
 import com.solutionium.shared.data.model.FilterCriterion
 import com.solutionium.shared.data.model.Order
 import com.solutionium.shared.data.model.toQueryMap
-import com.solutionium.data.woo.orders.OrderRepository
+import com.solutionium.shared.data.orders.OrderRepository
 import kotlinx.coroutines.flow.Flow
 
 class GetOrderListPagingUseCaseImpl(

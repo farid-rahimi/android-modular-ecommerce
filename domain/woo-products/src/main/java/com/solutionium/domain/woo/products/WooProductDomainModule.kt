@@ -1,6 +1,6 @@
 package com.solutionium.domain.woo.products
 
-import com.solutionium.data.woo.products.productsDataModule
+import com.solutionium.shared.data.products.productsDataModule
 import com.solutionium.domain.woo.products.impl.GetAttributeTermsUseCaseImpl
 import com.solutionium.domain.woo.products.impl.GetBrandsUseCaseImpl
 import com.solutionium.domain.woo.products.impl.GetProductDetailsUseCaseImpl

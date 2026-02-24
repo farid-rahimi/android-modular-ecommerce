@@ -1,4 +1,4 @@
-package com.solutionium.data.woo.orders
+package com.solutionium.shared.data.orders
 
 import androidx.paging.PagingData
 import com.solutionium.shared.data.model.GeneralError

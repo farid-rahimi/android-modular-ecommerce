@@ -3,7 +3,7 @@ package com.solutionium.domain.review
 import com.solutionium.shared.data.model.GeneralError
 import com.solutionium.shared.data.model.Result
 import com.solutionium.shared.data.model.Review
-import com.solutionium.data.woo.products.WooProductRepository
+import com.solutionium.shared.data.products.WooProductRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

@@ -2,11 +2,9 @@ package com.solutionium.data.woo.products
 
 import com.solutionium.data.database.entity.ProductAttributeSerializable
 import com.solutionium.data.database.entity.ProductDetailEntity
-import com.solutionium.data.database.entity.VariationAttributeSerializable
 import com.solutionium.shared.data.model.ProductAttribute
 import com.solutionium.shared.data.model.ProductDetail
 import com.solutionium.shared.data.model.ProductCatType
-import com.solutionium.shared.data.model.VariationAttribute
 
 fun ProductDetailEntity.toModel(): ProductDetail {
 

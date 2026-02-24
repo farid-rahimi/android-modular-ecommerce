@@ -1,4 +1,4 @@
-package com.solutionium.data.woo.checkout
+package com.solutionium.shared.data.checkout
 
 import com.solutionium.shared.data.model.GeneralError
 import com.solutionium.shared.data.model.NewOrderData

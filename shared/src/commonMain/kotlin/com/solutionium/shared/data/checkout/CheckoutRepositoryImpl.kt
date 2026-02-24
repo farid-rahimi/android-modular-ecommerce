@@ -1,7 +1,7 @@
-package com.solutionium.data.woo.checkout
+package com.solutionium.shared.data.checkout
 
 import com.solutionium.shared.data.api.woo.WooCheckoutRemoteSource
-import com.solutionium.data.local.TokenStore
+import com.solutionium.shared.data.local.TokenStore
 import com.solutionium.shared.data.model.GeneralError
 import com.solutionium.shared.data.model.NewOrderData
 import com.solutionium.shared.data.model.Order

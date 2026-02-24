@@ -2,7 +2,7 @@ package com.solutionium.data.woo.user
 
 import com.solutionium.shared.data.api.woo.getApiModule
 import com.solutionium.data.database.databaseModule
-import com.solutionium.data.local.localModule
+import com.solutionium.shared.data.local.localModule
 import org.koin.dsl.module
 
 fun getUserDataModules() = setOf(userDataModule, databaseModule, localModule) + getApiModule()

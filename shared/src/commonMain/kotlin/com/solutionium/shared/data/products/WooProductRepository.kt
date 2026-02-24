@@ -1,4 +1,4 @@
-package com.solutionium.data.woo.products
+package com.solutionium.shared.data.products
 
 import androidx.paging.PagingData
 import com.solutionium.shared.data.model.AttributeTerm

@@ -1,6 +1,6 @@
 package com.solutionium.domain.checkout
 
-import com.solutionium.data.woo.checkout.checkoutDataModule
+import com.solutionium.shared.data.checkout.checkoutDataModule
 import com.solutionium.domain.checkout.impl.ApplyCouponUseCaseImpl
 import com.solutionium.domain.checkout.impl.CreateOrderUseCaseImpl
 import com.solutionium.domain.checkout.impl.GetOrderStatusUseCaseImpl

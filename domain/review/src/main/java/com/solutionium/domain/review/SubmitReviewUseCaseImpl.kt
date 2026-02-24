@@ -4,7 +4,7 @@ import com.solutionium.shared.data.model.GeneralError
 import com.solutionium.shared.data.model.NewReview
 import com.solutionium.shared.data.model.Result
 import com.solutionium.shared.data.model.Review
-import com.solutionium.data.woo.products.WooProductRepository
+import com.solutionium.shared.data.products.WooProductRepository
 
 class SubmitReviewUseCaseImpl(
 

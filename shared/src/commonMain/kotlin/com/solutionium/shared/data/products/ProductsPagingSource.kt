@@ -1,4 +1,4 @@
-package com.solutionium.data.woo.products
+package com.solutionium.shared.data.products
 
 import android.util.Log
 import androidx.paging.PagingSource

@@ -1,6 +1,6 @@
 package com.solutionium.domain.order
 
-import com.solutionium.data.woo.orders.orderDataModule
+import com.solutionium.shared.data.orders.orderDataModule
 import org.koin.dsl.module
 
 

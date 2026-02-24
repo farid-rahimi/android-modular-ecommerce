@@ -31,14 +31,16 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.solutionium.core.designsystem.theme.WooTheme
 import com.solutionium.core.ui.common.component.LanguageSelectionScreen
-import com.solutionium.data.local.AppPreferencesImpl
+import com.solutionium.shared.data.local.AppPreferencesImpl
 import com.solutionium.feature.home.GRAPH_HOME_ROUTE
 import com.solutionium.feature.home.navigateToHome
 import com.solutionium.feature.product.detail.navigateProductDetail
 import com.solutionium.shared.Greeting
+import com.solutionium.shared.data.local.AppPreferences
 import com.solutionium.woo.ui.WooApp
 import kotlinx.coroutines.delay
 import org.koin.compose.viewmodel.koinViewModel
+import org.koin.java.KoinJavaComponent.getKoin
 import java.util.Locale
 
 data class DeepLinkData(val uri: Uri)
@@ -67,7 +69,9 @@ class MainActivity : ComponentActivity() {
     }
 
     override fun attachBaseContext(newBase: Context) {
-        val lang = AppPreferencesImpl(newBase).getLanguage()
+
+        val appPreferences: AppPreferences = getKoin().get()
+        val lang = appPreferences.getLanguage()
         val localeToSet = Locale.forLanguageTag(lang ?: "fa")
         val config = Configuration(newBase.resources.configuration)
         Locale.setDefault(localeToSet)
@@ -81,9 +85,6 @@ class MainActivity : ComponentActivity() {
     @SuppressLint("UnsafeOptInUsageError")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        Log.i("Login Activity", "Hello from shared module: " + (Greeting().greet()))
-
 
         parseIntentForDeepLink(intent)
         askNotificationPermission()

@@ -1,6 +1,6 @@
 package com.solutionium.domain.review
 
-import com.solutionium.data.woo.products.productsDataModule
+import com.solutionium.shared.data.products.productsDataModule
 import org.koin.dsl.module
 
 fun getReviewDomainModules() = listOf(reviewDomainModule, productsDataModule)

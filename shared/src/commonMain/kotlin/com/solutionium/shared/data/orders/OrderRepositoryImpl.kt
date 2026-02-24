@@ -1,11 +1,11 @@
-package com.solutionium.data.woo.orders
+package com.solutionium.shared.data.orders
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.solutionium.shared.data.api.woo.WooOrderRemoteSource
 import com.solutionium.shared.data.api.woo.WooProductsRemoteSource
-import com.solutionium.data.local.TokenStore
+import com.solutionium.shared.data.local.TokenStore
 import com.solutionium.shared.data.model.FilterKey
 import com.solutionium.shared.data.model.GeneralError
 import com.solutionium.shared.data.model.Order

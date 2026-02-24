@@ -1,10 +1,9 @@
-package com.solutionium.data.woo.products
+package com.solutionium.shared.data.products
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.solutionium.shared.data.api.woo.WooProductsRemoteSource
-import com.solutionium.data.database.dao.ProductDetailDao
 import com.solutionium.shared.data.model.AttributeTerm
 import com.solutionium.shared.data.model.AttributeTermsListType
 import com.solutionium.shared.data.model.Brand
@@ -21,7 +20,6 @@ import kotlinx.coroutines.flow.Flow
 
 internal class WooProductRepositoryImpl(
     private val wooProductsRemoteSource: WooProductsRemoteSource,
-    private val productDetailDao: ProductDetailDao,
 ) : WooProductRepository {
 
 

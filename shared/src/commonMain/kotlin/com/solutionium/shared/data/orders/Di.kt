@@ -1,4 +1,4 @@
-package com.solutionium.data.woo.orders
+package com.solutionium.shared.data.orders
 
 import org.koin.dsl.module
 

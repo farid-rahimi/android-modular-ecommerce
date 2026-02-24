@@ -1,7 +1,7 @@
 package com.solutionium.woo
 
 
-import com.solutionium.data.local.localModule
+import com.solutionium.shared.data.local.localModule
 import com.solutionium.feature.account.getAccountModules
 import com.solutionium.feature.address.getAddressModules
 import com.solutionium.feature.cart.getCartFeatureModules
@@ -12,6 +12,7 @@ import com.solutionium.feature.orders.getOrdersModules
 import com.solutionium.feature.product.detail.getProductDetailModules
 import com.solutionium.feature.product.list.getProductListModules
 import com.solutionium.feature.review.getReviewModules
+import com.solutionium.shared.data.local.androidLocalModule
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
@@ -21,7 +22,7 @@ val appModule = module {
 }
 
 val allModules = (
-    setOf(localModule, appModule) +
+    setOf(androidLocalModule, localModule, appModule) +
     getAccountModules() +
     getAddressModules() +
     getCartFeatureModules() +
