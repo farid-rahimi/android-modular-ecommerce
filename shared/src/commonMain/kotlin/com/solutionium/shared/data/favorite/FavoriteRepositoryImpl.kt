@@ -1,4 +1,4 @@
-package com.solutionium.data.favorite
+package com.solutionium.shared.data.favorite
 
 import com.solutionium.shared.data.api.woo.WooFavoriteRemoteSource
 import com.solutionium.shared.data.database.dao.FavoriteDao

@@ -1,6 +1,6 @@
 package com.solutionium.domain.favorite.impl
 
-import com.solutionium.data.favorite.FavoriteRepository
+import com.solutionium.shared.data.favorite.FavoriteRepository
 import com.solutionium.domain.favorite.ToggleFavoriteUseCase
 
 class ToggleFavoriteUseCaseImpl(

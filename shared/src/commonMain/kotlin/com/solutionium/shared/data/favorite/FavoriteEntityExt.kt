@@ -1,4 +1,4 @@
-package com.solutionium.data.favorite
+package com.solutionium.shared.data.favorite
 
 import com.solutionium.shared.data.database.entity.FavoriteEntity
 import com.solutionium.shared.data.model.Favorite

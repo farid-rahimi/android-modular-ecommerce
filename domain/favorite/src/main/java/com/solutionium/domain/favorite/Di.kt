@@ -1,6 +1,6 @@
 package com.solutionium.domain.favorite
 
-import com.solutionium.data.favorite.getFavoriteDataModules
+import com.solutionium.shared.data.favorite.getFavoriteDataModules
 import com.solutionium.domain.favorite.impl.ObserveFavoritesUseCaseImpl
 import com.solutionium.domain.favorite.impl.SyncFavoriteUseCaseImpl
 import com.solutionium.domain.favorite.impl.ToggleFavoriteUseCaseImpl

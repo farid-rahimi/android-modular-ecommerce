@@ -1,4 +1,4 @@
-package com.solutionium.data.favorite
+package com.solutionium.shared.data.favorite
 
 import kotlinx.coroutines.flow.Flow
 

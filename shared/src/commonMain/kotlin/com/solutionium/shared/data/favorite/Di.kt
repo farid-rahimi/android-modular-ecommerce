@@ -1,4 +1,4 @@
-package com.solutionium.data.favorite
+package com.solutionium.shared.data.favorite
 
 import com.solutionium.shared.data.api.woo.getApiModule
 import com.solutionium.shared.data.database.databaseModule
