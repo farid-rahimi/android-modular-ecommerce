@@ -1,9 +1,8 @@
 package com.solutionium.feature.cart
 
 import com.solutionium.shared.data.model.CartItem
-import com.solutionium.shared.data.model.UiText
 import com.solutionium.shared.data.model.ValidationInfo
-import com.solutionium.domain.cart.CartItemValidationResult
+import com.solutionium.shared.domain.cart.CartItemValidationResult
 
 data class CartScreenUiState(
     val cartItems: List<CartItem> = emptyList(),

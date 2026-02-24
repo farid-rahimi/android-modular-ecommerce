@@ -1,4 +1,4 @@
-package com.solutionium.domain.cart
+package com.solutionium.shared.domain.cart
 
 import com.solutionium.shared.data.model.GeneralError
 import com.solutionium.shared.data.model.Result

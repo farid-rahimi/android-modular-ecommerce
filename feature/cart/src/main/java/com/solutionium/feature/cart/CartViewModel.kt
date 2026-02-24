@@ -8,11 +8,11 @@ import com.solutionium.shared.data.model.GeneralError
 import com.solutionium.shared.data.model.Result
 import com.solutionium.shared.data.model.UiText
 import com.solutionium.shared.data.model.ValidationInfo
-import com.solutionium.domain.cart.ClearCartUseCase
-import com.solutionium.domain.cart.ConfirmValidationUseCase
-import com.solutionium.domain.cart.ObserveCartUseCase
-import com.solutionium.domain.cart.UpdateCartItemUseCase
-import com.solutionium.domain.cart.ValidateCartUseCase
+import com.solutionium.shared.domain.cart.ClearCartUseCase
+import com.solutionium.shared.domain.cart.ConfirmValidationUseCase
+import com.solutionium.shared.domain.cart.ObserveCartUseCase
+import com.solutionium.shared.domain.cart.UpdateCartItemUseCase
+import com.solutionium.shared.domain.cart.ValidateCartUseCase
 import com.solutionium.domain.config.PaymentMethodDiscountUseCase
 import com.solutionium.domain.user.CheckLoginUserUseCase
 import kotlinx.coroutines.delay

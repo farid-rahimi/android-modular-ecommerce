@@ -16,7 +16,6 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -52,7 +51,6 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -76,8 +74,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.distinctUntilChanged
-import androidx.lifecycle.map
 import com.solutionium.core.ui.common.component.CartItemCard
 import com.solutionium.core.ui.common.component.CenteredCircularProgress
 import com.solutionium.core.ui.common.component.FormattedPriceV2
@@ -85,12 +81,9 @@ import com.solutionium.shared.data.model.Address
 import com.solutionium.shared.data.model.CartItem
 import com.solutionium.shared.data.model.PaymentGateway
 import com.solutionium.shared.data.model.ShippingMethod
-import com.solutionium.shared.data.model.toThrowable
-import com.solutionium.domain.cart.impl.toFormattedString
 import com.solutionium.domain.checkout.CouponError
 import com.solutionium.domain.checkout.CouponErrorType
 import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.map
 import kotlin.math.absoluteValue
 
 

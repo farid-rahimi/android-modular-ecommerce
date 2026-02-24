@@ -1,4 +1,4 @@
-package com.solutionium.domain.cart
+package com.solutionium.shared.domain.cart
 
 interface ClearCartUseCase {
 

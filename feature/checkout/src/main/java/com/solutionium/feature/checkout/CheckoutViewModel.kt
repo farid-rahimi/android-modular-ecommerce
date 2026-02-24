@@ -16,8 +16,8 @@ import com.solutionium.shared.data.model.ShippingMethod
 import com.solutionium.shared.data.model.getPartialPaymentAmount
 import com.solutionium.shared.data.model.getPaymentRedirectUrl
 import com.solutionium.shared.data.model.getWalletPartialPaymentMeta
-import com.solutionium.domain.cart.ClearCartUseCase
-import com.solutionium.domain.cart.ObserveCartUseCase
+import com.solutionium.shared.domain.cart.ClearCartUseCase
+import com.solutionium.shared.domain.cart.ObserveCartUseCase
 import com.solutionium.domain.checkout.ApplyCouponUseCase
 import com.solutionium.domain.checkout.CreateOrderUseCase
 import com.solutionium.domain.checkout.GetOrderStatusUseCase
@@ -26,11 +26,8 @@ import com.solutionium.domain.checkout.GetShippingMethodsUseCase
 import com.solutionium.domain.config.ForcedEnabledPaymentUseCase
 import com.solutionium.domain.config.GetBACSDetailsUseCase
 import com.solutionium.domain.config.PaymentMethodDiscountUseCase
-import com.solutionium.domain.user.CheckLoginUserUseCase
-import com.solutionium.domain.user.CheckSuperUserUseCase
 import com.solutionium.domain.user.GetUserWalletUseCase
 import com.solutionium.domain.user.LoadAddressesUseCase
-import com.solutionium.domain.user.SetDefaultAddressUseCase
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow

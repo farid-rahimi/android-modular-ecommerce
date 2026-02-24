@@ -14,9 +14,9 @@ import com.solutionium.shared.data.model.ProductVariation
 import com.solutionium.shared.data.model.Result
 import com.solutionium.shared.data.model.getDecantBySize
 import com.solutionium.shared.data.model.toCartItem
-import com.solutionium.domain.cart.AddToCartUseCase
-import com.solutionium.domain.cart.GetCartItemByProductUseCase
-import com.solutionium.domain.cart.UpdateCartItemUseCase
+import com.solutionium.shared.domain.cart.AddToCartUseCase
+import com.solutionium.shared.domain.cart.GetCartItemByProductUseCase
+import com.solutionium.shared.domain.cart.UpdateCartItemUseCase
 import com.solutionium.domain.config.PaymentMethodDiscountUseCase
 import com.solutionium.domain.favorite.ObserveFavoritesUseCase
 import com.solutionium.domain.favorite.ToggleFavoriteUseCase

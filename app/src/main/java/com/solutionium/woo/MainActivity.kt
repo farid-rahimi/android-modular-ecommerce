@@ -35,7 +35,6 @@ import com.solutionium.shared.data.local.AppPreferencesImpl
 import com.solutionium.feature.home.GRAPH_HOME_ROUTE
 import com.solutionium.feature.home.navigateToHome
 import com.solutionium.feature.product.detail.navigateProductDetail
-import com.solutionium.shared.Greeting
 import com.solutionium.shared.data.local.AppPreferences
 import com.solutionium.woo.ui.WooApp
 import kotlinx.coroutines.delay

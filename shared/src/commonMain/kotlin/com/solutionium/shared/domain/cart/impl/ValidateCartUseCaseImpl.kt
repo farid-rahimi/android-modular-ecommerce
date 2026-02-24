@@ -1,4 +1,4 @@
-package com.solutionium.domain.cart.impl
+package com.solutionium.shared.domain.cart.impl
 
 import com.solutionium.shared.data.cart.CartRepository
 import com.solutionium.shared.data.model.CartItem
@@ -8,14 +8,13 @@ import com.solutionium.shared.data.model.GeneralError
 import com.solutionium.shared.data.model.Result
 import com.solutionium.shared.data.model.ValidationInfo
 import com.solutionium.shared.data.products.WooProductRepository
-import com.solutionium.domain.cart.CartItemValidationResult
-import com.solutionium.domain.cart.CartItemValidationStatus
-import com.solutionium.domain.cart.ValidateCartUseCase
+import com.solutionium.shared.domain.cart.CartItemValidationResult
+import com.solutionium.shared.domain.cart.CartItemValidationStatus
+import com.solutionium.shared.domain.cart.ValidateCartUseCase
+import com.solutionium.shared.util.toFormattedString
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
-import java.text.NumberFormat
-import java.util.Locale
 
 class ValidateCartUseCaseImpl(
     private val cartRepository: CartRepository,
@@ -115,9 +114,24 @@ class ValidateCartUseCaseImpl(
         }
 
         return when {
-            issues.isEmpty() -> CartItemValidationResult(localItem, CartItemValidationStatus.Valid, serverPrice, serverStock)
-            issues.size == 1 -> CartItemValidationResult(localItem, issues.first(), serverPrice, serverStock)
-            else -> CartItemValidationResult(localItem, CartItemValidationStatus.MultipleIssues(issues), serverPrice, serverStock)
+            issues.isEmpty() -> CartItemValidationResult(
+                localItem,
+                CartItemValidationStatus.Valid,
+                serverPrice,
+                serverStock
+            )
+            issues.size == 1 -> CartItemValidationResult(
+                localItem,
+                issues.first(),
+                serverPrice,
+                serverStock
+            )
+            else -> CartItemValidationResult(
+                localItem,
+                CartItemValidationStatus.MultipleIssues(issues),
+                serverPrice,
+                serverStock
+            )
         }
     }
 
@@ -216,7 +230,8 @@ class ValidateCartUseCaseImpl(
             }
             is CartItemValidationStatus.MultipleIssues -> {
                 status.issues.forEach { issue ->
-                    updatedItem = applyValidationToCartItem(updatedItem.copy(), CartItemValidationResult(originalItem, issue, serverPrice, serverStock), serverProduct)
+                    updatedItem = applyValidationToCartItem(updatedItem.copy(),
+                        CartItemValidationResult(originalItem, issue, serverPrice, serverStock), serverProduct)
                 }
 //                val messages = status.issues.mapNotNull {
 //                    when(it) {
@@ -250,21 +265,3 @@ class ValidateCartUseCaseImpl(
         return updatedItem
     }
 }
-
-
-// Extension function to format a Double into a clean, comma-separated string.
-fun Double.toFormattedString(): String {
-    val numberFormat = NumberFormat.getNumberInstance(Locale.US) // Or your desired Locale
-    // Check if the number has a fractional part.
-    return if (this % 1 == 0.0) {
-        // It's a whole number, format without decimal places.
-        numberFormat.format(this.toLong())
-    } else {
-        // It has decimal places, format as is.
-        numberFormat.format(this)
-    }
-}
-
-
-
-

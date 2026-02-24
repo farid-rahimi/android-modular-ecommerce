@@ -1,8 +1,8 @@
-package com.solutionium.domain.cart.impl
+package com.solutionium.shared.domain.cart.impl
 
 import com.solutionium.shared.data.cart.CartRepository
 import com.solutionium.shared.data.model.CartItem
-import com.solutionium.domain.cart.AddToCartUseCase
+import com.solutionium.shared.domain.cart.AddToCartUseCase
 
 internal class AddToCartUseCaseImpl(
     private val cartRepository: CartRepository

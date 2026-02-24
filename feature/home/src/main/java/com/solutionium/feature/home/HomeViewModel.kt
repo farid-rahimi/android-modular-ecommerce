@@ -8,9 +8,9 @@ import com.solutionium.shared.data.model.ProductListType
 import com.solutionium.shared.data.model.ProductThumbnail
 import com.solutionium.shared.data.model.Result
 import com.solutionium.shared.data.model.toCartItem
-import com.solutionium.domain.cart.AddToCartUseCase
-import com.solutionium.domain.cart.ObserveCartUseCase
-import com.solutionium.domain.cart.UpdateCartItemUseCase
+import com.solutionium.shared.domain.cart.AddToCartUseCase
+import com.solutionium.shared.domain.cart.ObserveCartUseCase
+import com.solutionium.shared.domain.cart.UpdateCartItemUseCase
 import com.solutionium.domain.config.GetContactInfoUseCase
 import com.solutionium.domain.config.GetHeaderLogoUseCase
 import com.solutionium.domain.config.GetStoriesUseCase
