@@ -8,7 +8,7 @@ import com.solutionium.core.ui.common.component.OrderStatusFilter
 import com.solutionium.shared.data.model.FilterCriterion
 import com.solutionium.shared.data.model.Order
 import com.solutionium.shared.data.model.OrderFilterKey
-import com.solutionium.domain.order.GetOrderListPagingUseCase
+import com.solutionium.shared.domain.order.GetOrderListPagingUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

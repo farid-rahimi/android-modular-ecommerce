@@ -1,4 +1,4 @@
-package com.solutionium.domain.order
+package com.solutionium.shared.domain.order
 
 import androidx.paging.PagingData
 import com.solutionium.shared.data.model.FilterCriterion

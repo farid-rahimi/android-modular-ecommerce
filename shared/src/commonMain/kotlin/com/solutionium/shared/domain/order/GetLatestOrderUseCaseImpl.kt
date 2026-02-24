@@ -1,4 +1,4 @@
-package com.solutionium.domain.order
+package com.solutionium.shared.domain.order
 
 import com.solutionium.shared.data.model.GeneralError
 import com.solutionium.shared.data.model.Order

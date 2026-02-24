@@ -1,4 +1,4 @@
-package com.solutionium.domain.order
+package com.solutionium.shared.domain.order
 
 import com.solutionium.shared.data.orders.orderDataModule
 import org.koin.dsl.module
