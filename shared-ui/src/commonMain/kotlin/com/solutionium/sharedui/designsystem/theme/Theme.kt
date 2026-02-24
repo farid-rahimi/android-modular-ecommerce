@@ -93,7 +93,7 @@ fun WooTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = WooTypography,
+        typography = wooTypography(),
         content = content,
     )
 }

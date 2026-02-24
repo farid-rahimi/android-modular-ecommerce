@@ -1,8 +1,10 @@
-package com.solutionium.feature.product.list
+package com.solutionium.sharedui.products
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.calculateEndPadding
+import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -16,25 +18,35 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.koin.compose.viewmodel.koinViewModel
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.solutionium.core.designsystem.plus
-import com.solutionium.core.ui.common.component.ProductThumbnailCard
-import com.solutionium.sharedui.common.component.ProductThumbnailPlaceholder
 import com.solutionium.shared.data.model.ProductThumbnail
+import com.solutionium.sharedui.common.component.ProductThumbnailCard2
+import com.solutionium.sharedui.common.component.ProductThumbnailPlaceholder
+import io.ktor.http.parametersOf
+import org.koin.compose.koinInject
+import org.koin.core.parameter.parametersOf
 
 @Composable
 fun ProductListScreen(
     onProductClick: (id: Int) -> Unit,
     onBack: () -> Unit,
+    args: Map<String, String> = emptyMap(),
 ) {
-    val viewModel =koinViewModel<ProductListViewModel>()
+    val viewModel = koinInject<com.solutionium.shared.viewmodel.ProductListViewModel>(
+        parameters = { parametersOf(args) }
+    )
+    DisposableEffect(viewModel) {
+        onDispose { viewModel.clear() }
+    }
+
     val pagedList = viewModel.pagedList.collectAsLazyPagingItems()
     val state by viewModel.state.collectAsState()
 
@@ -59,6 +71,13 @@ fun ProductListScreen(
         )
     }
 }
+
+private operator fun PaddingValues.plus(other: PaddingValues): PaddingValues = PaddingValues(
+    start = this.calculateStartPadding(LayoutDirection.Ltr) + other.calculateStartPadding(LayoutDirection.Ltr),
+    top = this.calculateTopPadding() + other.calculateTopPadding(),
+    end = this.calculateEndPadding(LayoutDirection.Ltr) + other.calculateEndPadding(LayoutDirection.Ltr),
+    bottom = this.calculateBottomPadding() + other.calculateBottomPadding(),
+)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -142,7 +161,7 @@ private fun ProductListContent(
             val item = pagedList[index]
             if (item != null) {
 
-                ProductThumbnailCard(
+                ProductThumbnailCard2(
                     product = item,
                     onProductClick = { onProductClick(item.id) },
                     isFavorite = isFavorite(item.id),

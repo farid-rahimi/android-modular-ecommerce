@@ -1,4 +1,4 @@
-package com.solutionium.core.ui.common.component
+package com.solutionium.sharedui.common.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
@@ -44,13 +44,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.solutionium.core.ui.common.DateHelper
+import com.solutionium.sharedui.common.DateHelper
 import com.solutionium.core.ui.common.R
 import com.solutionium.shared.data.model.Review
 import com.solutionium.shared.data.model.ReviewChild
-import java.time.OffsetDateTime
-import java.time.format.DateTimeFormatter
-import java.time.format.FormatStyle
 
 
 @Composable

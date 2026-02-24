@@ -28,9 +28,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.solutionium.core.ui.common.component.CriteriaRatingBar
+import com.solutionium.sharedui.common.component.CriteriaRatingBar
 import com.solutionium.sharedui.common.component.OrderSummaryCardPlaceholder
-import com.solutionium.core.ui.common.component.ReviewItem
+import com.solutionium.sharedui.common.component.ReviewItem
 import com.solutionium.shared.data.model.Review
 
 @Composable

@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.solutionium.core.ui.common.component.OrderStatusFilter
+import com.solutionium.sharedui.common.component.OrderStatusFilter
 import com.solutionium.shared.data.model.FilterCriterion
 import com.solutionium.shared.data.model.Order
 import com.solutionium.shared.data.model.OrderFilterKey

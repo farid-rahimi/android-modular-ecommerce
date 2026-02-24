@@ -1,12 +1,13 @@
 package com.solutionium.sharedui.designsystem.theme
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import com.solutionium.core.ui.common.R
 
 actual object SharedUiFonts {
-    actual val primary: FontFamily = FontFamily(
+    private val primaryFontFamily: FontFamily = FontFamily(
         Font(R.font.vazir_thin, FontWeight.Thin),
         Font(R.font.vazir_light, FontWeight.ExtraLight),
         Font(R.font.vazir_light, FontWeight.Light),
@@ -17,4 +18,7 @@ actual object SharedUiFonts {
         Font(R.font.vazir_bold, FontWeight.ExtraBold),
         Font(R.font.vazir_black, FontWeight.Black)
     )
+
+    @Composable
+    actual fun primary(): FontFamily = primaryFontFamily
 }

@@ -1,4 +1,4 @@
-package com.solutionium.core.ui.common.component
+package com.solutionium.sharedui.common.component
 
 
 import androidx.compose.foundation.layout.Column

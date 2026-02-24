@@ -44,10 +44,9 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.solutionium.core.ui.common.LoginPromptDialog
-import com.solutionium.core.ui.common.component.CartItemCard
-import com.solutionium.core.ui.common.component.PriceView
+import com.solutionium.sharedui.common.LoginPromptDialog
+import com.solutionium.sharedui.common.component.CartItemCard
+import com.solutionium.sharedui.common.component.PriceView
 import com.solutionium.shared.data.model.CartItem
 import com.solutionium.shared.data.model.UiText
 import com.solutionium.shared.data.model.ValidationInfo

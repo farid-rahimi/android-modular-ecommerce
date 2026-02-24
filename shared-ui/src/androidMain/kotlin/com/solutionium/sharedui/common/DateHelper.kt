@@ -1,11 +1,13 @@
-package com.solutionium.core.ui.common
+package com.solutionium.sharedui.common
 
 import android.content.Context
+import com.solutionium.core.ui.common.R
 import java.time.LocalDateTime
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
 import java.util.Locale
+import kotlin.text.iterator
 
 /**
  * A helper object for parsing and formatting dates, with a focus on converting

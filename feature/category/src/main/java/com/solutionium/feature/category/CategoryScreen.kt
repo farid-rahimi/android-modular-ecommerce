@@ -1,6 +1,6 @@
 package com.solutionium.feature.category
 
-import com.solutionium.core.ui.common.component.SearchAppBar
+import com.solutionium.sharedui.common.component.SearchAppBar
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -57,9 +57,9 @@ import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.solutionium.sharedui.common.component.CategoryScreenPlaceholder
-import com.solutionium.core.ui.common.component.PerfumeAttributes
-import com.solutionium.core.ui.common.component.PriceView
-import com.solutionium.core.ui.common.component.ShoeAttributes
+import com.solutionium.sharedui.common.component.PerfumeAttributes
+import com.solutionium.sharedui.common.component.PriceView
+import com.solutionium.sharedui.common.component.ShoeAttributes
 import com.solutionium.shared.data.model.AttributeTerm
 import com.solutionium.shared.data.model.DisplayableTerm
 import com.solutionium.shared.data.model.PERFUME_CAT_ID

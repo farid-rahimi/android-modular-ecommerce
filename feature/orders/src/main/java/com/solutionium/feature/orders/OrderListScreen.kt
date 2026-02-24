@@ -18,8 +18,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.solutionium.core.ui.common.component.OrderStatusFilter
-import com.solutionium.core.ui.common.component.OrderSummaryCard
+import com.solutionium.sharedui.common.component.OrderStatusFilter
+import com.solutionium.sharedui.common.component.OrderSummaryCard
 import com.solutionium.sharedui.common.component.OrderSummaryCardPlaceholder
 import com.solutionium.shared.data.model.Order
 

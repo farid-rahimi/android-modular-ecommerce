@@ -10,9 +10,9 @@ import com.solutionium.feature.checkout.getCheckoutModules
 import com.solutionium.feature.home.getHomeModules
 import com.solutionium.feature.orders.getOrdersModules
 import com.solutionium.feature.product.detail.getProductDetailModules
-import com.solutionium.feature.product.list.getProductListModules
 import com.solutionium.feature.review.getReviewModules
 import com.solutionium.shared.data.local.androidLocalModule
+import com.solutionium.shared.viewmodel.getProductListModules
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
@@ -34,4 +34,3 @@ val allModules = (
     getProductListModules() +
     getReviewModules()
 ).toList()
-

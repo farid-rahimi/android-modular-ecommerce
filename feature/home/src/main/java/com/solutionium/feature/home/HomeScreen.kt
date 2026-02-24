@@ -41,14 +41,14 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.solutionium.core.ui.common.component.BannerSlider
-import com.solutionium.core.ui.common.component.CategoryThumbnailCard
-import com.solutionium.core.ui.common.component.ContactSupportDialog
-import com.solutionium.core.ui.common.component.HeaderLogo
+import com.solutionium.sharedui.common.component.BannerSlider
+import com.solutionium.sharedui.common.component.CategoryThumbnailCard
+import com.solutionium.sharedui.common.component.ContactSupportDialog
+import com.solutionium.sharedui.common.component.HeaderLogo
 import com.solutionium.sharedui.common.component.ProductCarouselPlaceholder
-import com.solutionium.core.ui.common.component.ProductThumbnailCard
+import com.solutionium.sharedui.common.component.ProductThumbnailCard2
 import com.solutionium.sharedui.common.component.StoryReelPlaceholder
-import com.solutionium.core.ui.common.component.StoryReelSection
+import com.solutionium.sharedui.common.component.StoryReelSection
 import com.solutionium.shared.data.model.Category
 import com.solutionium.shared.data.model.PRODUCT_ARG_FEATURED
 import com.solutionium.shared.data.model.PRODUCT_ARG_ON_SALE
@@ -368,7 +368,7 @@ fun ProductSectionRow(
                 Modifier
                     .testTag("discover_carousel_item")
 
-                ProductThumbnailCard(
+                ProductThumbnailCard2(
                     product = item,
                     onProductClick = { onProductClick(item.id) },
                     onFavoriteClick = toggleFavorite,

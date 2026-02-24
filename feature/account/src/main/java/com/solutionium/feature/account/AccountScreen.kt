@@ -65,11 +65,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.solutionium.core.ui.common.DateHelper
-import com.solutionium.core.ui.common.component.ContactSupportDialog
-import com.solutionium.core.ui.common.component.FormattedPriceV2
+import com.solutionium.sharedui.common.DateHelper
+import com.solutionium.sharedui.common.component.ContactSupportDialog
+import com.solutionium.sharedui.common.component.FormattedPriceV2
 import com.solutionium.sharedui.common.component.LanguageSelectionScreen
-import com.solutionium.core.ui.common.component.OrderSummaryCard
+import com.solutionium.sharedui.common.component.OrderSummaryCard
 import com.solutionium.shared.data.model.Order
 import com.solutionium.shared.data.model.Transaction
 import com.solutionium.shared.data.model.Type

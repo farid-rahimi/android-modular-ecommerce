@@ -27,8 +27,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.navOptions
 import com.solutionium.sharedui.common.GlobalUiState
-import com.solutionium.core.ui.common.LoginPromptDialog
-import com.solutionium.core.ui.common.component.StoryViewer
+import com.solutionium.sharedui.common.LoginPromptDialog
+import com.solutionium.sharedui.common.component.StoryViewer
 import com.solutionium.feature.account.navigateToAccount
 import com.solutionium.feature.cart.CartViewModel
 import com.solutionium.feature.home.GRAPH_HOME_ROUTE

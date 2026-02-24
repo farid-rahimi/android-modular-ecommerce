@@ -1,4 +1,4 @@
-package com.solutionium.core.ui.common.component
+package com.solutionium.sharedui.common.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -28,7 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.solutionium.core.ui.common.DateHelper
+import com.solutionium.sharedui.common.DateHelper
 import com.solutionium.core.ui.common.R
 import com.solutionium.shared.data.model.Order
 

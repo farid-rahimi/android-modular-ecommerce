@@ -1,4 +1,4 @@
-package com.solutionium.core.ui.common.component
+package com.solutionium.sharedui.common.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.interaction.collectIsDraggedAsState
@@ -19,7 +19,6 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
 import com.solutionium.shared.data.model.BannerItem
-import com.solutionium.sharedui.common.component.LinePagerIndicators
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlin.math.absoluteValue

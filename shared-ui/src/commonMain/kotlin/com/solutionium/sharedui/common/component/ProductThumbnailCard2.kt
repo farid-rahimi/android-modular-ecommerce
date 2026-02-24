@@ -1,4 +1,4 @@
-package com.solutionium.core.ui.common.component
+package com.solutionium.sharedui.common.component
 
 
 import androidx.compose.animation.AnimatedContent
@@ -54,29 +54,34 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.ColorPainter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import coil3.request.ImageRequest
-import coil3.request.crossfade
-import com.solutionium.core.ui.common.R
 import com.solutionium.shared.data.model.FeatureType
 import com.solutionium.shared.data.model.ProductCatType
 import com.solutionium.shared.data.model.ProductThumbnail
+import com.solutionium.sharedui.resources.Res
+import com.solutionium.sharedui.resources.feature_authentic
+import com.solutionium.sharedui.resources.feature_fast_selling
+import com.solutionium.sharedui.resources.feature_free_shipping
+import com.solutionium.sharedui.resources.feature_high_quality
+import com.solutionium.sharedui.resources.feature_size_exchange
+import com.solutionium.sharedui.resources.feature_team_choice
+import com.solutionium.sharedui.resources.full_pay
+import com.solutionium.sharedui.resources.in_stock
+import com.solutionium.sharedui.resources.in_stock_count
+import com.solutionium.sharedui.resources.installment_pay
+import com.solutionium.sharedui.resources.out_of_stock
 import kotlinx.coroutines.delay
-import androidx.core.graphics.toColorInt
-import com.solutionium.sharedui.common.component.CartIQuantityButtons
+import org.jetbrains.compose.resources.stringResource
 
 
 @Composable
-fun ProductThumbnailCard(
+fun ProductThumbnailCard2(
     product: ProductThumbnail,
     onProductClick: (productId: Int) -> Unit,
     modifier: Modifier = Modifier,
@@ -110,18 +115,16 @@ fun ProductThumbnailCard(
                     .background(Color.White)
 
             ) { // Image container
+
                 AsyncImage(
-                    model = ImageRequest.Builder(LocalContext.current)
-                        .data(product.imageUrl.ifEmpty { ColorPainter(MaterialTheme.colorScheme.secondaryContainer) })
-                        .crossfade(true)
-                        .build(),
+                    model = product.imageUrl,
                     contentDescription = product.name,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(24.dp)
+                        .padding(20.dp),
                 )
-                FavoriteIconButton(
+                FavoriteIconButton2(
                     isFavorite = isFavorite,
                     onClick = { onFavoriteClick(product.id, isFavorite) },
                     modifier = Modifier
@@ -136,7 +139,7 @@ fun ProductThumbnailCard(
                 )
 
                 if (product.isOnSale())
-                    SalesBadge(
+                    SalesBadge2(
                         discount = product.salesPercentage(),
                         modifier = Modifier
                             .align(Alignment.TopStart)
@@ -231,11 +234,11 @@ fun ProductThumbnailCard(
 
                 if (showStock) {
                     val stockText = if (product.manageStock && product.stock > 0) {
-                        stringResource(R.string.in_stock_count, product.stock)
+                        stringResource(Res.string.in_stock_count, product.stock)
                     } else if (!product.manageStock && product.stockStatus == "instock") {
-                        stringResource(R.string.in_stock)
+                        stringResource(Res.string.in_stock)
                     } else {
-                        stringResource(R.string.out_of_stock)
+                        stringResource(Res.string.out_of_stock)
                     }
                     Text(
                         text = stockText,
@@ -252,10 +255,10 @@ fun ProductThumbnailCard(
                 Row(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(stringResource(R.string.installment_pay), fontSize = 9.sp, color = Color.Gray)
+                    Text(stringResource(Res.string.installment_pay), fontSize = 9.sp, color = Color.Gray)
                     Spacer(modifier = Modifier.weight(1f))
                     Text("x 4 ", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f))
-                    PriceView(
+                    PriceView2(
                         price = product.price / 4,
                         onSale = product.onSale,
                         regularPrice = product.regularPrice?.let { it / 4 },
@@ -266,9 +269,9 @@ fun ProductThumbnailCard(
                     Row(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(text = stringResource(R.string.full_pay), fontSize = 9.sp, color = Color.Gray)
+                        Text(text = stringResource(Res.string.full_pay), fontSize = 9.sp, color = Color.Gray)
                         Spacer(modifier = Modifier.weight(1f))
-                        PriceView(
+                        PriceView2(
                             price = discountedPrice(product.price) ?: product.price,
                             onSale = product.onSale,
                             regularPrice = discountedPrice(product.regularPrice)
@@ -280,13 +283,13 @@ fun ProductThumbnailCard(
 
                 // Type-Specific Attributes
                 when (product.type) {
-                    ProductCatType.PERFUME -> PerfumeAttributes(product)
-                    ProductCatType.SHOES -> ShoeAttributes(product)
+                    ProductCatType.PERFUME -> PerfumeAttributes2(product)
+                    ProductCatType.SHOES -> ShoeAttributes2(product)
                     else -> Spacer(modifier = Modifier.height(18.dp)) // Placeholder or empty space for other types
                 }
 
 
-                RotatingFeatureText(features = product.features().map { it.toUiFeature() })
+                RotatingFeatureText2(features = product.features().map { it.toUiFeature2() })
 
 
                 // Rotating Features Text
@@ -306,7 +309,7 @@ fun ProductThumbnailCard(
 
 
 @Composable
-fun PerfumeAttributes(
+fun PerfumeAttributes2(
     product: ProductThumbnail,
     onlyVolume: Boolean = false
 ) {
@@ -320,7 +323,7 @@ fun PerfumeAttributes(
                 horizontalArrangement = Arrangement.spacedBy(6.dp),
             ) {
                 product.scentGroup?.forEach {
-                    AttributeChip(text = it)
+                    AttributeChip2(text = it)
                 }
             }
         }
@@ -330,13 +333,13 @@ fun PerfumeAttributes(
             ) {
             Spacer(modifier = Modifier.weight(1f))
             product.volume?.let {
-                AttributeChip(text = it, available = product.isInStock)
+                AttributeChip2(text = it, available = product.isInStock)
             }
 
             product.decants?.let {
                 if (it.isNotEmpty()) {
                     it.forEach { size ->
-                        AttributeChip(text = size, icon = null)
+                        AttributeChip2(text = size, icon = null)
                     }
                 }
             }
@@ -348,13 +351,13 @@ fun PerfumeAttributes(
 }
 
 @Composable
-fun ShoeAttributes(product: ProductThumbnail) {
+fun ShoeAttributes2(product: ProductThumbnail) {
     Column(
         verticalArrangement = Arrangement.spacedBy(4.dp),
         modifier = Modifier.heightIn(min = 18.dp) // Consistent height
     ) {
         product.sizingRange?.let {
-            AttributeChip(text = "Sizes: $it", icon = Icons.Filled.Straighten)
+            AttributeChip2(text = "Sizes: $it", icon = Icons.Filled.Straighten)
         }
         product.availableColorsHex?.let { colors ->
             if (colors.isNotEmpty()) {
@@ -371,7 +374,7 @@ fun ShoeAttributes(product: ProductThumbnail) {
                             modifier = Modifier
                                 .size(8.dp)
                                 .clip(CircleShape)
-                                .background(Color(hexColor.toColorInt()))
+                                //.background(hexToColor(hexColor))
                                 .padding(end = 4.dp)
                         )
                     }
@@ -387,7 +390,7 @@ fun ShoeAttributes(product: ProductThumbnail) {
 
 
 @Composable
-fun AttributeChip(text: String, icon: ImageVector? = null, available: Boolean = true) {
+fun AttributeChip2(text: String, icon: ImageVector? = null, available: Boolean = true) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
@@ -420,7 +423,7 @@ fun AttributeChip(text: String, icon: ImageVector? = null, available: Boolean = 
 }
 
 @Composable
-fun RotatingFeatureText(features: List<UiFeature>) {
+fun RotatingFeatureText2(features: List<UiFeature2>) {
     if (features.isEmpty()) return
 
     var currentIndex by remember { mutableIntStateOf(0) }
@@ -470,7 +473,7 @@ fun RotatingFeatureText(features: List<UiFeature>) {
 }
 
 @Composable
-fun FavoriteIconButton(
+fun FavoriteIconButton2(
     isFavorite: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
@@ -488,7 +491,7 @@ fun FavoriteIconButton(
 }
 
 @Composable
-fun SalesBadge(
+fun SalesBadge2(
     discount: Int,
     modifier: Modifier = Modifier
 ) {
@@ -519,83 +522,66 @@ fun SalesBadge(
 }
 
 
-//// --- Preview ---
-//
-//class SampleProductThumbnailProvider : PreviewParameterProvider<ProductThumbnail> {
-//    override val values = sequenceOf(
-//        ProductThumbnail(
-//            id = 1, name = "Elegant Floral Eau de Parfum For Her Summer Collection", imageUrl = "https://example.com/perfume1.jpg",
-//            price = 89.99, salePrice = 69.99, isFavorite = true, type = ProductType.PERFUME,
-//            scentGroup = "Floral Fruity", volume = "100ml",
-//            rotatingFeatures = listOf(
-//                ProductFeatureText("3 easy installments", 0), // 0 for Payment icon
-//                ProductFeatureText("Notes: Rose, Jasmine, Citrus"),
-//                ProductFeatureText("Est. Delivery: 2-3 days", 1) // 1 for Shipping icon
-//            )
-//        ),
-//        ProductThumbnail(
-//            id = 2, name = "Urban Runner Pro Max Comfort Sneakers", imageUrl = "https://example.com/shoe1.jpg",
-//            price = 120.00, isFavorite = false, type = ProductType.SHOES,
-//            sizingRange = "US 8-13", availableColorsHex = listOf("#FF0000", "#0000FF", "#00FF00", "#FFFF00", "#000000", "#FFFFFF"),
-//            rotatingFeatures = listOf(
-//                ProductFeatureText("Free returns available"),
-//                ProductFeatureText("Breathable mesh upper"),
-//                ProductFeatureText("Ships in 1 day", 1)
-//            ),
-//            hasSimpleAddToCart = true
-//        ),
-//        ProductThumbnail(
-//            id = 3, name = "Classic Leather Oxford Shoes for Men", imageUrl = "", // Empty to test placeholder
-//            price = 150.00, salePrice = 135.00, isFavorite = true, type = ProductType.SHOES,
-//            sizingRange = "UK 7-11", availableColorsHex = listOf("#A0522D", "#000000"),
-//            rotatingFeatures = emptyList(),
-//            hasSimpleAddToCart = false
-//        )
-//    )
-//}
-//
-
-data class UiFeature(
+data class UiFeature2(
     val text: String,
     val icon: ImageVector?
 )
 
 @Composable
-fun FeatureType.toUiFeature(): UiFeature =
+fun FeatureType.toUiFeature2(): UiFeature2 =
     when (this) {
         FeatureType.FREE_SHIPPING ->
-            UiFeature(
-                text = stringResource(R.string.feature_free_shipping),
+            UiFeature2(
+                text = stringResource(Res.string.feature_free_shipping),
                 icon = Icons.Outlined.LocalShipping
             )
 
         FeatureType.FAST_SELLING ->
-            UiFeature(
-                text = stringResource(R.string.feature_fast_selling),
+            UiFeature2(
+                text = stringResource(Res.string.feature_fast_selling),
                 icon = Icons.Outlined.RocketLaunch
             )
 
         FeatureType.AUTHENTIC ->
-            UiFeature(
-                text = stringResource(R.string.feature_authentic),
+            UiFeature2(
+                text = stringResource(Res.string.feature_authentic),
                 icon = Icons.Outlined.Verified
             )
 
         FeatureType.SIZE_EXCHANGE ->
-            UiFeature(
-                text = stringResource(R.string.feature_size_exchange),
+            UiFeature2(
+                text = stringResource(Res.string.feature_size_exchange),
                 icon = Icons.Outlined.Sync
             )
 
         FeatureType.HIGH_QUALITY ->
-            UiFeature(
-                text = stringResource(R.string.feature_high_quality),
+            UiFeature2(
+                text = stringResource(Res.string.feature_high_quality),
                 icon = Icons.Outlined.BrightnessAuto
             )
 
         FeatureType.TEAM_CHOICE ->
-            UiFeature(
-                text = stringResource(R.string.feature_team_choice),
+            UiFeature2(
+                text = stringResource(Res.string.feature_team_choice),
                 icon = Icons.Outlined.Loyalty
             )
     }
+
+fun hexToColor2(hex: String): Color {
+    val cleanHex = hex.removePrefix("#")
+    return when (cleanHex.length) {
+        6 -> Color(
+            red = cleanHex.substring(0, 2).toInt(16) / 255f,
+            green = cleanHex.substring(2, 4).toInt(16) / 255f,
+            blue = cleanHex.substring(4, 6).toInt(16) / 255f,
+            alpha = 1f
+        )
+        8 -> Color(
+            red = cleanHex.substring(2, 4).toInt(16) / 255f,
+            green = cleanHex.substring(4, 6).toInt(16) / 255f,
+            blue = cleanHex.substring(6, 8).toInt(16) / 255f,
+            alpha = cleanHex.substring(0, 2).toInt(16) / 255f
+        )
+        else -> Color.Transparent
+    }
+}

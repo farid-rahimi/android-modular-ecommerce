@@ -1,4 +1,4 @@
-package com.solutionium.core.ui.common.component
+package com.solutionium.sharedui.common.component
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.LinearEasing

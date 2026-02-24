@@ -36,7 +36,11 @@ kotlin {
                 implementation(compose.foundation)
                 implementation(compose.material3)
                 implementation(compose.ui)
+                implementation(compose.components.resources)
                 implementation(compose.materialIconsExtended)
+                implementation(libs.coil.compose)
+                implementation(libs.coil.network.ktor3)
+                implementation(project(":shared"))
             }
         }
 
@@ -51,9 +55,22 @@ kotlin {
                 implementation(project(":shared"))
                 implementation(libs.accompanist.pager)
                 implementation(libs.androidx.activity.compose)
+                implementation(libs.paging.compose)
+                implementation(libs.koin.compose)
                 implementation(libs.coil.compose)
                 implementation(libs.androidx.core.ktx)
+                implementation(libs.ktor.client.okhttp)
+            }
+        }
+
+        iosMain {
+            dependencies {
+                implementation(libs.ktor.client.darwin)
             }
         }
     }
+}
+
+compose.resources {
+    packageOfResClass = "com.solutionium.sharedui.resources"
 }
