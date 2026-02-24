@@ -1,4 +1,4 @@
-package com.solutionium.data.cart
+package com.solutionium.shared.data.cart
 
 import com.solutionium.shared.data.database.entity.CartItemEntity
 import com.solutionium.shared.data.database.entity.VariationAttributeSerializable

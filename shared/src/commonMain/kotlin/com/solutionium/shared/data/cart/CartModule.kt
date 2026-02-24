@@ -1,4 +1,4 @@
-package com.solutionium.data.cart
+package com.solutionium.shared.data.cart
 
 import org.koin.dsl.module
 

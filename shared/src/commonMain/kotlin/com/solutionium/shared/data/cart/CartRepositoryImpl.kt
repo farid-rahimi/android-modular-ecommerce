@@ -1,4 +1,4 @@
-package com.solutionium.data.cart
+package com.solutionium.shared.data.cart
 
 import com.solutionium.shared.data.database.dao.CartDao
 import com.solutionium.shared.data.model.CartItem

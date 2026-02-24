@@ -1,6 +1,6 @@
 package com.solutionium.domain.cart
 
-import com.solutionium.data.cart.cartRepoModule
+import com.solutionium.shared.data.cart.cartRepoModule
 import com.solutionium.domain.cart.impl.AddToCartUseCaseImpl
 import com.solutionium.domain.cart.impl.ClearCartUseCaseImpl
 import com.solutionium.domain.cart.impl.ConfirmValidationUseCaseImpl
