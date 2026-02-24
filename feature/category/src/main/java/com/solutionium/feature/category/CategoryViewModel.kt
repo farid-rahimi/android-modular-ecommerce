@@ -11,9 +11,9 @@ import com.solutionium.shared.data.model.ProductThumbnail
 import com.solutionium.shared.data.model.Result
 import com.solutionium.shared.domain.config.GetAppImages
 import com.solutionium.shared.domain.user.CheckSuperUserUseCase
-import com.solutionium.domain.woo.products.GetAttributeTermsUseCase
-import com.solutionium.domain.woo.products.GetBrandsUseCase
-import com.solutionium.domain.woo.products.SearchProductsUseCase
+import com.solutionium.shared.domain.products.GetAttributeTermsUseCase
+import com.solutionium.shared.domain.products.GetBrandsUseCase
+import com.solutionium.shared.domain.products.SearchProductsUseCase
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

@@ -1,4 +1,4 @@
-package com.solutionium.domain.woo.products
+package com.solutionium.shared.domain.products
 
 import com.solutionium.shared.data.model.AttributeTerm
 import com.solutionium.shared.data.model.AttributeTermsListType

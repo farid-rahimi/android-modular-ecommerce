@@ -1,13 +1,13 @@
-package com.solutionium.domain.woo.products
+package com.solutionium.shared.domain.products
 
 import com.solutionium.shared.data.products.productsDataModule
-import com.solutionium.domain.woo.products.impl.GetAttributeTermsUseCaseImpl
-import com.solutionium.domain.woo.products.impl.GetBrandsUseCaseImpl
-import com.solutionium.domain.woo.products.impl.GetProductDetailsUseCaseImpl
-import com.solutionium.domain.woo.products.impl.GetProductListStreamUseCaseImpl
-import com.solutionium.domain.woo.products.impl.GetProductVariationsUseCaseImpl
-import com.solutionium.domain.woo.products.impl.GetProductsListUseCaseImpl
-import com.solutionium.domain.woo.products.impl.SearchProductsUseCaseImpl
+import com.solutionium.shared.domain.products.impl.GetAttributeTermsUseCaseImpl
+import com.solutionium.shared.domain.products.impl.GetBrandsUseCaseImpl
+import com.solutionium.shared.domain.products.impl.GetProductDetailsUseCaseImpl
+import com.solutionium.shared.domain.products.impl.GetProductListStreamUseCaseImpl
+import com.solutionium.shared.domain.products.impl.GetProductVariationsUseCaseImpl
+import com.solutionium.shared.domain.products.impl.GetProductsListUseCaseImpl
+import com.solutionium.shared.domain.products.impl.SearchProductsUseCaseImpl
 import org.koin.dsl.module
 
 fun getProductsDomainModules() = setOf(productsDomainModule, productsDataModule)

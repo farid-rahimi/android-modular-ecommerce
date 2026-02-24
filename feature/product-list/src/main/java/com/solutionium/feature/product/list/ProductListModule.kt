@@ -4,7 +4,7 @@ import com.solutionium.shared.domain.cart.getCartDomainModules
 import com.solutionium.shared.domain.config.getConfigDomainModules
 import com.solutionium.shared.domain.favorite.getFavoriteDomainModules
 import com.solutionium.shared.domain.user.getUserDomainModules
-import com.solutionium.domain.woo.products.getProductsDomainModules
+import com.solutionium.shared.domain.products.getProductsDomainModules
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 

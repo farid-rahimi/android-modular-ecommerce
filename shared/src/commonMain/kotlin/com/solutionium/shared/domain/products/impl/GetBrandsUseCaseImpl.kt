@@ -1,8 +1,8 @@
-package com.solutionium.domain.woo.products.impl
+package com.solutionium.shared.domain.products.impl
 
 import com.solutionium.shared.data.model.BrandListType
 import com.solutionium.shared.data.products.WooProductRepository
-import com.solutionium.domain.woo.products.GetBrandsUseCase
+import com.solutionium.shared.domain.products.GetBrandsUseCase
 import kotlinx.coroutines.flow.flow
 
 internal class GetBrandsUseCaseImpl(

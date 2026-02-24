@@ -23,8 +23,8 @@ import com.solutionium.shared.domain.user.AddStoryViewUseCase
 import com.solutionium.shared.domain.user.CheckLoginUserUseCase
 import com.solutionium.shared.domain.user.CheckSuperUserUseCase
 import com.solutionium.shared.domain.user.GetAllStoryViewUseCase
-import com.solutionium.domain.woo.categories.GetCategoryListUseCase
-import com.solutionium.domain.woo.products.GetProductsListUseCase
+import com.solutionium.shared.domain.categories.GetCategoryListUseCase
+import com.solutionium.shared.domain.products.GetProductsListUseCase
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow

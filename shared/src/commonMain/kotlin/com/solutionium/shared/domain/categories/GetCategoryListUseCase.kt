@@ -1,8 +1,7 @@
-package com.solutionium.domain.woo.categories
+package com.solutionium.shared.domain.categories
 
 import com.solutionium.shared.data.model.Category
 import com.solutionium.shared.data.model.GeneralError
-import com.solutionium.shared.data.model.ProductThumbnail
 import com.solutionium.shared.data.model.Result
 import kotlinx.coroutines.flow.Flow
 

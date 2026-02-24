@@ -1,4 +1,4 @@
-package com.solutionium.domain.woo.categories
+package com.solutionium.shared.domain.categories
 
 import com.solutionium.shared.data.model.Category
 import com.solutionium.shared.data.model.GeneralError

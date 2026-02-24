@@ -16,7 +16,7 @@ import com.solutionium.shared.domain.config.PaymentMethodDiscountUseCase
 import com.solutionium.shared.domain.favorite.ObserveFavoritesUseCase
 import com.solutionium.shared.domain.favorite.ToggleFavoriteUseCase
 import com.solutionium.shared.domain.user.CheckSuperUserUseCase
-import com.solutionium.domain.woo.products.GetProductListStreamUseCase
+import com.solutionium.shared.domain.products.GetProductListStreamUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

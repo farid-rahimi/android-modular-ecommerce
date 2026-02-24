@@ -21,8 +21,8 @@ import com.solutionium.shared.domain.config.PaymentMethodDiscountUseCase
 import com.solutionium.shared.domain.favorite.ObserveFavoritesUseCase
 import com.solutionium.shared.domain.favorite.ToggleFavoriteUseCase
 import com.solutionium.shared.domain.review.GetTopReviewsUseCase
-import com.solutionium.domain.woo.products.GetProductDetailsUseCase
-import com.solutionium.domain.woo.products.GetProductVariationsUseCase
+import com.solutionium.shared.domain.products.GetProductDetailsUseCase
+import com.solutionium.shared.domain.products.GetProductVariationsUseCase
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

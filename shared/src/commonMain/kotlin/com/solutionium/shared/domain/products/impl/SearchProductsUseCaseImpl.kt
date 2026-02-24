@@ -1,10 +1,10 @@
-package com.solutionium.domain.woo.products.impl
+package com.solutionium.shared.domain.products.impl
 
 import com.solutionium.shared.data.model.GeneralError
 import com.solutionium.shared.data.model.ProductThumbnail
 import com.solutionium.shared.data.model.Result
 import com.solutionium.shared.data.products.WooProductRepository
-import com.solutionium.domain.woo.products.SearchProductsUseCase
+import com.solutionium.shared.domain.products.SearchProductsUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

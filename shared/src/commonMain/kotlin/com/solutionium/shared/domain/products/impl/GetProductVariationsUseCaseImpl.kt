@@ -1,10 +1,10 @@
-package com.solutionium.domain.woo.products.impl
+package com.solutionium.shared.domain.products.impl
 
 import com.solutionium.shared.data.model.GeneralError
 import com.solutionium.shared.data.model.ProductVariation
 import com.solutionium.shared.data.model.Result
 import com.solutionium.shared.data.products.WooProductRepository
-import com.solutionium.domain.woo.products.GetProductVariationsUseCase
+import com.solutionium.shared.domain.products.GetProductVariationsUseCase
 
 class GetProductVariationsUseCaseImpl(
     private val wooProductRepository: WooProductRepository

@@ -1,6 +1,5 @@
-package com.solutionium.domain.woo.products
+package com.solutionium.shared.domain.products
 
-import com.solutionium.shared.data.model.AttributeTerm
 import com.solutionium.shared.data.model.Brand
 import com.solutionium.shared.data.model.BrandListType
 import com.solutionium.shared.data.model.GeneralError
