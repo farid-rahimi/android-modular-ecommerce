@@ -1,4 +1,4 @@
-package com.solutionium.data.woo.user
+package com.solutionium.shared.data.user
 
 import com.solutionium.shared.data.database.dao.StoryViewDao
 import com.solutionium.shared.data.database.entity.StoryViewEntity

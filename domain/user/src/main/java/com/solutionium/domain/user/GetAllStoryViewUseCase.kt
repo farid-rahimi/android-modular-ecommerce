@@ -1,7 +1,7 @@
 package com.solutionium.domain.user
 
 import com.solutionium.shared.data.model.ViewedStory
-import com.solutionium.data.woo.user.StoryViewRepository
+import com.solutionium.shared.data.user.StoryViewRepository
 import kotlinx.coroutines.flow.Flow
 
 interface GetAllStoryViewUseCase {

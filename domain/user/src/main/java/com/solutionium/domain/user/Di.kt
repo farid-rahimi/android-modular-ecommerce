@@ -1,6 +1,6 @@
 package com.solutionium.domain.user
 
-import com.solutionium.data.woo.user.getUserDataModules
+import com.solutionium.shared.data.user.getUserDataModules
 import org.koin.dsl.module
 
 fun getUserDomainModules() = setOf(userDomainModule) + getUserDataModules()

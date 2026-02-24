@@ -1,6 +1,6 @@
 package com.solutionium.domain.user
 
-import com.solutionium.data.woo.user.WooUserRepository
+import com.solutionium.shared.data.user.WooUserRepository
 import kotlinx.coroutines.flow.Flow
 
 interface CheckLoginUserUseCase {
