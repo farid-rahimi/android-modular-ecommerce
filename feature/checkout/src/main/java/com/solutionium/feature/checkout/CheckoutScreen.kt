@@ -81,8 +81,8 @@ import com.solutionium.shared.data.model.Address
 import com.solutionium.shared.data.model.CartItem
 import com.solutionium.shared.data.model.PaymentGateway
 import com.solutionium.shared.data.model.ShippingMethod
-import com.solutionium.domain.checkout.CouponError
-import com.solutionium.domain.checkout.CouponErrorType
+import com.solutionium.shared.domain.checkout.CouponError
+import com.solutionium.shared.domain.checkout.CouponErrorType
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlin.math.absoluteValue
 

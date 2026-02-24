@@ -1,11 +1,11 @@
-package com.solutionium.domain.checkout
+package com.solutionium.shared.domain.checkout
 
 import com.solutionium.shared.data.checkout.checkoutDataModule
-import com.solutionium.domain.checkout.impl.ApplyCouponUseCaseImpl
-import com.solutionium.domain.checkout.impl.CreateOrderUseCaseImpl
-import com.solutionium.domain.checkout.impl.GetOrderStatusUseCaseImpl
-import com.solutionium.domain.checkout.impl.GetPaymentGatewaysUseCaseImpl
-import com.solutionium.domain.checkout.impl.GetShippingMethodsUseCaseImpl
+import com.solutionium.shared.domain.checkout.impl.GetOrderStatusUseCaseImpl
+import com.solutionium.shared.domain.checkout.impl.ApplyCouponUseCaseImpl
+import com.solutionium.shared.domain.checkout.impl.CreateOrderUseCaseImpl
+import com.solutionium.shared.domain.checkout.impl.GetPaymentGatewaysUseCaseImpl
+import com.solutionium.shared.domain.checkout.impl.GetShippingMethodsUseCaseImpl
 import org.koin.dsl.module
 
 fun getCheckoutDomainModules() = setOf(checkoutDomainModule, checkoutDataModule)

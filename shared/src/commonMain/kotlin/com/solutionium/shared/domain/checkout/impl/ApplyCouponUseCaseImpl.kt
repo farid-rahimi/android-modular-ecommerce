@@ -1,15 +1,16 @@
-package com.solutionium.domain.checkout.impl
+package com.solutionium.shared.domain.checkout.impl
 
 import com.solutionium.shared.data.model.CartItem
 import com.solutionium.shared.data.model.Coupon
 import com.solutionium.shared.data.model.Result
 import com.solutionium.shared.data.checkout.CouponRepository
-import com.solutionium.domain.checkout.ApplyCouponUseCase
-import com.solutionium.domain.checkout.CouponError
-import com.solutionium.domain.checkout.CouponErrorType
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.time.format.DateTimeParseException
+import com.solutionium.shared.domain.checkout.ApplyCouponUseCase
+import com.solutionium.shared.domain.checkout.CouponError
+import com.solutionium.shared.domain.checkout.CouponErrorType
+import kotlinx.datetime.Clock
+import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
 
 class ApplyCouponUseCaseImpl(
     private val couponRepository: CouponRepository // Inject the repository to fetch coupon data
@@ -29,7 +30,12 @@ class ApplyCouponUseCaseImpl(
         // 2. Fetch coupon details from the API.
         val coupon = when (val couponResult = couponRepository.getCouponByCode(couponCode)) {
             is Result.Success -> couponResult.data
-            is Result.Failure -> return Result.Failure(CouponError(CouponErrorType.NotExist, couponCode)) // Pass the API error back (e.g., "Coupon not found").
+            is Result.Failure -> return Result.Failure(
+                CouponError(
+                    CouponErrorType.NotExist,
+                    couponCode
+                )
+            ) // Pass the API error back (e.g., "Coupon not found").
         }
 
         // 3. Perform eligibility checks using the fetched coupon data.
@@ -61,16 +67,14 @@ class ApplyCouponUseCaseImpl(
 
         if (!coupon.dateExpires.isNullOrEmpty()) {
             try {
-                // The format matches the string "2025-10-01T00:00:00"
-                val formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME
-                val expiryDate = LocalDateTime.parse(coupon.dateExpires, formatter)
-                val now = LocalDateTime.now()
+                val expiryDate = LocalDateTime.parse(coupon.dateExpires)
+                val now = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
 
-                if (now.isAfter(expiryDate)) {
+                if (now > expiryDate) {
                     return CouponError(CouponErrorType.Expired)
                     //return "This coupon has expired."
                 }
-            } catch (e: DateTimeParseException) {
+            } catch (_: IllegalArgumentException) {
                 // e.g., return "Could not verify coupon's expiration date."
             }
         }
@@ -158,5 +162,4 @@ class ApplyCouponUseCaseImpl(
         return null
     }
 }
-
 

@@ -5,14 +5,10 @@ import com.solutionium.shared.data.model.Address
 import com.solutionium.shared.data.model.BACSDetails
 import com.solutionium.shared.data.model.CartItem
 import com.solutionium.shared.data.model.Coupon
-import com.solutionium.shared.data.model.GeneralError
-import com.solutionium.shared.data.model.Order
 import com.solutionium.shared.data.model.PaymentGateway
 import com.solutionium.shared.data.model.ShippingMethod
-import com.solutionium.shared.data.model.UserDetails
 import com.solutionium.shared.data.model.UserWallet
-import com.solutionium.domain.checkout.CouponError
-import java.util.UUID
+import com.solutionium.shared.domain.checkout.CouponError
 
 sealed class PlaceOrderStatus {
     data object Idle : PlaceOrderStatus() // Initial state

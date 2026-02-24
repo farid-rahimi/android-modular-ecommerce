@@ -18,11 +18,11 @@ import com.solutionium.shared.data.model.getPaymentRedirectUrl
 import com.solutionium.shared.data.model.getWalletPartialPaymentMeta
 import com.solutionium.shared.domain.cart.ClearCartUseCase
 import com.solutionium.shared.domain.cart.ObserveCartUseCase
-import com.solutionium.domain.checkout.ApplyCouponUseCase
-import com.solutionium.domain.checkout.CreateOrderUseCase
-import com.solutionium.domain.checkout.GetOrderStatusUseCase
-import com.solutionium.domain.checkout.GetPaymentGatewaysUseCase
-import com.solutionium.domain.checkout.GetShippingMethodsUseCase
+import com.solutionium.shared.domain.checkout.ApplyCouponUseCase
+import com.solutionium.shared.domain.checkout.CreateOrderUseCase
+import com.solutionium.shared.domain.checkout.GetOrderStatusUseCase
+import com.solutionium.shared.domain.checkout.GetPaymentGatewaysUseCase
+import com.solutionium.shared.domain.checkout.GetShippingMethodsUseCase
 import com.solutionium.domain.config.ForcedEnabledPaymentUseCase
 import com.solutionium.domain.config.GetBACSDetailsUseCase
 import com.solutionium.domain.config.PaymentMethodDiscountUseCase

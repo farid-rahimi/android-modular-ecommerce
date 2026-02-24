@@ -1,4 +1,4 @@
-package com.solutionium.domain.checkout
+package com.solutionium.shared.domain.checkout
 
 import com.solutionium.shared.data.model.GeneralError
 import com.solutionium.shared.data.model.Result

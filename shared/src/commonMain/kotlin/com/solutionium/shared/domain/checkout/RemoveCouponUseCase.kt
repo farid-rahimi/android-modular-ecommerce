@@ -1,4 +1,4 @@
-package com.solutionium.domain.checkout
+package com.solutionium.shared.domain.checkout
 
 interface RemoveCouponUseCase {
 
