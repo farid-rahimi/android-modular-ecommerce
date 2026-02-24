@@ -14,7 +14,7 @@ import com.solutionium.shared.domain.cart.ObserveCartUseCase
 import com.solutionium.shared.domain.cart.UpdateCartItemUseCase
 import com.solutionium.shared.domain.cart.ValidateCartUseCase
 import com.solutionium.shared.domain.config.PaymentMethodDiscountUseCase
-import com.solutionium.domain.user.CheckLoginUserUseCase
+import com.solutionium.shared.domain.user.CheckLoginUserUseCase
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

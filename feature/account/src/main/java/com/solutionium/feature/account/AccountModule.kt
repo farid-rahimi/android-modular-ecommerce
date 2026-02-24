@@ -2,7 +2,7 @@ package com.solutionium.feature.account
 
 import com.solutionium.shared.domain.config.getConfigDomainModules
 import com.solutionium.shared.domain.favorite.getFavoriteDomainModules
-import com.solutionium.domain.user.getUserDomainModules
+import com.solutionium.shared.domain.user.getUserDomainModules
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 

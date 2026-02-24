@@ -16,8 +16,8 @@ import com.solutionium.shared.data.model.UserDetails
 import com.solutionium.shared.domain.config.ReviewCriteriaUseCase
 import com.solutionium.shared.domain.review.GetReviewListPagingUseCase
 import com.solutionium.shared.domain.review.SubmitReviewUseCase
-import com.solutionium.domain.user.CheckLoginUserUseCase
-import com.solutionium.domain.user.GetCurrentUserUseCase
+import com.solutionium.shared.domain.user.CheckLoginUserUseCase
+import com.solutionium.shared.domain.user.GetCurrentUserUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

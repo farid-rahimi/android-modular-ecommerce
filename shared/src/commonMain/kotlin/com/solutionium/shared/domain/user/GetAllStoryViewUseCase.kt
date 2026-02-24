@@ -1,4 +1,4 @@
-package com.solutionium.domain.user
+package com.solutionium.shared.domain.user
 
 import com.solutionium.shared.data.model.ViewedStory
 import com.solutionium.shared.data.user.StoryViewRepository

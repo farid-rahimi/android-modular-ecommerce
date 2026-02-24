@@ -5,17 +5,14 @@ import androidx.lifecycle.viewModelScope
 import com.solutionium.shared.data.model.ActionType
 import com.solutionium.shared.data.model.Result
 import com.solutionium.shared.data.model.UserDetails
-import com.solutionium.domain.user.CheckLoginUserUseCase
-import com.solutionium.domain.user.EditUserDetailsUseCase
-import com.solutionium.domain.user.GetCurrentUserUseCase
-import com.solutionium.domain.user.LoginOrRegisterUseCase
-import com.solutionium.domain.user.SendOtpUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
+import com.solutionium.shared.domain.user.CheckLoginUserUseCase
+import com.solutionium.shared.domain.user.EditUserDetailsUseCase
+import com.solutionium.shared.domain.user.LoginOrRegisterUseCase
+import com.solutionium.shared.domain.user.SendOtpUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 // This enum determines which screen to show: phone number input or OTP verification
 enum class LoginStep {

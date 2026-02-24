@@ -1,20 +1,20 @@
-package com.solutionium.domain.user
+package com.solutionium.shared.domain.user
 
 import com.solutionium.shared.data.model.Address
 import com.solutionium.shared.data.user.WooUserRepository
 
-interface DeleteAddressUseCase {
+interface SaveAddressUseCase {
 
     suspend operator fun invoke(address: Address)
 
 }
 
-internal class DeleteAddressUseCaseImpl(
+internal class SaveAddressUseCaseImpl(
 
     private val userRepository: WooUserRepository
 
-): DeleteAddressUseCase {
+): SaveAddressUseCase {
     override suspend fun invoke(address: Address) {
-        userRepository.deleteAddress(address)
+        userRepository.saveAddress(address)
     }
 }

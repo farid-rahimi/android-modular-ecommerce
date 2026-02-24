@@ -19,10 +19,10 @@ import com.solutionium.shared.domain.config.HomeBannersUseCase
 import com.solutionium.shared.domain.config.PaymentMethodDiscountUseCase
 import com.solutionium.shared.domain.favorite.ObserveFavoritesUseCase
 import com.solutionium.shared.domain.favorite.ToggleFavoriteUseCase
-import com.solutionium.domain.user.AddStoryViewUseCase
-import com.solutionium.domain.user.CheckLoginUserUseCase
-import com.solutionium.domain.user.CheckSuperUserUseCase
-import com.solutionium.domain.user.GetAllStoryViewUseCase
+import com.solutionium.shared.domain.user.AddStoryViewUseCase
+import com.solutionium.shared.domain.user.CheckLoginUserUseCase
+import com.solutionium.shared.domain.user.CheckSuperUserUseCase
+import com.solutionium.shared.domain.user.GetAllStoryViewUseCase
 import com.solutionium.domain.woo.categories.GetCategoryListUseCase
 import com.solutionium.domain.woo.products.GetProductsListUseCase
 import kotlinx.coroutines.delay

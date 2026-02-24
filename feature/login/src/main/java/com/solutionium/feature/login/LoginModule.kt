@@ -1,6 +1,6 @@
 package com.solutionium.feature.login
 
-import com.solutionium.domain.user.getUserDomainModules
+import com.solutionium.shared.domain.user.getUserDomainModules
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 

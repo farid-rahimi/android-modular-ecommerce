@@ -4,10 +4,10 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.solutionium.shared.data.model.Address
-import com.solutionium.domain.user.DeleteAddressUseCase
-import com.solutionium.domain.user.LoadAddressesUseCase
-import com.solutionium.domain.user.SaveAddressUseCase
-import com.solutionium.domain.user.SetDefaultAddressUseCase
+import com.solutionium.shared.domain.user.DeleteAddressUseCase
+import com.solutionium.shared.domain.user.LoadAddressesUseCase
+import com.solutionium.shared.domain.user.SaveAddressUseCase
+import com.solutionium.shared.domain.user.SetDefaultAddressUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update

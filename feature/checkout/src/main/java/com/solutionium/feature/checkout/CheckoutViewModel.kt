@@ -26,8 +26,8 @@ import com.solutionium.shared.domain.checkout.GetShippingMethodsUseCase
 import com.solutionium.shared.domain.config.ForcedEnabledPaymentUseCase
 import com.solutionium.shared.domain.config.GetBACSDetailsUseCase
 import com.solutionium.shared.domain.config.PaymentMethodDiscountUseCase
-import com.solutionium.domain.user.GetUserWalletUseCase
-import com.solutionium.domain.user.LoadAddressesUseCase
+import com.solutionium.shared.domain.user.GetUserWalletUseCase
+import com.solutionium.shared.domain.user.LoadAddressesUseCase
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
