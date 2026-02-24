@@ -1,8 +1,8 @@
-package com.solutionium.domain.config.impl
+package com.solutionium.shared.domain.config.impl
 
 import com.solutionium.shared.data.config.AppConfigRepository
 import com.solutionium.shared.data.model.Result
-import com.solutionium.domain.config.ReviewCriteriaUseCase
+import com.solutionium.shared.domain.config.ReviewCriteriaUseCase
 
 class ReviewCriteriaUseCaseImpl(
     private val appConfigRepository: AppConfigRepository

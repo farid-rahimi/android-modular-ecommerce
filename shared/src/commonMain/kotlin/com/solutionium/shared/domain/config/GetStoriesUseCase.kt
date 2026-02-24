@@ -1,4 +1,4 @@
-package com.solutionium.domain.config
+package com.solutionium.shared.domain.config
 
 import com.solutionium.shared.data.model.StoryItem
 

@@ -1,6 +1,6 @@
 package com.solutionium.feature.account
 
-import com.solutionium.domain.config.getConfigDomainModules
+import com.solutionium.shared.domain.config.getConfigDomainModules
 import com.solutionium.domain.favorite.getFavoriteDomainModules
 import com.solutionium.domain.user.getUserDomainModules
 import org.koin.core.module.dsl.viewModel

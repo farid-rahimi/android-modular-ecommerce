@@ -1,7 +1,7 @@
 package com.solutionium.feature.cart
 
 import com.solutionium.shared.domain.cart.getCartDomainModules
-import com.solutionium.domain.config.getConfigDomainModules
+import com.solutionium.shared.domain.config.getConfigDomainModules
 import com.solutionium.domain.user.getUserDomainModules
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module

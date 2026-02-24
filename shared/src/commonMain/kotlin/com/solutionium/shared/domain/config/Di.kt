@@ -1,17 +1,17 @@
-package com.solutionium.domain.config
+package com.solutionium.shared.domain.config
 
 import com.solutionium.shared.data.config.appConfigDataModule
-import com.solutionium.domain.config.impl.ForcedEnabledPaymentUseCaseImpl
-import com.solutionium.domain.config.impl.GetAppImagesImpl
-import com.solutionium.domain.config.impl.GetBACSDetailsUseCaseImpl
-import com.solutionium.domain.config.impl.GetContactInfoUseCaseImpl
-import com.solutionium.domain.config.impl.GetHeaderLogoUseCaseImpl
-import com.solutionium.domain.config.impl.GetPrivacyPolicyUseCaseImpl
-import com.solutionium.domain.config.impl.GetStoriesUseCaseImpl
-import com.solutionium.domain.config.impl.GetVersionsUseCaseImpl
-import com.solutionium.domain.config.impl.HomeBannersUseCaseImpl
-import com.solutionium.domain.config.impl.PaymentMethodDiscountUseCaseImpl
-import com.solutionium.domain.config.impl.ReviewCriteriaUseCaseImpl
+import com.solutionium.shared.domain.config.impl.GetPrivacyPolicyUseCaseImpl
+import com.solutionium.shared.domain.config.impl.ForcedEnabledPaymentUseCaseImpl
+import com.solutionium.shared.domain.config.impl.GetAppImagesImpl
+import com.solutionium.shared.domain.config.impl.GetBACSDetailsUseCaseImpl
+import com.solutionium.shared.domain.config.impl.GetContactInfoUseCaseImpl
+import com.solutionium.shared.domain.config.impl.GetHeaderLogoUseCaseImpl
+import com.solutionium.shared.domain.config.impl.GetStoriesUseCaseImpl
+import com.solutionium.shared.domain.config.impl.GetVersionsUseCaseImpl
+import com.solutionium.shared.domain.config.impl.HomeBannersUseCaseImpl
+import com.solutionium.shared.domain.config.impl.PaymentMethodDiscountUseCaseImpl
+import com.solutionium.shared.domain.config.impl.ReviewCriteriaUseCaseImpl
 import org.koin.dsl.module
 
 fun getConfigDomainModules() = setOf(configDomainModule, appConfigDataModule)

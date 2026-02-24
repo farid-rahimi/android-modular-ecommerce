@@ -23,9 +23,9 @@ import com.solutionium.shared.domain.checkout.CreateOrderUseCase
 import com.solutionium.shared.domain.checkout.GetOrderStatusUseCase
 import com.solutionium.shared.domain.checkout.GetPaymentGatewaysUseCase
 import com.solutionium.shared.domain.checkout.GetShippingMethodsUseCase
-import com.solutionium.domain.config.ForcedEnabledPaymentUseCase
-import com.solutionium.domain.config.GetBACSDetailsUseCase
-import com.solutionium.domain.config.PaymentMethodDiscountUseCase
+import com.solutionium.shared.domain.config.ForcedEnabledPaymentUseCase
+import com.solutionium.shared.domain.config.GetBACSDetailsUseCase
+import com.solutionium.shared.domain.config.PaymentMethodDiscountUseCase
 import com.solutionium.domain.user.GetUserWalletUseCase
 import com.solutionium.domain.user.LoadAddressesUseCase
 import kotlinx.coroutines.Job

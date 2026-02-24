@@ -9,7 +9,7 @@ import com.solutionium.shared.data.model.Brand
 import com.solutionium.shared.data.model.BrandListType
 import com.solutionium.shared.data.model.ProductThumbnail
 import com.solutionium.shared.data.model.Result
-import com.solutionium.domain.config.GetAppImages
+import com.solutionium.shared.domain.config.GetAppImages
 import com.solutionium.domain.user.CheckSuperUserUseCase
 import com.solutionium.domain.woo.products.GetAttributeTermsUseCase
 import com.solutionium.domain.woo.products.GetBrandsUseCase

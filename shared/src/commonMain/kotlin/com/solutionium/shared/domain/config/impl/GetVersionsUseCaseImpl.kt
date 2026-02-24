@@ -1,9 +1,9 @@
-package com.solutionium.domain.config.impl
+package com.solutionium.shared.domain.config.impl
 
 import com.solutionium.shared.data.config.AppConfigRepository
 import com.solutionium.shared.data.model.AppVersion
 import com.solutionium.shared.data.model.Result
-import com.solutionium.domain.config.GetVersionsUseCase
+import com.solutionium.shared.domain.config.GetVersionsUseCase
 
 class GetVersionsUseCaseImpl(
     private val configRepository: AppConfigRepository

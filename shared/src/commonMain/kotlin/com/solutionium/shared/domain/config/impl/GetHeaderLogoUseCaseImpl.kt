@@ -1,21 +1,20 @@
-package com.solutionium.domain.config.impl
+package com.solutionium.shared.domain.config.impl
 
 import com.solutionium.shared.data.config.AppConfigRepository
-import com.solutionium.shared.data.model.BannerItem
 import com.solutionium.shared.data.model.Result
-import com.solutionium.domain.config.HomeBannersUseCase
+import com.solutionium.shared.domain.config.GetHeaderLogoUseCase
 
-internal class HomeBannersUseCaseImpl(
+class GetHeaderLogoUseCaseImpl(
     private val configRepository: AppConfigRepository
-) : HomeBannersUseCase {
-    override suspend fun invoke(): List<BannerItem> =
+) : GetHeaderLogoUseCase {
+    override suspend fun invoke(): String? =
         when (val result = configRepository.getAppConfig()) {
             is Result.Success -> {
-                result.data.homeBanners
+                result.data.headerLogoUrl
             }
 
             is Result.Failure -> {
-                emptyList()
+                null
             }
         }
 }

@@ -1,0 +1,21 @@
+package com.solutionium.shared.domain.config.impl
+
+import com.solutionium.shared.data.config.AppConfigRepository
+import com.solutionium.shared.data.model.BannerItem
+import com.solutionium.shared.data.model.Result
+import com.solutionium.shared.domain.config.HomeBannersUseCase
+
+internal class HomeBannersUseCaseImpl(
+    private val configRepository: AppConfigRepository
+) : HomeBannersUseCase {
+    override suspend fun invoke(): List<BannerItem> =
+        when (val result = configRepository.getAppConfig()) {
+            is Result.Success -> {
+                result.data.homeBanners
+            }
+
+            is Result.Failure -> {
+                emptyList()
+            }
+        }
+}

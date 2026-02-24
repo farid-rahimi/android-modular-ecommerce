@@ -1,9 +1,9 @@
-package com.solutionium.domain.config.impl
+package com.solutionium.shared.domain.config.impl
 
 import com.solutionium.shared.data.config.AppConfigRepository
 import com.solutionium.shared.data.model.Result
 import com.solutionium.shared.data.model.StoryItem
-import com.solutionium.domain.config.GetStoriesUseCase
+import com.solutionium.shared.domain.config.GetStoriesUseCase
 
 class GetStoriesUseCaseImpl(
     private val configRepository: AppConfigRepository

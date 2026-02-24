@@ -7,10 +7,11 @@ import com.solutionium.shared.data.checkout.CouponRepository
 import com.solutionium.shared.domain.checkout.ApplyCouponUseCase
 import com.solutionium.shared.domain.checkout.CouponError
 import com.solutionium.shared.domain.checkout.CouponErrorType
-import kotlinx.datetime.Clock
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
+import kotlin.time.Clock
+import kotlin.time.ExperimentalTime
 
 class ApplyCouponUseCaseImpl(
     private val couponRepository: CouponRepository // Inject the repository to fetch coupon data
@@ -58,6 +59,7 @@ class ApplyCouponUseCaseImpl(
      * Performs a series of local validation checks based on WooCommerce rules.
      * Returns an error message string if validation fails, otherwise null.
      */
+    @OptIn(ExperimentalTime::class)
     private fun validateCoupon(
         coupon: Coupon,
         appliedCoupons: List<Coupon>,

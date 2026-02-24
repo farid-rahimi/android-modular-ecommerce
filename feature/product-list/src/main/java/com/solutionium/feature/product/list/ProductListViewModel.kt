@@ -12,7 +12,7 @@ import com.solutionium.shared.data.model.toCartItem
 import com.solutionium.shared.domain.cart.AddToCartUseCase
 import com.solutionium.shared.domain.cart.ObserveCartUseCase
 import com.solutionium.shared.domain.cart.UpdateCartItemUseCase
-import com.solutionium.domain.config.PaymentMethodDiscountUseCase
+import com.solutionium.shared.domain.config.PaymentMethodDiscountUseCase
 import com.solutionium.domain.favorite.ObserveFavoritesUseCase
 import com.solutionium.domain.favorite.ToggleFavoriteUseCase
 import com.solutionium.domain.user.CheckSuperUserUseCase

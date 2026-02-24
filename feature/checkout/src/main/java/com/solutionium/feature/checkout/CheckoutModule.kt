@@ -2,7 +2,7 @@ package com.solutionium.feature.checkout
 
 import com.solutionium.shared.domain.cart.getCartDomainModules
 import com.solutionium.shared.domain.checkout.getCheckoutDomainModules
-import com.solutionium.domain.config.getConfigDomainModules
+import com.solutionium.shared.domain.config.getConfigDomainModules
 import com.solutionium.domain.user.getUserDomainModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.dsl.viewModel

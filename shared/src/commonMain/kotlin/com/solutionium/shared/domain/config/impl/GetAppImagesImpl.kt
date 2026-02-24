@@ -1,8 +1,8 @@
-package com.solutionium.domain.config.impl
+package com.solutionium.shared.domain.config.impl
 
 import com.solutionium.shared.data.config.AppConfigRepository
 import com.solutionium.shared.data.model.Result
-import com.solutionium.domain.config.GetAppImages
+import com.solutionium.shared.domain.config.GetAppImages
 
 internal class GetAppImagesImpl(
     private val appConfigRepository: AppConfigRepository

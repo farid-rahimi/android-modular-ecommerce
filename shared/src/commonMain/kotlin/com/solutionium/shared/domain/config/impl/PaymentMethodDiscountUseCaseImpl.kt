@@ -1,21 +1,21 @@
-package com.solutionium.domain.config.impl
+package com.solutionium.shared.domain.config.impl
 
 import com.solutionium.shared.data.config.AppConfigRepository
-import com.solutionium.shared.data.model.BACSDetails
 import com.solutionium.shared.data.model.Result
-import com.solutionium.domain.config.GetBACSDetailsUseCase
+import com.solutionium.shared.domain.config.PaymentMethodDiscountUseCase
 
-class GetBACSDetailsUseCaseImpl(
+class PaymentMethodDiscountUseCaseImpl(
     private val appConfigRepository: AppConfigRepository
-) : GetBACSDetailsUseCase {
-    override suspend fun invoke(): BACSDetails? =
+) : PaymentMethodDiscountUseCase {
+    override suspend fun invoke(): Map<String, Double> =
         when (val result = appConfigRepository.getAppConfig()) {
             is Result.Success -> {
-                result.data.bacsDetails
+                result.data.paymentDiscount
             }
 
             is Result.Failure -> {
-                null
+                emptyMap()
             }
         }
+
 }
