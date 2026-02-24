@@ -67,6 +67,7 @@
             <option value="$PROJECT_DIR$/gradle/build-logic" />
             <option value="$PROJECT_DIR$/gradle/build-logic/convention" />
             <option value="$PROJECT_DIR$/shared" />
+            <option value="$PROJECT_DIR$/shared-ui" />
           </set>
         </option>
       </GradleProjectSettings>
